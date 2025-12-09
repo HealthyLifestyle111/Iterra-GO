@@ -1,0 +1,15 @@
+[
+  {
+    "id": "1765267229861",
+    "username": "admin",
+    "email": "admin@iterra-go.com",
+    "password": "$2a$10$CfyPkxPNsCa9LRi2NLl27ezeTjMAwUYCj1rAhdX3MlKOwuxiIHI26",
+    "firstName": "Admin",
+    "lastName": "User",
+    "role": "admin",
+    "doterraSiteUrl": "",
+    "memberNumber": "",
+    "createdAt": "2025-12-09T08:00:29.861Z",
+    "active": true
+  }
+]
