@@ -1,16 +1,19 @@
 services:
   - type: web
-    name: iterra-go
-    env: node
-    plan: free
-    buildCommand: npm install
-    startCommand: npm start
+    name: iterra-wellness
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
     envVars:
-      - key: NODE_ENV
-        value: production
-      - key: SESSION_SECRET
-        generateValue: true
-      - key: ADMIN_USERNAME
-        value: admin
-      - key: ADMIN_PASSWORD
-        sync: false
+      - key: NODE_VERSION
+        value: 18
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-XSS-Protection
+        value: 1; mode=block
