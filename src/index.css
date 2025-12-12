@@ -1,0 +1,7 @@
+/* Basic reset */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+/* Optional: a simple background so you can tell it loaded */
+#root { min-height: 100%; }
