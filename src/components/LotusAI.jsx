@@ -574,8 +574,7 @@ export default function LotusAI({ onClose }) {
 
               Take another breath…
               Let the blend thread itself through your ribs, behind your heart, down your spine.
-              This is the threshold—where clarity returns, where your internal crown settles back onto your head, where the world quiets enough for you to hear your own authority again.`,
-                  audioUrl: null
+              This is the threshold—where clarity returns, where your internal crown settles back onto your head, where the world quiets enough for you to hear your own authority again.`
                 }}
             />
           </div>
