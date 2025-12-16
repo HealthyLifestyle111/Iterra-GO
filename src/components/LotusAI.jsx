@@ -6,6 +6,7 @@ import { createPageUrl } from "@/utils";
 import MeditationPlayer from "./MeditationPlayer";
 import SeasonalCare from "./SeasonalCare";
 
+const ENABLE_BASE44_AUTH = false;
 const DOTERRA_BASE_URL = "https://my.doterra.com/jennawilliams1/p/";
 
 const SYSTEM_PROMPT = `You are the iTerra™ Wellness Concierge AI - an elegant, knowledgeable guide combining expertise as a nutritionist, aromatherapist, and wellness associate for holistic wellness using doTERRA essential oils and natural solutions.
@@ -834,7 +835,13 @@ function AssociateLoginEmbed({ onBack, onClose }) {
         return;
       }
 
-      base44.auth.redirectToLogin(window.location.origin + '/BackOffice');
+      // Success - redirect to Base44 login
+      if (ENABLE_BASE44_AUTH) {
+        base44.auth.redirectToLogin(window.location.origin + '/BackOffice');
+      } else {
+        // Local development: Skip Base44 authentication
+        console.log('Auth disabled: Would redirect to Base44 login');
+      }
       
     } catch (err) {
       setError('Login failed. Please try again.');

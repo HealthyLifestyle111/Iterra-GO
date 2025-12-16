@@ -5,6 +5,8 @@ import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Lock, Loader2 } from "lucide-react";
 
+const ENABLE_BASE44_AUTH = false;
+
 export default function SpecializedIntake() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -28,12 +30,23 @@ export default function SpecializedIntake() {
           return;
         }
 
-        const isAuth = await base44.auth.isAuthenticated();
-        if (!isAuth) {
-          navigate(createPageUrl('Home'));
-          return;
+        let currentUser;
+        
+        if (ENABLE_BASE44_AUTH) {
+          const isAuth = await base44.auth.isAuthenticated();
+          if (!isAuth) {
+            navigate(createPageUrl('Home'));
+            return;
+          }
+          currentUser = await base44.auth.me();
+        } else {
+          // Local development: Use guest user with full access
+          currentUser = {
+            education_tier: 'tier3',
+            name: 'Guest User',
+            email: 'guest@local'
+          };
         }
-        const currentUser = await base44.auth.me();
         setUser(currentUser);
       } catch (err) {
         navigate(createPageUrl('Home'));

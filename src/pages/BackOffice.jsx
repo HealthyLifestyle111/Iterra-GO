@@ -6,6 +6,7 @@ import { base44 } from "@/api/base44Client";
 import ManifestationManager from "../components/ManifestationManager";
 import UniversityBlueprint from "../components/UniversityBlueprint";
 
+const ENABLE_BASE44_AUTH = false;
 
 export default function BackOffice() {
   const [activeSection, setActiveSection] = useState('manifestation');
@@ -38,13 +39,24 @@ export default function BackOffice() {
           return;
         }
 
-        const isAuth = await base44.auth.isAuthenticated();
-        if (!isAuth) {
-          navigate(createPageUrl('Home'));
-          return;
+        let currentUser;
+        
+        if (ENABLE_BASE44_AUTH) {
+          const isAuth = await base44.auth.isAuthenticated();
+          if (!isAuth) {
+            navigate(createPageUrl('Home'));
+            return;
+          }
+          currentUser = await base44.auth.me();
+        } else {
+          // Local development: Use guest user with full access
+          currentUser = {
+            backoffice_access: true,
+            education_tier: 'tier3',
+            name: 'Guest User',
+            email: 'guest@local'
+          };
         }
-
-        const currentUser = await base44.auth.me();
         
         if (!currentUser.backoffice_access) {
           alert('You do not have back office access. Please contact your upline.');

@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { AlertCircle, Loader2 } from "lucide-react";
 
+const ENABLE_BASE44_AUTH = false;
+
 export default function AssociateLogin({ onClose, onSuccess }) {
   const [step, setStep] = useState('login'); // 'login' | 'verify' | 'reset'
   const [email, setEmail] = useState('');
@@ -44,7 +46,12 @@ export default function AssociateLogin({ onClose, onSuccess }) {
       }
 
       // Success - redirect to login page
-      base44.auth.redirectToLogin(window.location.origin + '/BackOffice');
+      if (ENABLE_BASE44_AUTH) {
+        base44.auth.redirectToLogin(window.location.origin + '/BackOffice');
+      } else {
+        // Local development: Skip Base44 authentication
+        console.log('Auth disabled: Would redirect to Base44 login');
+      }
       
     } catch (err) {
       setError('Login failed. Please try again.');
