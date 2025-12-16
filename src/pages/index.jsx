@@ -16,6 +16,8 @@ import WellnessIntakeResult from "./WellnessIntakeResult";
 
 import SpecializedIntake from "./SpecializedIntake";
 
+import LotusAI from "../components/LotusAI";
+
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 const PAGES = {
@@ -78,6 +80,8 @@ function PagesContent() {
                 <Route path="/WellnessIntakeResult" element={<WellnessIntakeResult />} />
                 
                 <Route path="/SpecializedIntake" element={<SpecializedIntake />} />
+                
+                <Route path="/ai" element={<LotusAI />} />
                 
             </Routes>
         </Layout>
