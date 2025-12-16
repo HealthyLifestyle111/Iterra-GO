@@ -2,6 +2,21 @@
 // Feature flag: Enable/disable Base44 authentication (currently disabled)
 const ENABLE_BASE44_AUTH = false;
 
+// Real AI API function
+export async function invokeLLM({ prompt, context }) {
+  const res = await fetch("/api/ai", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ prompt, context }),
+  });
+
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    throw new Error(`AI request failed (${res.status}): ${text}`);
+  }
+  return res.json();
+}
+
 // Stub authentication functions
 export async function isAuthenticated() { return false; }
 export async function me() { return null; }
@@ -42,7 +57,10 @@ export const base44 = {
   },
   integrations: {
     Core: {
-      InvokeLLM: async () => ({ result: 'Mock LLM response' }),
+      InvokeLLM: async ({ prompt, add_context_from_internet }) => {
+        // Call real API endpoint instead of mock
+        return invokeLLM({ prompt, context: add_context_from_internet });
+      },
       SendEmail: async () => ({ success: true }),
       UploadFile: async () => ({ success: true }),
       GenerateImage: async () => ({ success: true }),
