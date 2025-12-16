@@ -4,19 +4,29 @@ import OpenAI from "openai";
 const app = express();
 app.use(express.json({ limit: "1mb" }));
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const hasKey = !!process.env.OPENAI_API_KEY;
+const openai = hasKey ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) : null;
 
-app.get("/api/health", (_req, res) => res.json({ ok: true }));
+app.get("/api/health", (_req, res) =>
+  res.json({ ok: true, ai: hasKey ? "enabled" : "stub" })
+);
 
 app.post("/api/ai", async (req, res) => {
+  const { prompt, context } = req.body ?? {};
+  if (!prompt || typeof prompt !== "string") {
+    return res.status(400).json({ error: "Missing prompt (string)." });
+  }
+
+  // ✅ No key yet → return stub JSON (keeps UI working)
+  if (!hasKey) {
+    return res.json({
+      text: "AI is offline (no API key set). Backend is healthy and ready.",
+      stub: true
+    });
+  }
+
   try {
-    const { prompt, context } = req.body ?? {};
-    if (!prompt || typeof prompt !== "string") {
-      return res.status(400).json({ error: "Missing prompt (string)." });
-    }
-
     const input = (context ? `Context:\n${context}\n\n` : "") + prompt;
-
     const r = await openai.chat.completions.create({
       model: process.env.OPENAI_MODEL || "gpt-4",
       messages: [
@@ -26,8 +36,6 @@ app.post("/api/ai", async (req, res) => {
       temperature: 0.7,
       max_tokens: 1500
     });
-
-    // Extract the response text from OpenAI API v4
     return res.json({ text: r.choices[0].message.content });
   } catch (err) {
     return res.status(500).json({ error: err?.message || "AI server error" });
