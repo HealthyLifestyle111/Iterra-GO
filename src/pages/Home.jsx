@@ -1,21 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import AssociateLogin from "../components/AssociateLogin";
-import LotusAI from "../components/LotusAI";
 
 export default function IterraVitalityDropdown() {
-        const [showDropdown, setShowDropdown] = useState(false);
-        const [showFeminineDropdown, setShowFeminineDropdown] = useState(false);
-        const [showAgelessDropdown, setShowAgelessDropdown] = useState(false);
-        const [showPetDropdown, setShowPetDropdown] = useState(false);
-        const [panelOpen, setPanelOpen] = useState([false, false, false, false]);
-        const [selectedAgelessCategory, setSelectedAgelessCategory] = useState(null);
-        const [selectedPetType, setSelectedPetType] = useState(null);
-        const [selectedMasculinePillar, setSelectedMasculinePillar] = useState(null);
-        const [selectedFemininePillar, setSelectedFemininePillar] = useState(null);
-        const [showLotusAI, setShowLotusAI] = useState(false);
-        const [showAssociateLogin, setShowAssociateLogin] = useState(false);
+  const navigate = useNavigate();
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [showFeminineDropdown, setShowFeminineDropdown] = useState(false);
+  const [showAgelessDropdown, setShowAgelessDropdown] = useState(false);
+  const [showPetDropdown, setShowPetDropdown] = useState(false);
+  const [panelOpen, setPanelOpen] = useState([false, false, false, false]);
+  const [selectedAgelessCategory, setSelectedAgelessCategory] = useState(null);
+  const [selectedPetType, setSelectedPetType] = useState(null);
+  const [selectedMasculinePillar, setSelectedMasculinePillar] = useState(null);
+  const [selectedFemininePillar, setSelectedFemininePillar] = useState(null);
+  const [showAssociateLogin, setShowAssociateLogin] = useState(false);
   const dropdownRef = useRef(null);
   const feminineDropdownRef = useRef(null);
   const agelessDropdownRef = useRef(null);
@@ -2003,13 +2003,10 @@ body.no-scroll{overflow:hidden!important}
       </div>
 
       <div className="lotus-ai-container">
-        <div className="lotus-ai" onClick={() => setShowLotusAI(true)} style={{cursor:"pointer"}}>
+        <div className="lotus-ai" onClick={() => navigate("/ai")} style={{cursor:"pointer"}}>
           <div className="lotus-symbol">🪷</div>
         </div>
       </div>
-
-      {/* Lotus AI */}
-      {showLotusAI && <LotusAI onClose={() => setShowLotusAI(false)} />}
 
       {/* Associate Login Modal */}
       {showAssociateLogin && (
