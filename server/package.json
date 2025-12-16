@@ -1,0 +1,19 @@
+{
+  "name": "iterra-go-server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend API server for iTerra-GO",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["api", "openai", "express"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "openai": "^4.20.0",
+    "cors": "^2.8.5"
+  }
+}
