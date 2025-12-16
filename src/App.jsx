@@ -1,8 +1,14 @@
-import React from "react";
+import './App.css'
+import Pages from "@/pages/index.jsx"
+import { Toaster } from "@/components/ui/toaster"
 
-export default function App() {
-  return <div style={{ padding: 40 }}>Iterra-GO</div>;
+function App() {
+  return (
+    <>
+      <Pages />
+      <Toaster />
+    </>
+  )
 }
 
-
-
+export default App 

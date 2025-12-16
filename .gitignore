@@ -1,5 +1,5 @@
 node_modules/
 dist/
-extracted/
 .DS_Store
 .env
+extracted/
