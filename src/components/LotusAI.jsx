@@ -9,6 +9,13 @@ import SeasonalCare from "./SeasonalCare";
 const ENABLE_BASE44_AUTH = false;
 const DOTERRA_BASE_URL = "https://my.doterra.com/jennawilliams1/p/";
 
+// Safely extract text from any response type
+const asText = (v) => {
+  if (typeof v === "string") return v;
+  if (v && typeof v === "object" && typeof v.text === "string") return v.text;
+  return String(v ?? "");
+};
+
 const SYSTEM_PROMPT = `You are the iTerra™ Wellness Concierge AI - an elegant, knowledgeable guide combining expertise as a nutritionist, aromatherapist, and wellness associate for holistic wellness using doTERRA essential oils and natural solutions.
 
 CRITICAL RULES:
@@ -252,7 +259,7 @@ export default function LotusAI({ onClose }) {
 
       const assistantMessage = {
         role: "assistant",
-        content: response || "I apologize, I couldn't process that request."
+        content: asText(response) || "I apologize, I couldn't process that request."
       };
 
       setMessages(prev => [...prev, assistantMessage]);
