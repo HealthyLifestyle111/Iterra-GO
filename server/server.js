@@ -14,7 +14,7 @@ app.get("/api/health", (_req, res) =>
 );
 
 app.post("/api/ai", async (req, res) => {
-  const { prompt, context } = req.body ?? {};
+  const { prompt, context, response_json_schema } = req.body ?? {};
   if (!prompt || typeof prompt !== "string") {
     return res.status(400).json({ error: "Missing prompt (string)." });
   }
@@ -22,14 +22,16 @@ app.post("/api/ai", async (req, res) => {
   // ✅ No key yet → return stub JSON (keeps UI working)
   if (!hasKey) {
     return res.json({
-      text: "AI is offline (no API key set). Backend is healthy and ready.",
+      text: response_json_schema 
+        ? JSON.stringify({ stub: true, message: "AI offline" })
+        : "AI is offline (no API key set). Backend is healthy and ready.",
       stub: true
     });
   }
 
   try {
     const input = (context ? `Context:\n${context}\n\n` : "") + prompt;
-    const r = await openai.chat.completions.create({
+    const options = {
       model: process.env.OPENAI_MODEL || "gpt-4",
       messages: [
         { role: "system", content: "You are the iTerra™ Wellness Concierge AI - an elegant, knowledgeable guide combining expertise as a nutritionist, aromatherapist, and wellness associate for holistic wellness using doTERRA essential oils and natural solutions." },
@@ -37,7 +39,14 @@ app.post("/api/ai", async (req, res) => {
       ],
       temperature: 0.7,
       max_tokens: 1500
-    });
+    };
+
+    // Enable JSON mode if schema provided
+    if (response_json_schema) {
+      options.response_format = { type: "json_object" };
+    }
+
+    const r = await openai.chat.completions.create(options);
     return res.json({ text: r.choices[0].message.content });
   } catch (err) {
     return res.status(500).json({ error: err?.message || "AI server error" });

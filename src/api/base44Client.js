@@ -3,18 +3,38 @@
 const ENABLE_BASE44_AUTH = false;
 
 // Real AI API function
-export async function invokeLLM({ prompt, context }) {
+export async function invokeLLM({ prompt, context, response_json_schema }) {
   const res = await fetch("/api/ai", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ prompt, context }),
+    body: JSON.stringify({ prompt, context, response_json_schema }),
   });
 
+  const raw = await res.text();
+
   if (!res.ok) {
-    const text = await res.text().catch(() => "");
-    throw new Error(`AI request failed (${res.status}): ${text}`);
+    throw new Error(`AI request failed (${res.status}): ${raw}`);
   }
-  return res.json();
+
+  // Try to parse JSON response
+  try {
+    const data = JSON.parse(raw);
+    
+    // If client expects structured JSON output, return the parsed content
+    if (response_json_schema && typeof data.text === 'string') {
+      try {
+        return JSON.parse(data.text);
+      } catch {
+        // If text isn't valid JSON, return it as-is
+        return data.text;
+      }
+    }
+    
+    // Otherwise return the text field as a string (for chat-like responses)
+    return typeof data === "string" ? data : (data?.text ?? data?.message ?? String(data));
+  } catch {
+    return raw;
+  }
 }
 
 // Stub authentication functions
