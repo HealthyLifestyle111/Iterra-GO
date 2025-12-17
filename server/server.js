@@ -7,6 +7,8 @@ app.use(express.json({ limit: "1mb" }));
 const hasKey = !!process.env.OPENAI_API_KEY;
 const openai = hasKey ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) : null;
 
+app.get("/", (_req, res) => res.send("Iterra-GO API is running. Try /api/health"));
+
 app.get("/api/health", (_req, res) =>
   res.json({ ok: true, ai: hasKey ? "enabled" : "stub" })
 );
