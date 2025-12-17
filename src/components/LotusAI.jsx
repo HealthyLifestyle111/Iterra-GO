@@ -163,7 +163,7 @@ export default function LotusAI({ onClose }) {
   useEffect(scrollToBottom, [messages]);
 
   const convertLinksToHTML = (text) => {
-    return text.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, (match, name, slug) => {
+    return asText(text).replace(/\[([^\]]+)\]\(([^\)]+)\)/g, (match, name, slug) => {
       const url = `${DOTERRA_BASE_URL}${slug}`;
       return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="color: var(--rosegold); text-decoration: underline; font-weight: 600;">${name}</a>`;
     });
@@ -175,7 +175,7 @@ export default function LotusAI({ onClose }) {
     speechSynthesis.cancel();
 
     // Remove all markdown, formatting, and special characters
-    let cleanText = text
+    let cleanText = asText(text)
       .replace(/\*\*/g, '')
       .replace(/\*/g, '')
       .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
