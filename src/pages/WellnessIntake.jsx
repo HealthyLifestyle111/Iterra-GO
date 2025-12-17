@@ -5,6 +5,11 @@ import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
+// Safely format string for display (handles non-string values)
+const safeFormat = (val) => {
+  return typeof val === 'string' ? val.replace(/_/g, ' ') : String(val || '');
+};
+
 export default function WellnessIntake() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -718,7 +723,7 @@ export default function WellnessIntake() {
                           <input type="checkbox" checked={formData.goals.includes(goal)}
                             onChange={() => handleCheckbox('goals', goal)}
                             disabled={formData.goals.length >= 3 && !formData.goals.includes(goal)} />
-                          <span style={{ textTransform: 'capitalize' }}>{goal.replace(/_/g, ' ')}</span>
+                          <span style={{ textTransform: 'capitalize' }}>{safeFormat(goal)}</span>
                         </label>
                       ))}
                     </div>
@@ -857,7 +862,7 @@ export default function WellnessIntake() {
                     <label key={mood} className={`option-label ${formData.moodcues.includes(mood) ? 'checked' : ''}`}>
                       <input type="checkbox" checked={formData.moodcues.includes(mood)}
                         onChange={() => handleCheckbox('moodcues', mood)} />
-                      <span style={{ textTransform: 'capitalize' }}>{mood.replace(/_/g, ' ')}</span>
+                      <span style={{ textTransform: 'capitalize' }}>{safeFormat(mood)}</span>
                     </label>
                   ))}
                 </div>
@@ -943,7 +948,7 @@ export default function WellnessIntake() {
                         <label key={focus} className={`option-label ${formData.female_focus.includes(focus) ? 'checked' : ''}`}>
                           <input type="checkbox" checked={formData.female_focus.includes(focus)}
                             onChange={() => handleCheckbox('female_focus', focus)} />
-                          <span style={{ textTransform: 'capitalize' }}>{focus.replace(/_/g, ' ')}</span>
+                          <span style={{ textTransform: 'capitalize' }}>{safeFormat(focus)}</span>
                         </label>
                       ))}
                     </div>
@@ -1548,7 +1553,7 @@ export default function WellnessIntake() {
                         <label key={opt} className={`option-label ${formData[item.key] === opt ? 'checked' : ''}`}>
                           <input type="radio" name={item.key} value={opt} checked={formData[item.key] === opt}
                             onChange={(e) => setFormData(prev => ({ ...prev, [item.key]: e.target.value }))} />
-                          <span style={{ fontSize: '0.8rem' }}>{opt.replace(/_/g, ' ')}</span>
+                          <span style={{ fontSize: '0.8rem' }}>{safeFormat(opt)}</span>
                         </label>
                       ))}
                     </div>
@@ -1561,7 +1566,7 @@ export default function WellnessIntake() {
                     <label key={pattern} className={`option-label ${formData.eating_pattern === pattern ? 'checked' : ''}`}>
                       <input type="radio" name="eating_pattern" value={pattern} checked={formData.eating_pattern === pattern}
                         onChange={(e) => setFormData(prev => ({ ...prev, eating_pattern: e.target.value }))} />
-                      <span style={{ textTransform: 'capitalize' }}>{pattern.replace(/_/g, ' ')}</span>
+                      <span style={{ textTransform: 'capitalize' }}>{safeFormat(pattern)}</span>
                     </label>
                   ))}
                 </div>
@@ -1637,7 +1642,7 @@ export default function WellnessIntake() {
                             : [...formData.diet_types, diet];
                           setFormData(prev => ({ ...prev, diet_types: newDiets }));
                         }} />
-                      <span style={{ textTransform: 'capitalize' }}>{diet.replace(/_/g, ' ')}</span>
+                      <span style={{ textTransform: 'capitalize' }}>{safeFormat(diet)}</span>
                     </label>
                   ))}
                 </div>
@@ -1691,7 +1696,7 @@ export default function WellnessIntake() {
                     <label key={type} className={`option-label ${formData.water_type === type ? 'checked' : ''}`}>
                       <input type="radio" name="water_type" value={type} checked={formData.water_type === type}
                         onChange={(e) => setFormData(prev => ({ ...prev, water_type: e.target.value }))} />
-                      <span style={{ textTransform: 'capitalize' }}>{type.replace(/_/g, ' ')}</span>
+                      <span style={{ textTransform: 'capitalize' }}>{safeFormat(type)}</span>
                     </label>
                   ))}
                 </div>
@@ -1872,7 +1877,7 @@ export default function WellnessIntake() {
                     <label key={flag} className={`option-label ${formData.digest_flags.includes(flag) ? 'checked' : ''}`}>
                       <input type="checkbox" checked={formData.digest_flags.includes(flag)}
                         onChange={() => handleCheckbox('digest_flags', flag)} />
-                      <span style={{ textTransform: 'capitalize' }}>{flag.replace(/_/g, ' ')}</span>
+                      <span style={{ textTransform: 'capitalize' }}>{safeFormat(flag)}</span>
                     </label>
                   ))}
                 </div>
@@ -1985,7 +1990,7 @@ export default function WellnessIntake() {
                               : [...current, env];
                             setFormData(prev => ({ ...prev, sleep_environment: newEnv }));
                           }} />
-                        <span style={{ fontSize: '0.8rem' }}>{env.replace(/_/g, ' ')}</span>
+                        <span style={{ fontSize: '0.8rem' }}>{safeFormat(env)}</span>
                       </label>
                     ))}
                   </div>
@@ -2004,7 +2009,7 @@ export default function WellnessIntake() {
                               : [...current, routine];
                             setFormData(prev => ({ ...prev, bedtime_routine: newRoutine }));
                           }} />
-                        <span style={{ fontSize: '0.8rem' }}>{routine.replace(/_/g, ' ')}</span>
+                        <span style={{ fontSize: '0.8rem' }}>{safeFormat(routine)}</span>
                       </label>
                     ))}
                   </div>
@@ -2051,7 +2056,7 @@ export default function WellnessIntake() {
                               : [...current, challenge];
                             setFormData(prev => ({ ...prev, sleep_challenges: newChallenges }));
                           }} />
-                        <span style={{ fontSize: '0.8rem' }}>{challenge.replace(/_/g, ' ')}</span>
+                        <span style={{ fontSize: '0.8rem' }}>{safeFormat(challenge)}</span>
                       </label>
                     ))}
                   </div>
@@ -2085,7 +2090,7 @@ export default function WellnessIntake() {
                       <label key={level} className={`option-label ${formData.commitment_level === level ? 'checked' : ''}`}>
                         <input type="radio" name="commitment_level" value={level} checked={formData.commitment_level === level}
                           onChange={(e) => setFormData(prev => ({ ...prev, commitment_level: e.target.value }))} />
-                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{level.replace(/_/g, ' ')}</span>
+                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{safeFormat(level)}</span>
                       </label>
                     ))}
                   </div>
@@ -2098,7 +2103,7 @@ export default function WellnessIntake() {
                       <label key={type} className={`option-label ${formData.motivation_type === type ? 'checked' : ''}`}>
                         <input type="radio" name="motivation_type" value={type} checked={formData.motivation_type === type}
                           onChange={(e) => setFormData(prev => ({ ...prev, motivation_type: e.target.value }))} />
-                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{type.replace(/_/g, ' ')}</span>
+                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{safeFormat(type)}</span>
                       </label>
                     ))}
                   </div>
@@ -2111,7 +2116,7 @@ export default function WellnessIntake() {
                       <label key={pref} className={`option-label ${formData.support_preference === pref ? 'checked' : ''}`}>
                         <input type="radio" name="support_preference" value={pref} checked={formData.support_preference === pref}
                           onChange={(e) => setFormData(prev => ({ ...prev, support_preference: e.target.value }))} />
-                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{pref.replace(/_/g, ' ')}</span>
+                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{safeFormat(pref)}</span>
                       </label>
                     ))}
                   </div>
@@ -2137,7 +2142,7 @@ export default function WellnessIntake() {
                       <label key={style} className={`option-label ${formData.learning_style === style ? 'checked' : ''}`}>
                         <input type="radio" name="learning_style" value={style} checked={formData.learning_style === style}
                           onChange={(e) => setFormData(prev => ({ ...prev, learning_style: e.target.value }))} />
-                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{style.replace(/_/g, ' ')}</span>
+                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{safeFormat(style)}</span>
                       </label>
                     ))}
                   </div>
@@ -2150,7 +2155,7 @@ export default function WellnessIntake() {
                       <label key={time} className={`option-label ${formData.time_availability === time ? 'checked' : ''}`}>
                         <input type="radio" name="time_availability" value={time} checked={formData.time_availability === time}
                           onChange={(e) => setFormData(prev => ({ ...prev, time_availability: e.target.value }))} />
-                        <span style={{ fontSize: '0.85rem' }}>{time.replace(/_/g, ' ')}</span>
+                        <span style={{ fontSize: '0.85rem' }}>{safeFormat(time)}</span>
                       </label>
                     ))}
                   </div>
@@ -2168,7 +2173,7 @@ export default function WellnessIntake() {
                               : [...formData.obstacles, obstacle];
                             setFormData(prev => ({ ...prev, obstacles: newObstacles }));
                           }} />
-                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{obstacle.replace(/_/g, ' ')}</span>
+                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{safeFormat(obstacle)}</span>
                       </label>
                     ))}
                   </div>
@@ -2186,7 +2191,7 @@ export default function WellnessIntake() {
                               : [...formData.success_metrics, metric];
                             setFormData(prev => ({ ...prev, success_metrics: newMetrics }));
                           }} />
-                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{metric.replace(/_/g, ' ')}</span>
+                        <span style={{ textTransform: 'capitalize', fontSize: '0.85rem' }}>{safeFormat(metric)}</span>
                       </label>
                     ))}
                   </div>
@@ -2215,7 +2220,7 @@ export default function WellnessIntake() {
                     <label key={dur} className={`option-label ${formData.detox_duration === dur ? 'checked' : ''}`}>
                       <input type="radio" name="detox_duration" value={dur} checked={formData.detox_duration === dur}
                         onChange={(e) => setFormData(prev => ({ ...prev, detox_duration: e.target.value }))} />
-                      <span style={{ color: 'var(--champagne)' }}>{dur.replace(/_/g, ' ')}</span>
+                      <span style={{ color: 'var(--champagne)' }}>{safeFormat(dur)}</span>
                     </label>
                   ))}
                 </div>
@@ -2240,7 +2245,7 @@ export default function WellnessIntake() {
                     <label key={opt} className={`option-label ${formData.detox_options.includes(opt) ? 'checked' : ''}`}>
                       <input type="checkbox" checked={formData.detox_options.includes(opt)}
                         onChange={() => handleCheckbox('detox_options', opt)} />
-                      <span style={{ textTransform: 'capitalize', color: 'var(--champagne)' }}>{opt.replace(/_/g, ' ')}</span>
+                      <span style={{ textTransform: 'capitalize', color: 'var(--champagne)' }}>{safeFormat(opt)}</span>
                     </label>
                   ))}
                 </div>

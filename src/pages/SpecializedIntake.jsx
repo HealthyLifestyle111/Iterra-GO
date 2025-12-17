@@ -7,6 +7,11 @@ import { ArrowLeft, Lock, Loader2 } from "lucide-react";
 
 const ENABLE_BASE44_AUTH = false;
 
+// Safely format string for display (handles non-string values)
+const safeFormat = (val) => {
+  return typeof val === 'string' ? val.replace(/_/g, ' ') : String(val || '');
+};
+
 export default function SpecializedIntake() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -472,7 +477,7 @@ Format as structured JSON.`;
                       >
                         <option value="">Choose...</option>
                         {q.options.map(opt => (
-                          <option key={opt} value={opt} style={{background:"#2d1810"}}>{opt.replace(/_/g, ' ')}</option>
+                          <option key={opt} value={opt} style={{background:"#2d1810"}}>{safeFormat(opt)}</option>
                         ))}
                       </select>
                     )}
@@ -495,7 +500,7 @@ Format as structured JSON.`;
                               }}
                               style={{accentColor:"var(--rosegold)"}}
                             />
-                            <span style={{fontSize:13,color:"var(--champagne)"}}>{opt.replace(/_/g, ' ')}</span>
+                            <span style={{fontSize:13,color:"var(--champagne)"}}>{safeFormat(opt)}</span>
                           </label>
                         ))}
                       </div>
