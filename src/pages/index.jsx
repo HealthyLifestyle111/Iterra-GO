@@ -18,7 +18,7 @@ import SpecializedIntake from "./SpecializedIntake";
 
 import LotusAI from "../components/LotusAI";
 
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 const PAGES = {
     
@@ -89,9 +89,5 @@ function PagesContent() {
 }
 
 export default function Pages() {
-    return (
-        <Router>
-            <PagesContent />
-        </Router>
-    );
+    return <PagesContent />;
 }
