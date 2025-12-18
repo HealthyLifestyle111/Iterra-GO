@@ -1022,7 +1022,7 @@ export default function BackOffice() {
                   <div style={{padding:16,borderRadius:10,background:"rgba(230,183,165,0.08)",border:"1px solid rgba(230,183,165,0.15)",marginTop:20}}>
                     <h4 style={{fontSize:14,color:"var(--champagne)",fontWeight:700,marginBottom:12}}>📚 Required Reading & Resources</h4>
                     <ul style={{fontSize:13,color:"var(--rosegold)",lineHeight:1.8,paddingLeft:20,marginBottom:16}}>
-                      <li><a href="http://download.e-bookshelf.de/download/0000/5854/22/L-G-0000585422-0002384637.pdf" target="_blank" rel="noopener noreferrer" style={{color:"var(--rosegold)",textDecoration:"underline"}}>Free eBook: 15 Secrets Every Network Marketer Must Know (PDF)</a></li>
+                      <li><a href="https://download.e-bookshelf.de/download/0000/5854/22/L-G-0000585422-0002384637.pdf" target="_blank" rel="noopener noreferrer" style={{color:"var(--rosegold)",textDecoration:"underline"}}>Free eBook: 15 Secrets Every Network Marketer Must Know (PDF)</a></li>
                       <li><a href="https://www.youtube.com/watch?v=lLlF1QL_1e4" target="_blank" rel="noopener noreferrer" style={{color:"var(--rosegold)",textDecoration:"underline"}}>Video: How MLM Duplication Works (YouTube)</a></li>
                       <li><a href="https://www.ftc.gov/business-guidance/resources/business-guidance-concerning-multi-level-marketing" target="_blank" rel="noopener noreferrer" style={{color:"var(--rosegold)",textDecoration:"underline"}}>FTC Business Guidance: Multi-Level Marketing</a></li>
                     </ul>
@@ -1736,7 +1736,7 @@ Sat: Celebrate challenge winners - build community`}
                     <ul style={{fontSize:13,color:"var(--rosegold)",lineHeight:1.8,paddingLeft:20,marginBottom:16}}>
                       <li><a href="https://www.youtube.com/watch?v=yRRSbl7tt4s" target="_blank" rel="noopener noreferrer" style={{color:"var(--rosegold)",textDecoration:"underline"}}>Video: How To Create Duplication in Network Marketing (YouTube)</a></li>
                       <li><a href="https://www.youtube.com/watch?v=9Gdt2Gvbzow" target="_blank" rel="noopener noreferrer" style={{color:"var(--rosegold)",textDecoration:"underline"}}>Video: The Secret to Duplication by Todd Falcone (YouTube)</a></li>
-                      <li><a href="http://download.e-bookshelf.de/download/0000/5854/22/L-G-0000585422-0002384637.pdf" target="_blank" rel="noopener noreferrer" style={{color:"var(--rosegold)",textDecoration:"underline"}}>Free eBook: 15 Secrets Every Network Marketer Must Know (PDF)</a></li>
+                      <li><a href="https://download.e-bookshelf.de/download/0000/5854/22/L-G-0000585422-0002384637.pdf" target="_blank" rel="noopener noreferrer" style={{color:"var(--rosegold)",textDecoration:"underline"}}>Free eBook: 15 Secrets Every Network Marketer Must Know (PDF)</a></li>
                     </ul>
                   </div>
 

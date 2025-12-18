@@ -233,10 +233,10 @@ View full intake and recommendations in the Back Office.`
               Print / Save PDF
             </button>
             <button
-              onClick={() => navigate(createPageUrl('Dashboard'))}
+              onClick={() => navigate(createPageUrl('Home'))}
               style={{padding:"10px 18px",borderRadius:10,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,cursor:"pointer",fontSize:14}}
             >
-              Go to Dashboard
+              Return to Home
             </button>
           </div>
         </div>
@@ -439,7 +439,7 @@ View full intake and recommendations in the Back Office.`
             onClick={() => navigate(createPageUrl('Dashboard'))}
             style={{padding:"12px 24px",borderRadius:12,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,cursor:"pointer",fontSize:14}}
           >
-            Go to Dashboard
+            Return to Home
           </button>
         </div>
       </div>
