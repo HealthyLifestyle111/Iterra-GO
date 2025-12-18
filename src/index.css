@@ -156,3 +156,30 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+/* AI Section Styling - Champagne color and proper fonts */
+.ai-section {
+  color: #F7E7CE; /* champagne */
+}
+
+/* Force common "black text" patterns to champagne inside AI section */
+.ai-section .text-black,
+.ai-section .text-neutral-900,
+.ai-section .text-gray-900,
+.ai-section .text-slate-900,
+.ai-section [style*="color: black"],
+.ai-section [style*="color:#000"],
+.ai-section [style*="color: #000"] {
+  color: #F7E7CE !important;
+}
+
+/* AI buttons font + color */
+.ai-section .ai-btn {
+  font-family: inherit; /* inherit from parent */
+  color: #F7E7CE !important;
+}
+
+/* Ensure buttons inside AI section have proper styling */
+.ai-section button {
+  font-family: inherit;
+}

@@ -307,7 +307,7 @@ export default function LotusAI({ onClose }) {
   };
 
   return (
-    <div style={{
+    <div className="ai-section" style={{
       position: "fixed",
       inset: 0,
       background: "linear-gradient(135deg, rgba(32,22,20,0.98), rgba(43,31,28,0.98))",
@@ -374,6 +374,7 @@ export default function LotusAI({ onClose }) {
                 whileHover={{ scale: 1.02 }}
                 animate={{ boxShadow: ["0 8px 24px rgba(230,183,165,0.3)", "0 12px 32px rgba(230,183,165,0.5)", "0 8px 24px rgba(230,183,165,0.3)"] }}
                 transition={{ duration: 2, repeat: Infinity }}
+                className="ai-btn"
                 style={{
                   padding: 24,
                   borderRadius: 16,
@@ -395,7 +396,7 @@ export default function LotusAI({ onClose }) {
                 <div style={{ fontSize: 13, fontWeight: 400, opacity: 0.9 }}>Ask about oils, recipes, wellness programs</div>
               </motion.button>
 
-              <button onClick={() => setView("gifts")} style={{ padding: 18, borderRadius: 12, background: "rgba(220,20,60,0.15)", border: "1px solid rgba(220,20,60,0.3)", color: "var(--champagne)", fontWeight: 600, cursor: "pointer", fontSize: 15, textAlign: "left", display: "flex", alignItems: "center", gap: 12 }}>
+              <button onClick={() => setView("gifts")} className="ai-btn" style={{ padding: 18, borderRadius: 12, background: "rgba(220,20,60,0.15)", border: "1px solid rgba(220,20,60,0.3)", color: "var(--champagne)", fontWeight: 600, cursor: "pointer", fontSize: 15, textAlign: "left", display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ fontSize: 24, filter: "grayscale(30%)" }}>🎁</span>
                 <div>
                   <div style={{ fontFamily: "'Playfair Display', serif" }}>Holiday Wellness Gifts</div>
@@ -403,7 +404,7 @@ export default function LotusAI({ onClose }) {
                 </div>
               </button>
 
-              <button onClick={handleOilOfDay} style={{ padding: 18, borderRadius: 12, background: "rgba(245,222,179,0.06)", border: "1px solid rgba(218,165,112,0.2)", color: "var(--champagne)", fontWeight: 600, cursor: "pointer", fontSize: 15, textAlign: "left", display: "flex", alignItems: "center", gap: 12 }}>
+              <button onClick={handleOilOfDay} className="ai-btn" style={{ padding: 18, borderRadius: 12, background: "rgba(245,222,179,0.06)", border: "1px solid rgba(218,165,112,0.2)", color: "var(--champagne)", fontWeight: 600, cursor: "pointer", fontSize: 15, textAlign: "left", display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ fontSize: 24, filter: "grayscale(30%)" }}>✦</span>
                 <div>
                   <div style={{ fontFamily: "'Playfair Display', serif" }}>Oil of the Day</div>
@@ -411,7 +412,7 @@ export default function LotusAI({ onClose }) {
                 </div>
               </button>
 
-              <button onClick={handleMeditation} style={{ padding: 18, borderRadius: 12, background: "rgba(143,188,143,0.15)", border: "1px solid rgba(143,188,143,0.3)", color: "var(--champagne)", fontWeight: 600, cursor: "pointer", fontSize: 15, textAlign: "left", display: "flex", alignItems: "center", gap: 12 }}>
+              <button onClick={handleMeditation} className="ai-btn" style={{ padding: 18, borderRadius: 12, background: "rgba(143,188,143,0.15)", border: "1px solid rgba(143,188,143,0.3)", color: "var(--champagne)", fontWeight: 600, cursor: "pointer", fontSize: 15, textAlign: "left", display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ fontSize: 24, filter: "grayscale(30%)" }}>✦</span>
                 <div>
                   <div style={{ fontFamily: "'Playfair Display', serif" }}>Deep Forest Meditation</div>
@@ -419,7 +420,7 @@ export default function LotusAI({ onClose }) {
                 </div>
               </button>
 
-              <button onClick={handleSeasonalCare} style={{ padding: 18, borderRadius: 12, background: "rgba(245,222,179,0.06)", border: "1px solid rgba(218,165,112,0.2)", color: "var(--champagne)", fontWeight: 600, cursor: "pointer", fontSize: 15, textAlign: "left", display: "flex", alignItems: "center", gap: 12 }}>
+              <button onClick={handleSeasonalCare} className="ai-btn" style={{ padding: 18, borderRadius: 12, background: "rgba(245,222,179,0.06)", border: "1px solid rgba(218,165,112,0.2)", color: "var(--champagne)", fontWeight: 600, cursor: "pointer", fontSize: 15, textAlign: "left", display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ fontSize: 24, filter: "grayscale(30%)" }}>✦</span>
                 <div>
                   <div style={{ fontFamily: "'Playfair Display', serif" }}>Seasonal Wellness Care</div>
@@ -427,7 +428,7 @@ export default function LotusAI({ onClose }) {
                 </div>
               </button>
 
-              <button onClick={handleAssociateLogin} style={{ padding: 16, borderRadius: 12, background: "rgba(245,222,179,0.04)", border: "1px solid rgba(218,165,112,0.15)", color: "var(--rosegold)", fontWeight: 500, cursor: "pointer", fontSize: 14, textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginTop: 8 }}>
+              <button onClick={handleAssociateLogin} className="ai-btn" style={{ padding: 16, borderRadius: 12, background: "rgba(245,222,179,0.04)", border: "1px solid rgba(218,165,112,0.15)", color: "var(--rosegold)", fontWeight: 500, cursor: "pointer", fontSize: 14, textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginTop: 8 }}>
                 <User size={18} />
                 <span>Associate Portal Login</span>
               </button>
@@ -476,7 +477,7 @@ export default function LotusAI({ onClose }) {
             <div style={{ padding: 16, borderTop: "1px solid rgba(218,165,127,0.2)", background: "rgba(218,165,127,0.06)" }}>
               <div style={{ display: "flex", gap: 8, alignItems: "flex-end" }}>
                 <textarea value={input} onChange={(e) => setInput(e.target.value)} onKeyPress={handleKeyPress} placeholder="Ask about wellness, oils, recipes, programs..." disabled={loading} style={{ flex: 1, padding: 12, borderRadius: 12, background: "rgba(245,222,179,0.06)", border: "1px solid rgba(245,222,179,0.2)", color: "var(--champagne)", fontSize: 14, resize: "none", minHeight: 50, maxHeight: 120, fontFamily: "inherit" }} rows={2} />
-                <button onClick={sendMessage} disabled={!input.trim() || loading} style={{ padding: 12, borderRadius: 12, background: input.trim() && !loading ? "linear-gradient(90deg,var(--bronze),var(--rosegold))" : "rgba(245,222,179,0.1)", border: 0, color: input.trim() && !loading ? "#1b0b06" : "rgba(245,222,179,0.3)", cursor: input.trim() && !loading ? "pointer" : "not-allowed", display: "flex", alignItems: "center", justifyContent: "center", minWidth: 50, height: 50 }}>
+                <button onClick={sendMessage} disabled={!input.trim() || loading} className="ai-btn" style={{ padding: 12, borderRadius: 12, background: input.trim() && !loading ? "linear-gradient(90deg,var(--bronze),var(--rosegold))" : "rgba(245,222,179,0.1)", border: 0, color: input.trim() && !loading ? "#1b0b06" : "rgba(245,222,179,0.3)", cursor: input.trim() && !loading ? "pointer" : "not-allowed", display: "flex", alignItems: "center", justifyContent: "center", minWidth: 50, height: 50 }}>
                   <Send size={20} />
                 </button>
               </div>

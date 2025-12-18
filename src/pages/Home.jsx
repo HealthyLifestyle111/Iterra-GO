@@ -25,7 +25,7 @@ export default function IterraVitalityDropdown() {
   const doterraBaseUrl = "https://my.doterra.com/jennawilliams1/p/";
 
   const navigateTo = (pageName) => {
-    if (typeof window !== "undefined") window.location.href = createPageUrl(pageName);
+    navigate(createPageUrl(pageName));
   };
 
   const openLink = (url) => {
