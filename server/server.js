@@ -38,7 +38,7 @@ app.post("/api/ai", async (req, res) => {
         { role: "user", content: input }
       ],
       temperature: 0.7,
-      max_tokens: 1500
+      max_completion_tokens: 1500
     };
 
     // Enable JSON mode if schema provided
