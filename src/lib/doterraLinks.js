@@ -4,7 +4,20 @@ const DEFAULT_SITE = "jennawilliams1";
 const BASE = "https://www.doterra.com/US/en/site";
 
 export const DOTERRA_SLUG_FIX = {
-  // Your known broken → known correct
+  // Single-word oils that need -oil suffix
+  "lemon": "lemon-oil",
+  "lavender": "lavender-oil",
+  "peppermint": "peppermint-oil",
+  "frankincense": "frankincense-oil",
+  "grapefruit": "grapefruit-oil",
+  "eucalyptus": "eucalyptus-oil",
+  "oregano": "oregano-oil",
+  "copaiba": "copaiba-oil",
+  "cedarwood": "cedarwood-oil",
+  "vetiver": "vetiver-oil",
+  "sandalwood": "sandalwood-oil",
+  
+  // Blend/product slug corrections
   "digestzen-digestive-blend": "digestzen-oil",
   "breathe-respiratory-blend": "breathe-respiratory-blend-oil",
   "lifelong-vitality-pack": "doterra-lifelong-vitality-pack",
@@ -16,17 +29,9 @@ export const DOTERRA_SLUG_FIX = {
   "balance-grounding-blend": "balance-grounding-blend-oil",
   "melaleuca-oil": "doterra-tea-tree",
   "rose-touch": "doterra-rose-touch",
-
-  // This one depends what you intended to sell:
-  // Softgels page exists:
   "on-guard-protective-blend": "onguard-protective-blend-softgel",
-
-  // If you meant "Zendocrine" not "Zen", this exists:
   "zen-blend": "zendocrine-oil-blend",
-
-  // Elevation doesn't show as a US product page in the same way;
-  // use the blog spotlight instead (still valid content):
-  // We'll handle this as a special-case below.
+  "serenity-restful-blend": "serenity-restful-blend",
 };
 
 export function doterraProductUrl(slug, site = DEFAULT_SITE) {
