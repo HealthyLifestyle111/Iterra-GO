@@ -4,6 +4,21 @@ const BASE = "https://iterra-go.onrender.com";
 const MAX_PAGES = 300;         // raise if you want deeper
 const SAME_ORIGIN_ONLY = true; // set false to also crawl external pages
 
+// Seed known routes for SPA
+const KNOWN_ROUTES = [
+  BASE,
+  BASE + "/ai",
+  BASE + "/Home",
+  BASE + "/BackOffice",
+  BASE + "/BackOffice?demo=true",
+  BASE + "/WellnessIntake",
+  BASE + "/WellnessIntakeResult",
+  BASE + "/SpecializedIntake",
+  BASE + "/HomeEssentials",
+  BASE + "/LeadershipWisdom",
+  BASE + "/ServiceDetail"
+];
+
 function normalize(url) {
   try {
     return new URL(url).toString();
@@ -34,7 +49,7 @@ async function checkUrl(url) {
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
-  const queue = [BASE];
+  const queue = [...KNOWN_ROUTES]; // Seed with known SPA routes
   const seenPages = new Set();
   const seenLinks = new Set();
   const broken = [];

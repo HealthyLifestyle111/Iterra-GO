@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, Mic, Volume2, User, Loader2, Sparkles } from "lucide-react";
+import { X, Send, User, Loader2, Sparkles } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import { createPageUrl } from "@/utils";
 import MeditationPlayer from "./MeditationPlayer";
@@ -147,14 +147,12 @@ export default function LotusAI({ onClose }) {
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [speaking, setSpeaking] = useState(false);
   const [error, setError] = useState(null);
   const [selectedMood, setSelectedMood] = useState("");
   const [oilRecommendation, setOilRecommendation] = useState(null);
   const [promotion, setPromotion] = useState(getSeasonalPromotion());
   
   const messagesEndRef = useRef(null);
-  const speechSynthesis = window.speechSynthesis;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -167,76 +165,6 @@ export default function LotusAI({ onClose }) {
       const url = `${DOTERRA_BASE_URL}${slug}`;
       return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="color: var(--rosegold); text-decoration: underline; font-weight: 600;">${name}</a>`;
     });
-  };
-
-  const speakMessage = (text) => {
-    if (!speechSynthesis) return;
-
-    speechSynthesis.cancel();
-
-    // Remove all markdown, formatting, and special characters
-    let cleanText = asText(text)
-      .replace(/\*\*/g, '')
-      .replace(/\*/g, '')
-      .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
-      .replace(/#{1,6}\s/g, '')
-      .replace(/`{1,3}[^`]+`{1,3}/g, '')
-      .replace(/_{1,2}([^_]+)_{1,2}/g, '$1')
-      .replace(/~~([^~]+)~~/g, '$1')
-      .replace(/\n\n+/g, '. ')
-      .replace(/\n/g, ' ')
-      .replace(/\s{2,}/g, ' ')
-      .replace(/•/g, '')
-      .replace(/–/g, '-')
-      .replace(/—/g, '-')
-      .trim();
-    
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    
-    // Load voices if not already loaded
-    let voices = speechSynthesis.getVoices();
-    if (voices.length === 0) {
-      speechSynthesis.onvoiceschanged = () => {
-        voices = speechSynthesis.getVoices();
-        selectVoice();
-      };
-    } else {
-      selectVoice();
-    }
-    
-    function selectVoice() {
-      // Natural conversational voice (similar to ChatGPT voice)
-      const preferredVoice = voices.find(voice => 
-        voice.name.includes('Google US English') ||
-        voice.name.includes('Microsoft Zira') ||
-        voice.name.includes('Samantha') ||
-        voice.lang === 'en-US'
-      ) || voices.find(voice => 
-        voice.lang.startsWith('en')
-      );
-
-      if (preferredVoice) {
-        utterance.voice = preferredVoice;
-      }
-
-      // Natural conversational settings
-      utterance.rate = 1.0;      // Normal speaking pace
-      utterance.pitch = 1.0;     // Natural tone
-      utterance.volume = 0.9;    // Clear volume
-      
-      utterance.onstart = () => setSpeaking(true);
-      utterance.onend = () => setSpeaking(false);
-      utterance.onerror = () => setSpeaking(false);
-      
-      speechSynthesis.speak(utterance);
-    }
-    
-    selectVoice();
-  };
-
-  const stopSpeaking = () => {
-    speechSynthesis.cancel();
-    setSpeaking(false);
   };
 
   const sendMessage = async () => {
@@ -263,7 +191,6 @@ export default function LotusAI({ onClose }) {
       };
 
       setMessages(prev => [...prev, assistantMessage]);
-      speakMessage(assistantMessage.content);
 
     } catch (err) {
       console.error('LLM Error:', err);
@@ -285,7 +212,7 @@ export default function LotusAI({ onClose }) {
   };
 
   const handleAssociateLogin = () => setView("login");
-  const handleBackToMenu = () => { setView("menu"); stopSpeaking(); };
+  const handleBackToMenu = () => setView("menu");
   const handleStartChat = () => setView("chat");
   const handleOilOfDay = () => setView("oilofday");
   const handleMeditation = () => setView("meditation");
@@ -452,11 +379,6 @@ export default function LotusAI({ onClose }) {
                     position: "relative"
                   }}>
                     <div dangerouslySetInnerHTML={{ __html: convertLinksToHTML(msg.content) }} />
-                    {msg.role === "assistant" && idx === messages.length - 1 && !loading && (
-                      <button onClick={() => speaking ? stopSpeaking() : speakMessage(msg.content)} style={{ position: "absolute", bottom: 8, right: 8, background: "rgba(218,165,112,0.2)", border: "1px solid rgba(218,165,112,0.3)", borderRadius: 6, padding: 6, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <Volume2 size={14} style={{ color: speaking ? "var(--rosegold)" : "var(--champagne)" }} />
-                      </button>
-                    )}
                   </div>
                 </motion.div>
               ))}
