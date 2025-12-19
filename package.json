@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test:urls": "node test-doterra-urls.mjs",
-    "test:urls:live": "node scripts/validate-doterra-slugs.mjs"
+    "test:urls:live": "node scripts/validate-doterra-slugs.mjs",
+    "test:slugs:all": "node scripts/scan-all-slugs.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",

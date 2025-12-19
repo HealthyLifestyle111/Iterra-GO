@@ -1,0 +1,105 @@
+{
+  "startedAt": "2025-12-19T08:16:06.044Z",
+  "results": {
+    "digestzen-digestive-blend": {
+      "slug": "digestzen-digestive-blend",
+      "ok": false,
+      "triedCount": 18
+    },
+    "cheer": {
+      "slug": "cheer",
+      "ok": false,
+      "triedCount": 18
+    },
+    "deep-blue-soothing-blend": {
+      "slug": "deep-blue-soothing-blend",
+      "ok": false,
+      "triedCount": 18
+    },
+    "aromatouch": {
+      "slug": "aromatouch",
+      "ok": false,
+      "triedCount": 18
+    },
+    "console": {
+      "slug": "console",
+      "ok": false,
+      "triedCount": 18
+    },
+    "home-essentials-kit": {
+      "slug": "home-essentials-kit",
+      "ok": false,
+      "triedCount": 18
+    },
+    "balance": {
+      "slug": "balance",
+      "ok": false,
+      "triedCount": 18
+    },
+    "citrus-bliss-invigorating-blend": {
+      "slug": "citrus-bliss-invigorating-blend",
+      "ok": false,
+      "triedCount": 18
+    },
+    "intune": {
+      "slug": "intune",
+      "ok": false,
+      "triedCount": 18
+    },
+    "melaleuca": {
+      "slug": "melaleuca",
+      "ok": false,
+      "triedCount": 18
+    },
+    "melaleuca-oil": {
+      "slug": "melaleuca-oil",
+      "ok": false,
+      "triedCount": 18
+    },
+    "metapwr-metabolic-blend": {
+      "slug": "metapwr-metabolic-blend",
+      "ok": false,
+      "triedCount": 18
+    },
+    "metapwr-system": {
+      "slug": "metapwr-system",
+      "ok": false,
+      "triedCount": 18
+    },
+    "purify-cleansing-blend": {
+      "slug": "purify-cleansing-blend",
+      "ok": false,
+      "triedCount": 18
+    },
+    "intune-focus-blend": {
+      "slug": "intune-focus-blend",
+      "ok": false,
+      "triedCount": 18
+    },
+    "on-guard-protective-blend": {
+      "slug": "on-guard-protective-blend",
+      "ok": false,
+      "triedCount": 18
+    },
+    "rose-touch": {
+      "slug": "rose-touch",
+      "ok": false,
+      "triedCount": 18
+    },
+    "terrazyme": {
+      "slug": "terrazyme",
+      "ok": false,
+      "triedCount": 18
+    },
+    "vegetable-capsules": {
+      "slug": "vegetable-capsules",
+      "ok": false,
+      "triedCount": 18
+    },
+    "terrazyme-digestive-enzyme-complex": {
+      "slug": "terrazyme-digestive-enzyme-complex",
+      "ok": false,
+      "triedCount": 18
+    }
+  }
+}

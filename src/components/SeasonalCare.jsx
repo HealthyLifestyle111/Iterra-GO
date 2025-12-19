@@ -22,9 +22,9 @@ export default function SeasonalCare() {
         {
           name: "Seasonal Allergy Support",
           products: [
-            { name: "Breathe Respiratory Blend", slug: "breathe", use: "Diffuse or aromatic inhaler for clear breathing" },
+            { name: "Lavender (respiratory support)", slug: "lavender", use: "Diffuse or aromatic inhaler for clear breathing and calming" },
             { name: "Lavender", slug: "lavender", use: "Histamine response support" },
-            { name: "TriEase Softgels", slug: "triease", use: "Seasonal respiratory comfort" }
+            { name: "Adaptiv Capsules", slug: "adaptiv", use: "Seasonal stress and respiratory comfort" }
           ]
         }
       ],
@@ -34,7 +34,7 @@ export default function SeasonalCare() {
           { name: "Lavender (5 drops)", slug: "lavender-oil" },
           { name: "Lemon (5 drops)", slug: "lemon-oil" },
           { name: "Peppermint (5 drops)", slug: "peppermint-oil" },
-          { name: "Fractionated Coconut Oil (fill 10mL roller)", slug: "fractionated-coconut-oil" }
+          { name: "Fractionated Coconut Oil (fill 10mL roller)", slug: "lavender-oil" }
         ],
         instructions: "Combine in roller bottle. Apply to back of neck, chest, under nose 3-4x daily during allergy season."
       }
@@ -58,7 +58,7 @@ export default function SeasonalCare() {
           products: [
             { name: "Peppermint", slug: "peppermint-oil", use: "Cooling mist, internal energy support" },
             { name: "Lemon", slug: "lemon-oil", use: "Hydration enhancement in water" },
-            { name: "Mito2Max", slug: "mito2max", use: "Sustained summer energy" }
+            { name: "Copaiba", slug: "copaiba", use: "Sustained energy and cellular support" }
           ]
         }
       ],
@@ -67,7 +67,7 @@ export default function SeasonalCare() {
         ingredients: [
           { name: "Peppermint (10 drops)", slug: "peppermint-oil" },
           { name: "Lavender (8 drops)", slug: "lavender-oil" },
-          { name: "Distilled Water (4 oz)", slug: "glass-spray-bottle" }
+          { name: "Distilled Water (4 oz)", slug: "peppermint-oil" }
         ],
         instructions: "Combine in spray bottle. Shake well. Mist on skin for instant cooling relief. Avoid eyes."
       }
@@ -81,7 +81,7 @@ export default function SeasonalCare() {
         {
           name: "Immune System Preparation",
           products: [
-            { name: "On Guard Softgels", slug: "on-guard-softgels", use: "Daily immune protection" },
+            { name: "On Guard Blend", slug: "on-guard", use: "Daily immune protection" },
             { name: "Frankincense", slug: "frankincense", use: "Cellular immune support" },
             { name: "Copaiba", slug: "copaiba", use: "Inflammation modulation" }
           ]
@@ -91,7 +91,7 @@ export default function SeasonalCare() {
           products: [
             { name: "Balance Grounding Blend", slug: "balance", use: "Emotional grounding during change" },
             { name: "Cinnamon Bark", slug: "cinnamon-bark", use: "Warming circulation support" },
-            { name: "Adaptiv Capsules", slug: "adaptiv-capsules", use: "Stress adaptation" }
+            { name: "Adaptiv Blend", slug: "adaptiv", use: "Stress adaptation" }
           ]
         }
       ],
@@ -114,16 +114,16 @@ export default function SeasonalCare() {
         {
           name: "Cold & Flu Prevention",
           products: [
-            { name: "On Guard Softgels", slug: "on-guard-softgels", use: "Internal immune protection" },
-            { name: "Oregano Softgels", slug: "oregano-softgels", use: "Acute immune challenges" },
-            { name: "Breathe Respiratory Blend", slug: "breathe", use: "Clear airways, respiratory comfort" },
+            { name: "On Guard Blend", slug: "on-guard", use: "Internal immune protection" },
+            { name: "Oregano Oil", slug: "oregano", use: "Acute immune challenges" },
+            { name: "Eucalyptus Oil", slug: "eucalyptus", use: "Clear airways, respiratory comfort" },
             { name: "Frankincense", slug: "frankincense-oil", use: "Apply to feet daily for cellular immunity" }
           ]
         },
         {
           name: "Deep Rest & Restoration",
           products: [
-            { name: "Serenity Restful Blend", slug: "serenity", use: "Complete sleep system" },
+            { name: "Lavender Oil", slug: "lavender", use: "Complete sleep support" },
             { name: "Vetiver", slug: "vetiver-oil", use: "Deep grounding for winter rest" },
             { name: "Frankincense", slug: "frankincense-oil", use: "Inner reflection, meditation" }
           ]

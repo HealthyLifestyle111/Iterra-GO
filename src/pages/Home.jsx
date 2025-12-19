@@ -175,7 +175,7 @@ export default function IterraVitalityDropdown() {
           description: "Support healthy metabolism, inflammation response, and digestive function. The essential stack.",
           outcomes: "Users report improved metabolism support, digestive comfort, and healthy weight management when combined with diet and exercise",
           products: [
-            { name: "Metabolic Blend Essential Oil", slug: "metapwr-metabolic-blend" },
+            { name: "Metabolic Blend Essential Oil", slug: "metapwr-oil" },
             { name: "Turmeric Dual Chamber Capsules", slug: "turmeric-dual-chamber-capsules" },
             { name: "Digestive Enzyme Complex", slug: "terrazyme-digestive-enzyme-complex" }
           ]
@@ -226,7 +226,7 @@ export default function IterraVitalityDropdown() {
           {
             name: "Post-Workout Recovery Protein Shake",
             ingredients: [
-              { name: "Metabolic Blend (2 drops)", slug: "metapwr-metabolic-blend" },
+              { name: "Metabolic Blend (2 drops)", slug: "metapwr-oil" },
               { name: "Lemon Essential Oil (1 drop)", slug: "lemon" },
               { name: "Grapefruit Essential Oil (1 drop)", slug: "grapefruit" }
             ],
@@ -561,8 +561,8 @@ export default function IterraVitalityDropdown() {
           description: "Support natural fat metabolism, healthy weight goals, and digestive function.",
           outcomes: "Support for metabolic balance, sustainable weight management, and digestive wellness when combined with healthy lifestyle habits",
           products: [
-            { name: "Metabolic Blend Essential Oil", slug: "metapwr-metabolic-blend" },
-            { name: "Metabolic Blend Softgels", slug: "metapwr-metabolic-blend" },
+            { name: "Metabolic Blend Essential Oil", slug: "metapwr-oil" },
+            { name: "Metabolic Blend Softgels", slug: "metapwr-softgels" },
             { name: "Grapefruit Essential Oil", slug: "grapefruit-oil" }
           ]
         },
@@ -612,7 +612,7 @@ export default function IterraVitalityDropdown() {
           {
             name: "Metabolism Boost Morning Water",
             ingredients: [
-              { name: "Metabolic Blend (2 drops)", slug: "metapwr-metabolic-blend" },
+              { name: "Metabolic Blend (2 drops)", slug: "metapwr-oil" },
               { name: "Grapefruit (2 drops)", slug: "grapefruit" },
               { name: "Lemon (1 drop)", slug: "lemon" }
             ],

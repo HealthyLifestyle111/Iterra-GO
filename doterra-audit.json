@@ -1,0 +1,916 @@
+{
+  "total": 101,
+  "working": 46,
+  "broken": 55,
+  "results": [
+    {
+      "slug": "adaptiv",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/adaptiv",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/adaptiv",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/adaptiv",
+      "usFinal": "https://www.doterra.com/US/en/p/adaptiv"
+    },
+    {
+      "slug": "adaptiv-calming-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/adaptiv-calming-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/adaptiv-calming-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/adaptiv-calming-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/adaptiv-calming-blend"
+    },
+    {
+      "slug": "adaptiv-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/adaptiv-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/adaptiv-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/adaptiv-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "aromatouch",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/aromatouch",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/aromatouch",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/aromatouch",
+      "usFinal": "https://www.doterra.com/US/en/p/aromatouch"
+    },
+    {
+      "slug": "aromatouch-massage-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/aromatouch-massage-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/aromatouch-massage-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/aromatouch-massage-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/aromatouch-massage-blend"
+    },
+    {
+      "slug": "aromatouch-massage-blend-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/aromatouch-massage-blend-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/aromatouch-massage-blend-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/aromatouch-massage-blend-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "balance",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/balance",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/balance",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/balance",
+      "usFinal": "https://www.doterra.com/US/en/p/balance"
+    },
+    {
+      "slug": "balance-grounding-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/balance-grounding-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/balance-grounding-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/balance-grounding-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/balance-grounding-blend"
+    },
+    {
+      "slug": "balance-grounding-blend-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/balance-grounding-blend-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/balance-grounding-blend-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/balance-grounding-blend-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "bergamot",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/bergamot",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/bergamot",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/bergamot",
+      "usFinal": "https://www.doterra.com/US/en/p/bergamot"
+    },
+    {
+      "slug": "bergamot-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/bergamot-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/bergamot-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/bergamot-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "cassia",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/cassia",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/cassia",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/cassia",
+      "usFinal": "https://www.doterra.com/US/en/p/cassia"
+    },
+    {
+      "slug": "cassia-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/cassia-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/cassia-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/cassia-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "cedarwood",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/cedarwood",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/cedarwood",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/cedarwood",
+      "usFinal": "https://www.doterra.com/US/en/p/cedarwood"
+    },
+    {
+      "slug": "cedarwood-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/cedarwood-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/cedarwood-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/cedarwood-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "cheer",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/cheer",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/cheer",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/cheer",
+      "usFinal": "https://www.doterra.com/US/en/p/cheer"
+    },
+    {
+      "slug": "cheer-uplifting-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/cheer-uplifting-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/cheer-uplifting-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/cheer-uplifting-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/cheer-uplifting-blend"
+    },
+    {
+      "slug": "cheer-uplifting-blend-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/cheer-uplifting-blend-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/cheer-uplifting-blend-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/cheer-uplifting-blend-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "cinnamon-bark",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/cinnamon-bark",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/cinnamon-bark",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/cinnamon-bark",
+      "usFinal": "https://www.doterra.com/US/en/p/cinnamon-bark"
+    },
+    {
+      "slug": "cinnamon-bark-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/cinnamon-bark-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/cinnamon-bark-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/cinnamon-bark-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "citrus-bliss",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/citrus-bliss",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/citrus-bliss",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/citrus-bliss",
+      "usFinal": "https://www.doterra.com/US/en/p/citrus-bliss"
+    },
+    {
+      "slug": "citrus-bliss-invigorating-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/citrus-bliss-invigorating-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/citrus-bliss-invigorating-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/citrus-bliss-invigorating-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/citrus-bliss-invigorating-blend"
+    },
+    {
+      "slug": "citrus-bliss-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/citrus-bliss-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/citrus-bliss-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/citrus-bliss-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "clary-sage",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/clary-sage",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/clary-sage",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/clary-sage",
+      "usFinal": "https://www.doterra.com/US/en/p/clary-sage"
+    },
+    {
+      "slug": "clary-sage-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/clary-sage-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/clary-sage-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/clary-sage-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "console",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/console",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/console",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/console",
+      "usFinal": "https://www.doterra.com/US/en/p/console"
+    },
+    {
+      "slug": "console-comforting-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/console-comforting-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/console-comforting-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/console-comforting-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/console-comforting-blend"
+    },
+    {
+      "slug": "console-comforting-blend-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/console-comforting-blend-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/console-comforting-blend-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/console-comforting-blend-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "copaiba",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/copaiba",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/copaiba",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/copaiba",
+      "usFinal": "https://www.doterra.com/US/en/p/copaiba"
+    },
+    {
+      "slug": "copaiba-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/copaiba-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/copaiba-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/copaiba-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "deep-blue",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/deep-blue",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/deep-blue",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/deep-blue",
+      "usFinal": "https://www.doterra.com/US/en/p/deep-blue"
+    },
+    {
+      "slug": "deep-blue-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/deep-blue-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/deep-blue-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/deep-blue-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "deep-blue-soothing-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/deep-blue-soothing-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/deep-blue-soothing-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/deep-blue-soothing-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/deep-blue-soothing-blend"
+    },
+    {
+      "slug": "digestzen",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/digestzen",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/digestzen",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/digestzen",
+      "usFinal": "https://www.doterra.com/US/en/p/digestzen"
+    },
+    {
+      "slug": "digestzen-digestive-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/digestzen-digestive-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/digestzen-digestive-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/digestzen-digestive-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/digestzen-digestive-blend"
+    },
+    {
+      "slug": "digestzen-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/digestzen-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/digestzen-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/digestzen-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "digestzen-terrazyme",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/digestzen-terrazyme",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/digestzen-terrazyme",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/digestzen-terrazyme",
+      "usFinal": null
+    },
+    {
+      "slug": "doterra-rose-touch",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/doterra-rose-touch",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/doterra-rose-touch",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/doterra-rose-touch",
+      "usFinal": null
+    },
+    {
+      "slug": "doterra-tea-tree",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/doterra-tea-tree",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/doterra-tea-tree",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/doterra-tea-tree",
+      "usFinal": null
+    },
+    {
+      "slug": "essentials-kit",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/essentials-kit",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/essentials-kit",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/essentials-kit",
+      "usFinal": null
+    },
+    {
+      "slug": "eucalyptus",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/eucalyptus",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/eucalyptus",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/recommended-error",
+      "usFinal": null
+    },
+    {
+      "slug": "eucalyptus-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/eucalyptus-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/eucalyptus-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/eucalyptus-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "frankincense",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/frankincense",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/frankincense",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/frankincense",
+      "usFinal": "https://www.doterra.com/US/en/p/frankincense"
+    },
+    {
+      "slug": "frankincense-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/frankincense-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/frankincense-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/frankincense-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "geranium",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/geranium",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/geranium",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/geranium",
+      "usFinal": "https://www.doterra.com/US/en/p/geranium"
+    },
+    {
+      "slug": "geranium-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/geranium-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/geranium-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/geranium-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "ginger",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/ginger",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/ginger",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/ginger",
+      "usFinal": "https://www.doterra.com/US/en/p/ginger"
+    },
+    {
+      "slug": "ginger-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/ginger-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/ginger-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/ginger-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "grapefruit",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/grapefruit",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/grapefruit",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/grapefruit",
+      "usFinal": "https://www.doterra.com/US/en/p/grapefruit"
+    },
+    {
+      "slug": "grapefruit-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/grapefruit-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/grapefruit-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/grapefruit-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "helichrysum",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/helichrysum",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/helichrysum",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/recommended-error",
+      "usFinal": null
+    },
+    {
+      "slug": "helichrysum-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/helichrysum-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/helichrysum-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/helichrysum-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "home-essentials-kit",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/home-essentials-kit",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/home-essentials-kit",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/home-essentials-kit",
+      "usFinal": "https://www.doterra.com/US/en/p/home-essentials-kit"
+    },
+    {
+      "slug": "in-tune-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/in-tune-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/in-tune-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/in-tune-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "intune",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/intune",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/intune",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/intune",
+      "usFinal": "https://www.doterra.com/US/en/p/intune"
+    },
+    {
+      "slug": "intune-focus-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/intune-focus-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/intune-focus-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/intune-focus-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/intune-focus-blend"
+    },
+    {
+      "slug": "lavender",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/lavender",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/lavender",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/lavender",
+      "usFinal": "https://www.doterra.com/US/en/p/lavender"
+    },
+    {
+      "slug": "lavender-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/lavender-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/lavender-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/lavender-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "lemon",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/lemon",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/lemon",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/lemon",
+      "usFinal": "https://www.doterra.com/US/en/p/lemon"
+    },
+    {
+      "slug": "lemon-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/lemon-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/lemon-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/lemon-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "lemongrass",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/lemongrass",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/lemongrass",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/lemongrass",
+      "usFinal": "https://www.doterra.com/US/en/p/lemongrass"
+    },
+    {
+      "slug": "lemongrass-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/lemongrass-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/lemongrass-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/lemongrass-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "marjoram",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/marjoram",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/marjoram",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/marjoram",
+      "usFinal": "https://www.doterra.com/US/en/p/marjoram"
+    },
+    {
+      "slug": "marjoram-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/marjoram-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/marjoram-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/marjoram-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "melaleuca",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/melaleuca",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/melaleuca",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/melaleuca",
+      "usFinal": "https://www.doterra.com/US/en/p/melaleuca"
+    },
+    {
+      "slug": "melaleuca-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/melaleuca-oil",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/melaleuca-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/melaleuca-oil",
+      "usFinal": "https://www.doterra.com/US/en/p/melaleuca-oil"
+    },
+    {
+      "slug": "metapwr-kit",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/metapwr-kit",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/metapwr-kit",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/metapwr-kit",
+      "usFinal": null
+    },
+    {
+      "slug": "metapwr-metabolic-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/metapwr-metabolic-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/metapwr-metabolic-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/metapwr-metabolic-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/metapwr-metabolic-blend"
+    },
+    {
+      "slug": "metapwr-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/metapwr-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/metapwr-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/metapwr-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "metapwr-system",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/metapwr-system",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/metapwr-system",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/metapwr-system",
+      "usFinal": "https://www.doterra.com/US/en/p/metapwr-system"
+    },
+    {
+      "slug": "myrrh",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/myrrh",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/myrrh",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/myrrh",
+      "usFinal": "https://www.doterra.com/US/en/p/myrrh"
+    },
+    {
+      "slug": "myrrh-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/myrrh-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/myrrh-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/myrrh-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "on-guard",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/on-guard",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/on-guard",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/on-guard",
+      "usFinal": "https://www.doterra.com/US/en/p/on-guard"
+    },
+    {
+      "slug": "on-guard-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/on-guard-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/on-guard-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/on-guard-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "on-guard-protective-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/on-guard-protective-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/on-guard-protective-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/on-guard-protective-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/on-guard-protective-blend"
+    },
+    {
+      "slug": "oregano",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/oregano",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/oregano",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/oregano",
+      "usFinal": "https://www.doterra.com/US/en/p/oregano"
+    },
+    {
+      "slug": "oregano-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/oregano-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/oregano-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/oregano-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "peppermint",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/peppermint",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/peppermint",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/peppermint",
+      "usFinal": "https://www.doterra.com/US/en/p/peppermint"
+    },
+    {
+      "slug": "peppermint-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/peppermint-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/peppermint-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/peppermint-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "purify",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/purify",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/purify",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/purify",
+      "usFinal": "https://www.doterra.com/US/en/p/purify"
+    },
+    {
+      "slug": "purify-cleansing-blend",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/purify-cleansing-blend",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/purify-cleansing-blend",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/purify-cleansing-blend",
+      "usFinal": "https://www.doterra.com/US/en/p/purify-cleansing-blend"
+    },
+    {
+      "slug": "purify-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/purify-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/purify-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/purify-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "rose",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/rose",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/rose",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/rose",
+      "usFinal": "https://www.doterra.com/US/en/p/rose"
+    },
+    {
+      "slug": "rose-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/rose-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/rose-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/rose-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "rose-touch",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/rose-touch",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/rose-touch",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/rose-touch",
+      "usFinal": "https://www.doterra.com/US/en/p/rose-touch"
+    },
+    {
+      "slug": "rosemary",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/rosemary",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/rosemary",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/rosemary",
+      "usFinal": "https://www.doterra.com/US/en/p/rosemary"
+    },
+    {
+      "slug": "rosemary-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/rosemary-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/rosemary-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/rosemary-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "sandalwood",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/sandalwood",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/sandalwood",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/sandalwood",
+      "usFinal": "https://www.doterra.com/US/en/p/sandalwood"
+    },
+    {
+      "slug": "sandalwood-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/sandalwood-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/sandalwood-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/sandalwood-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "terrazyme",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/terrazyme",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/terrazyme",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/terrazyme",
+      "usFinal": "https://www.doterra.com/US/en/p/terrazyme"
+    },
+    {
+      "slug": "terrazyme-digestive-enzyme-complex",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/terrazyme-digestive-enzyme-complex",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/terrazyme-digestive-enzyme-complex",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/terrazyme-digestive-enzyme-complex",
+      "usFinal": "https://www.doterra.com/US/en/p/terrazyme-digestive-enzyme-complex"
+    },
+    {
+      "slug": "vegetable-capsules",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/vegetable-capsules",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/vegetable-capsules",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/vegetable-capsules",
+      "usFinal": "https://www.doterra.com/US/en/p/vegetable-capsules"
+    },
+    {
+      "slug": "veggie-caps",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/veggie-caps",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/veggie-caps",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/veggie-caps",
+      "usFinal": null
+    },
+    {
+      "slug": "vetiver",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/vetiver",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/vetiver",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/vetiver",
+      "usFinal": "https://www.doterra.com/US/en/p/vetiver"
+    },
+    {
+      "slug": "vetiver-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/vetiver-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/vetiver-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/vetiver-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "wild-orange",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/wild-orange",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/wild-orange",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/wild-orange",
+      "usFinal": "https://www.doterra.com/US/en/p/wild-orange"
+    },
+    {
+      "slug": "wild-orange-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/wild-orange-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/wild-orange-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/wild-orange-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "wintergreen",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/wintergreen",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/wintergreen",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/wintergreen",
+      "usFinal": "https://www.doterra.com/US/en/p/wintergreen"
+    },
+    {
+      "slug": "wintergreen-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/wintergreen-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/wintergreen-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/wintergreen-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "ylang-ylang",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/ylang-ylang",
+      "siteOk": false,
+      "usUrl": "https://www.doterra.com/US/en/p/ylang-ylang",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/ylang-ylang",
+      "usFinal": "https://www.doterra.com/US/en/p/ylang-ylang"
+    },
+    {
+      "slug": "ylang-ylang-oil",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/ylang-ylang-oil",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/ylang-ylang-oil",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/ylang-ylang-oil",
+      "usFinal": null
+    }
+  ]
+}

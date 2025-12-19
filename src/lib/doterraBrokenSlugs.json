@@ -1,0 +1,30 @@
+{
+  "comment": "Products that need manual research and approval for mapping or replacement",
+  "fallbackToSearch": [
+    "breathe",
+    "breathe-respiratory-blend",
+    "whisper",
+    "terrashield",
+    "clarycalm",
+    "serenity",
+    "serenity-restful-blend",
+    "mito2max",
+    "pb-assist-jr",
+    "petal-diffuser",
+    "fractionated-coconut-oil",
+    "oregano-softgels",
+    "on-guard-softgels",
+    "adaptiv-capsules",
+    "triease"
+  ],
+  "notes": {
+    "breathe": "May be rebranded - check doTERRA catalog",
+    "whisper": "May be discontinued or renamed",
+    "elevation": "Blog post fallback exists, original product may be discontinued",
+    "serenity": "Discontinued - consider lavender-oil for sleep support",
+    "terrashield": "Check if renamed to TerraShield Outdoor Blend",
+    "clarycalm": "Check if renamed to ClaryCalm Monthly Blend",
+    "fractionated-coconut-oil": "May need different slug format",
+    "softgels": "Various softgel products may need individual research"
+  }
+}
