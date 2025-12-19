@@ -355,15 +355,6 @@
       "usFinal": null
     },
     {
-      "slug": "essentials-kit",
-      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/essentials-kit",
-      "siteOk": true,
-      "usUrl": "https://www.doterra.com/US/en/p/essentials-kit",
-      "usOk": false,
-      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/essentials-kit",
-      "usFinal": null
-    },
-    {
       "slug": "eucalyptus",
       "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/eucalyptus",
       "siteOk": true,
@@ -469,6 +460,15 @@
       "usUrl": "https://www.doterra.com/US/en/p/helichrysum-oil",
       "usOk": false,
       "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/helichrysum-oil",
+      "usFinal": null
+    },
+    {
+      "slug": "home-essentials-enrollment-kit",
+      "siteUrl": "https://www.doterra.com/US/en/site/jennawilliams1/p/home-essentials-enrollment-kit",
+      "siteOk": true,
+      "usUrl": "https://www.doterra.com/US/en/p/home-essentials-enrollment-kit",
+      "usOk": false,
+      "siteFinal": "https://www.doterra.com/US/en/site/jennawilliams1/p/home-essentials-enrollment-kit",
       "usFinal": null
     },
     {

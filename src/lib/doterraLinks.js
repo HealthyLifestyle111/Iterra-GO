@@ -70,7 +70,7 @@ export const DOTERRA_SLUG_FIX = {
   "rose-touch": "doterra-rose-touch",
   
   // Kits and accessories
-  "home-essentials-kit": "essentials-kit",
+  "home-essentials-kit": "home-essentials-enrollment-kit",
   "vegetable-capsules": "veggie-caps",
 
 
