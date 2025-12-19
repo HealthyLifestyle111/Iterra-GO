@@ -19,6 +19,7 @@ export const DOTERRA_SLUG_FIX = {
   
   // Blend/product slug corrections
   "digestzen-digestive-blend": "digestzen-oil",
+  "terrazyme-digestive-enzyme-complex": "digestzen-terrazyme",
   "breathe-respiratory-blend": "breathe-respiratory-blend-oil",
   "lifelong-vitality-pack": "doterra-lifelong-vitality-pack",
   "metapwr-system": "metapwr-kit",
@@ -31,7 +32,8 @@ export const DOTERRA_SLUG_FIX = {
   "rose-touch": "doterra-rose-touch",
   "on-guard-protective-blend": "onguard-protective-blend-softgel",
   "zen-blend": "zendocrine-oil-blend",
-  "serenity-restful-blend": "serenity-restful-blend",
+  // Note: "serenity-restful-blend" slug not found on doTERRA - may be discontinued
+  // Users searching for sleep support should use specific products
 };
 
 export function doterraProductUrl(slug, site = DEFAULT_SITE) {

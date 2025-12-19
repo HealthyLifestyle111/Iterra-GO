@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:urls": "node test-doterra-urls.mjs"
+    "test:urls": "node test-doterra-urls.mjs",
+    "test:urls:live": "node scripts/validate-doterra-slugs.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",

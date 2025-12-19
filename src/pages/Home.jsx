@@ -280,7 +280,7 @@ export default function IterraVitalityDropdown() {
           description: "Complete autonomic support. The nervous system of a monk with the drive of a CEO.",
           outcomes: "Support for calm under pressure, deep restorative sleep, and influential presence",
           products: [
-            { name: "Restful Blend Essential Oil", slug: "serenity-restful-blend" },
+            { name: "Lavender Essential Oil", slug: "lavender" },
             { name: "Respiratory Blend Essential Oil", slug: "breathe-respiratory-blend" },
             { name: "Bergamot Essential Oil", slug: "bergamot-oil" },
             { name: "Sandalwood Essential Oil", slug: "sandalwood-oil" }
@@ -875,9 +875,9 @@ export default function IterraVitalityDropdown() {
     },
     sleep: {
       title: "Foundation: Sleep Support",
-      description: "Complete Sleep System: A full system including a supplement, a topical oil blend, and a diffusable oil blend for rest.",
-      link: doterraProductUrl("serenity-restful-blend"),
-      linkText: "Shop Sleep Support System"
+      description: "Lavender Essential Oil: Premium therapeutic-grade lavender for relaxation, calm, and restful sleep support.",
+      link: doterraProductUrl("lavender"),
+      linkText: "Shop Lavender Essential Oil"
     },
     weightAndActivity: {
       title: "Foundation: Weight & Physical Activity Guidelines",
