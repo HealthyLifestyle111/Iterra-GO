@@ -41,5 +41,38 @@ export function doterraProductUrl(slug, site = DEFAULT_SITE) {
     return "https://www.doterra.com/US/en/blog/spotlight-elevation-joyful-blend";
   }
   const fixed = DOTERRA_SLUG_FIX[slug] || slug;
-  return `${BASE}/${site}/p/${fixed}`;
+  const url = `${BASE}/${site}/p/${fixed}`;
+  
+  // Sanity check in development
+  if (typeof import.meta !== 'undefined' && import.meta.env?.DEV) {
+    if (!url.startsWith("https://www.doterra.com/") && !url.startsWith("https://my.doterra.com/")) {
+      console.error(`[doterraProductUrl] Invalid URL generated: ${url}`);
+      console.error(`  Input slug: "${slug}"`);
+      console.error(`  Fixed slug: "${fixed}"`);
+      throw new Error(`Invalid doTERRA URL: ${url}`);
+    }
+  }
+  
+  return url;
+}
+
+// Validate all slug mappings (use in dev/testing)
+export function validateAllSlugs() {
+  const results = { valid: [], invalid: [] };
+  
+  // Test all mapped slugs
+  Object.keys(DOTERRA_SLUG_FIX).forEach(slug => {
+    try {
+      const url = doterraProductUrl(slug);
+      if (url.startsWith("https://www.doterra.com/") || url.startsWith("https://my.doterra.com/")) {
+        results.valid.push({ slug, url });
+      } else {
+        results.invalid.push({ slug, url, error: "Invalid domain" });
+      }
+    } catch (e) {
+      results.invalid.push({ slug, error: e.message });
+    }
+  });
+  
+  return results;
 }
