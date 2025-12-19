@@ -35,10 +35,29 @@ function isInternal(url) {
   }
 }
 
+function looksLikeDoterraNotFound(html) {
+  if (!html) return true;
+  const s = html.toLowerCase();
+  return (
+    s.includes("error 404:") ||
+    s.includes("oops! looks like something went wrong") ||
+    (s.includes("sorry") && s.includes("can't find")) ||
+    (s.includes("page not found"))
+  );
+}
+
 async function checkUrl(url) {
   // Some sites block HEAD; GET is safer.
   try {
     const r = await fetch(url, { method: "GET", redirect: "follow" });
+    const text = await r.text();
+    
+    // Special handling for doTERRA URLs - check content, not just status
+    if (url.includes("doterra.com")) {
+      const isErrorPage = looksLikeDoterraNotFound(text);
+      return { ok: !isErrorPage, status: r.status, finalUrl: r.url, isDoterra: true, isErrorPage };
+    }
+    
     return { ok: r.ok, status: r.status, finalUrl: r.url };
   } catch (e) {
     return { ok: false, status: 0, error: String(e) };

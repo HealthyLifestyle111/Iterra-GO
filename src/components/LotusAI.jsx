@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, User, Loader2, Sparkles } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import { createPageUrl } from "@/utils";
+import { doterraProductUrl } from "@/lib/doterraLinks";
 import MeditationPlayer from "./MeditationPlayer";
 import SeasonalCare from "./SeasonalCare";
 
 const ENABLE_BASE44_AUTH = false;
-const DOTERRA_BASE_URL = "https://my.doterra.com/jennawilliams1/p/";
 
 // Safely extract text from any response type
 const asText = (v) => {
@@ -162,7 +162,7 @@ export default function LotusAI({ onClose }) {
 
   const convertLinksToHTML = (text) => {
     return asText(text).replace(/\[([^\]]+)\]\(([^\)]+)\)/g, (match, name, slug) => {
-      const url = `${DOTERRA_BASE_URL}${slug}`;
+      const url = doterraProductUrl(slug);
       return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="color: var(--rosegold); text-decoration: underline; font-weight: 600;">${name}</a>`;
     });
   };
@@ -554,15 +554,15 @@ export default function LotusAI({ onClose }) {
                 <div style={{display:"grid",gap:8,marginBottom:14}}>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Holiday seasonal blend (warm spice)</span>
-                    <a href="https://www.doterra.com/US/en/p/holiday-joy-essential-oil-blend" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("holiday-peace-essential-oil-blend")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Mulled cider blend</span>
-                    <a href="https://www.doterra.com/US/en/p/wassail" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("wassail")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Holiday diffuser</span>
-                    <a href="https://www.doterra.com/US/en/p/lantern-diffuser-holiday" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("lantern-diffuser-holiday")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                 </div>
               </div>
@@ -573,19 +573,19 @@ export default function LotusAI({ onClose }) {
                 <div style={{display:"grid",gap:8,marginBottom:14}}>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Hand & body lotion gift set</span>
-                    <a href="https://www.doterra.com/US/en/p/spa-hand-body-lotion-gift-set" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("spa-hand-body-lotion-gift-set")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Holiday bath bomb trio</span>
-                    <a href="https://www.doterra.com/US/en/p/holiday-bath-bomb-trio" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("holiday-bath-bomb-trio")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Calming seasonal blend</span>
-                    <a href="https://www.doterra.com/US/en/p/holiday-peace-essential-oil-blend" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("holiday-peace-essential-oil-blend")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Lavender essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/lavender-essential-oil" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("lavender-essential-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                 </div>
               </div>
@@ -596,19 +596,19 @@ export default function LotusAI({ onClose }) {
                 <div style={{display:"grid",gap:8,marginBottom:14}}>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Himalayan fir essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/himalayan-fir-essential-oil" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("himalayan-fir-essential-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Respiratory support blend</span>
-                    <a href="https://www.doterra.com/US/en/p/breathe-respiratory-blend" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("breathe-respiratory-blend")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Protective immune blend</span>
-                    <a href="https://www.doterra.com/US/en/p/on-guard-protective-blend" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("on-guard-protective-blend")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Frankincense essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/frankincense-essential-oil" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("frankincense-essential-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                 </div>
               </div>
@@ -619,19 +619,19 @@ export default function LotusAI({ onClose }) {
                 <div style={{display:"grid",gap:8,marginBottom:14}}>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Himalayan fir essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/himalayan-fir-essential-oil" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("himalayan-fir-essential-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Douglas fir essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/douglas-fir-essential-oil" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("douglas-fir-essential-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Siberian fir essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/siberian-fir-essential-oil" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("siberian-fir-essential-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Cedarwood essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/cedarwood-essential-oil" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("cedarwood-essential-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                 </div>
               </div>
@@ -642,19 +642,19 @@ export default function LotusAI({ onClose }) {
                 <div style={{display:"grid",gap:8,marginBottom:14}}>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Hand & body lotion gift set</span>
-                    <a href="https://www.doterra.com/US/en/p/spa-hand-body-lotion-gift-set" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("spa-hand-body-lotion-gift-set")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Rose touch roller</span>
-                    <a href="https://www.doterra.com/US/en/p/rose-touch" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("rose-touch")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Lavender essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/lavender-essential-oil" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("lavender-essential-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>• Frankincense essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/frankincense-essential-oil" target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("frankincense-essential-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"6px 12px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:11,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                 </div>
               </div>
@@ -678,15 +678,15 @@ export default function LotusAI({ onClose }) {
                   <div style={{fontSize:13,color:"var(--champagne)",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>• 1/4 tsp sea salt</div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:13,color:"var(--champagne)"}}>• 3 drops Wild Orange essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/wild-orange-oil" target="_blank" rel="noopener noreferrer" style={{padding:"4px 10px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:10,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("wild-orange-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"4px 10px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:10,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:13,color:"var(--champagne)"}}>• 2 drops Cinnamon Bark essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/cinnamon-bark-oil" target="_blank" rel="noopener noreferrer" style={{padding:"4px 10px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:10,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("cinnamon-bark-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"4px 10px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:10,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:13,color:"var(--champagne)"}}>• 1 drop Ginger essential oil</span>
-                    <a href="https://www.doterra.com/US/en/p/ginger-oil" target="_blank" rel="noopener noreferrer" style={{padding:"4px 10px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:10,whiteSpace:"nowrap"}}>Shop</a>
+                    <a href={doterraProductUrl("ginger-oil")} target="_blank" rel="noopener noreferrer" style={{padding:"4px 10px",borderRadius:6,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,textDecoration:"none",fontSize:10,whiteSpace:"nowrap"}}>Shop</a>
                   </div>
                 </div>
                 <p style={{fontSize:13,color:"var(--champagne)",lineHeight:1.7,marginBottom:10}}>
