@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
-import { doterraGoUrl } from "@/lib/doterraGo";
+import { doterraUrl } from "@/lib/doterraLinks";
 import AssociateLogin from "../components/AssociateLogin";
 
 export default function IterraVitalityDropdown() {
@@ -846,7 +846,7 @@ export default function IterraVitalityDropdown() {
     nutrition: {
       title: "Foundation: Nutrition",
       description: "Core Supplement Bundle: A complete pack of multivitamins, probiotics and essential oils for daily foundational nutrition.",
-      link: doterraGoUrl("foundational-wellness-bundle"),
+      link: doterraUrl("foundational-wellness-bundle"),
       linkText: "Shop Foundational Wellness Bundle"
     },
     hydration: {
@@ -856,19 +856,19 @@ export default function IterraVitalityDropdown() {
         {
           time: "Morning (Energize & Cleanse)",
           instruction: "1-2 drops of citrus oil in water",
-          link: doterraGoUrl("lemon"),
+          link: doterraUrl("lemon"),
           linkText: "Lemon Oil"
         },
         {
           time: "Noon (Focus & Digest)",
           instruction: "1 drop of mint oil in water",
-          link: doterraGoUrl("peppermint"),
+          link: doterraUrl("peppermint"),
           linkText: "Peppermint Oil"
         },
         {
           time: "Evening (Calm & Soothe)",
           instruction: "1-2 drops of floral oil in warm water",
-          link: doterraGoUrl("lavender"),
+          link: doterraUrl("lavender"),
           linkText: "Lavender Oil"
         }
       ]
@@ -876,7 +876,7 @@ export default function IterraVitalityDropdown() {
     sleep: {
       title: "Foundation: Sleep Support",
       description: "Lavender Essential Oil: Premium therapeutic-grade lavender for relaxation, calm, and restful sleep support.",
-      link: doterraGoUrl("lavender"),
+      link: doterraUrl("lavender"),
       linkText: "Shop Lavender Essential Oil"
     },
     weightAndActivity: {
@@ -1746,7 +1746,7 @@ export default function IterraVitalityDropdown() {
                   <div key={i} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>{product.name}</span>
                     <button
-                      onClick={() => openLink(doterraGoUrl(product.slug))}
+                      onClick={() => openLink(doterraUrl(product.slug))}
                       style={{background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:"0",padding:"4px 10px",borderRadius:6,color:"#1b0b06",fontWeight:600,cursor:"pointer",fontSize:11}}
                     >
                       Shop →
@@ -1774,7 +1774,7 @@ export default function IterraVitalityDropdown() {
                         <div key={i} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:6,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                           <span style={{fontSize:11,color:"var(--champagne)"}}>{ing.name}</span>
                           <button
-                            onClick={() => openLink(doterraGoUrl(ing.slug))}
+                            onClick={() => openLink(doterraUrl(ing.slug))}
                             style={{background:"transparent",border:"1px solid rgba(245,222,179,0.3)",padding:"3px 8px",borderRadius:4,color:"var(--champagne)",cursor:"pointer",fontSize:10}}
                           >
                             Shop →
@@ -1822,7 +1822,7 @@ export default function IterraVitalityDropdown() {
                   <div key={i} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                     <span style={{fontSize:12,color:"var(--champagne)"}}>{product.name}</span>
                     <button
-                      onClick={() => openLink(doterraGoUrl(product.slug))}
+                      onClick={() => openLink(doterraUrl(product.slug))}
                       style={{background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:"0",padding:"4px 10px",borderRadius:6,color:"#1b0b06",fontWeight:600,cursor:"pointer",fontSize:11}}
                     >
                       Shop →
@@ -1873,7 +1873,7 @@ export default function IterraVitalityDropdown() {
                         <div key={i} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:6,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                           <span style={{fontSize:11,color:"var(--champagne)"}}>{ing.name}</span>
                           <button
-                            onClick={() => openLink(doterraGoUrl(ing.slug))}
+                            onClick={() => openLink(doterraUrl(ing.slug))}
                             style={{background:"transparent",border:"1px solid rgba(245,222,179,0.3)",padding:"3px 8px",borderRadius:4,color:"var(--champagne)",cursor:"pointer",fontSize:10}}
                           >
                             Shop →
@@ -2288,7 +2288,7 @@ body.no-scroll{overflow:hidden!important}
                               <div key={i} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:6,borderRadius:6,background:"rgba(245,222,179,0.04)"}}>
                                 <span style={{fontSize:11,color:"var(--champagne)"}}>{product.name}</span>
                                 <button
-                                  onClick={() => openLink(doterraGoUrl(product.slug))}
+                                  onClick={() => openLink(doterraUrl(product.slug))}
                                   style={{background:"transparent",border:"1px solid rgba(245,222,179,0.2)",padding:"3px 8px",borderRadius:4,color:"var(--champagne)",cursor:"pointer",fontSize:10}}
                                 >
                                   Shop →
@@ -2331,7 +2331,7 @@ body.no-scroll{overflow:hidden!important}
                           <div key={i} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:10,borderRadius:8,background:"rgba(245,222,179,0.04)",border:"1px solid rgba(245,222,179,0.08)"}}>
                             <span style={{fontSize:13,color:"var(--champagne)"}}>{product.name}</span>
                             <button
-                              onClick={() => openLink(doterraGoUrl(product.slug))}
+                              onClick={() => openLink(doterraUrl(product.slug))}
                               style={{background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:"0",padding:"4px 10px",borderRadius:6,color:"#1b0b06",fontWeight:600,cursor:"pointer",fontSize:11}}
                             >
                               Shop →
@@ -2432,7 +2432,7 @@ body.no-scroll{overflow:hidden!important}
                                     <div style={{fontSize:10,color:"var(--rosegold)"}}>{item.dosage}</div>
                                   </div>
                                   <button
-                                    onClick={() => openLink(doterraGoUrl(item.slug))}
+                                    onClick={() => openLink(doterraUrl(item.slug))}
                                     style={{background:"transparent",border:"1px solid rgba(245,222,179,0.2)",padding:"3px 8px",borderRadius:4,color:"var(--champagne)",cursor:"pointer",fontSize:10}}
                                   >
                                     Shop →
@@ -2454,7 +2454,7 @@ body.no-scroll{overflow:hidden!important}
                                     <div style={{fontSize:10,color:"var(--rosegold)"}}>{item.application}</div>
                                   </div>
                                   <button
-                                    onClick={() => openLink(doterraGoUrl(item.slug))}
+                                    onClick={() => openLink(doterraUrl(item.slug))}
                                     style={{background:"transparent",border:"1px solid rgba(245,222,179,0.2)",padding:"3px 8px",borderRadius:4,color:"var(--champagne)",cursor:"pointer",fontSize:10}}
                                   >
                                     Shop →
@@ -2476,7 +2476,7 @@ body.no-scroll{overflow:hidden!important}
                                     <div style={{fontSize:10,color:"var(--rosegold)"}}>{item.dosage}</div>
                                   </div>
                                   <button
-                                    onClick={() => openLink(doterraGoUrl(item.slug))}
+                                    onClick={() => openLink(doterraUrl(item.slug))}
                                     style={{background:"transparent",border:"1px solid rgba(245,222,179,0.2)",padding:"3px 8px",borderRadius:4,color:"var(--champagne)",cursor:"pointer",fontSize:10}}
                                   >
                                     Shop →
@@ -2502,7 +2502,7 @@ body.no-scroll{overflow:hidden!important}
                                   <div style={{fontSize:10,color:"var(--rosegold)"}}>{product.use}</div>
                                 </div>
                                 <button
-                                  onClick={() => openLink(doterraGoUrl(product.slug))}
+                                  onClick={() => openLink(doterraUrl(product.slug))}
                                   style={{background:"transparent",border:"1px solid rgba(245,222,179,0.2)",padding:"3px 8px",borderRadius:4,color:"var(--champagne)",cursor:"pointer",fontSize:10}}
                                 >
                                   Shop →

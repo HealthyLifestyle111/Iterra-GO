@@ -1,4 +1,4 @@
-import { doterraGoUrl } from "@/lib/doterraGo";
+import { doterraUrl } from "@/lib/doterraLinks";
 import React, { useState } from "react";
 
 export default function HomeEssentials() {
@@ -400,7 +400,7 @@ export default function HomeEssentials() {
                         <div style={{fontSize:12,color:"var(--rosegold)"}}>{product.use}</div>
                       </div>
                       <button
-                        onClick={() => openLink(doterraGoUrl(product.slug))}
+                        onClick={() => openLink(doterraUrl(product.slug))}
                         style={{background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:"0",padding:"6px 14px",borderRadius:6,color:"#1b0b06",fontWeight:600,cursor:"pointer",fontSize:12,whiteSpace:"nowrap"}}
                       >
                         Shop →
@@ -422,7 +422,7 @@ export default function HomeEssentials() {
                         <div style={{fontSize:12,color:"var(--rosegold)"}}>{diffuser.description}</div>
                       </div>
                       <button
-                        onClick={() => openLink(doterraGoUrl(diffuser.slug))}
+                        onClick={() => openLink(doterraUrl(diffuser.slug))}
                         style={{background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:"0",padding:"6px 14px",borderRadius:6,color:"#1b0b06",fontWeight:600,cursor:"pointer",fontSize:12,whiteSpace:"nowrap"}}
                       >
                         Shop →
@@ -461,7 +461,7 @@ export default function HomeEssentials() {
                         <div style={{fontSize:12,color:"var(--rosegold)"}}>{product.use}</div>
                       </div>
                       <button
-                        onClick={() => openLink(doterraGoUrl(product.slug))}
+                        onClick={() => openLink(doterraUrl(product.slug))}
                         style={{background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:"0",padding:"6px 14px",borderRadius:6,color:"#1b0b06",fontWeight:600,cursor:"pointer",fontSize:12,whiteSpace:"nowrap"}}
                       >
                         Shop →
@@ -500,7 +500,7 @@ export default function HomeEssentials() {
                         <span style={{fontSize:12,color:"var(--champagne)"}}>{ing.name}</span>
                         {ing.slug && (
                           <button
-                            onClick={() => openLink(doterraGoUrl(ing.slug))}
+                            onClick={() => openLink(doterraUrl(ing.slug))}
                             style={{background:"transparent",border:"1px solid rgba(245,222,179,0.2)",padding:"3px 8px",borderRadius:4,color:"var(--champagne)",cursor:"pointer",fontSize:10}}
                           >
                             Shop →
@@ -529,7 +529,7 @@ export default function HomeEssentials() {
                         <div style={{fontSize:12,color:"var(--rosegold)"}}>Perfect for: {gift.occasion}</div>
                       </div>
                       <button
-                        onClick={() => openLink(doterraGoUrl(gift.slug))}
+                        onClick={() => openLink(doterraUrl(gift.slug))}
                         style={{background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:"0",padding:"6px 14px",borderRadius:6,color:"#1b0b06",fontWeight:600,cursor:"pointer",fontSize:12}}
                       >
                         Shop →
