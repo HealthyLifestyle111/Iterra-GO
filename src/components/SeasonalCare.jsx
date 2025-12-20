@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { doterraProductUrl } from "@/lib/doterraLinks";
+import { doterraGoUrl } from "@/lib/doterraGo";
 
 export default function SeasonalCare() {
   const [activeSeason, setActiveSeason] = useState("winter");
@@ -193,7 +193,7 @@ export default function SeasonalCare() {
                     <div style={{fontSize:11,color:"var(--rosegold)"}}>{product.use}</div>
                   </div>
                   <a
-                    href={doterraProductUrl(product.slug)}
+                    href={doterraGoUrl(product.slug)}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{padding:"8px 16px",borderRadius:8,background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,color:"#1b0b06",fontWeight:700,fontSize:12,textDecoration:"none",whiteSpace:"nowrap"}}
@@ -215,7 +215,7 @@ export default function SeasonalCare() {
                 <div key={i} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:10,borderRadius:8,background:"rgba(245,222,179,0.06)"}}>
                   <span style={{fontSize:13,color:"var(--champagne)"}}>{ing.name}</span>
                   <a
-                    href={doterraProductUrl(ing.slug)}
+                    href={doterraGoUrl(ing.slug)}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{padding:"6px 12px",borderRadius:6,background:"rgba(218,165,112,0.3)",border:"1px solid rgba(218,165,112,0.4)",color:"var(--champagne)",fontSize:11,fontWeight:600,textDecoration:"none"}}

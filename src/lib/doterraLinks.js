@@ -1,4 +1,6 @@
 // src/lib/doterraLinks.js
+// DEPRECATED: Use doterraGo.js and doterraGoUrl() instead
+// This file is kept for reference only - DOTERRA_SLUG_FIX is used by backend
 
 const SITE = "jennawilliams1";
 const BASE = `https://www.doterra.com/US/en/site/${SITE}`;
@@ -26,6 +28,37 @@ export const DOTERRA_SLUG_FIX = {
   "wintergreen": "wintergreen-oil",
   "ginger": "ginger-oil",
   "cassia": "cassia-oil",
+  "turmeric": "doterra-turmeric-essential-oil",
+  "cinnamon": "cinnamon-bark-oil",
+  "thyme": "thyme-oil",
+  "basil": "basil-oil",
+  "helichrysum": "helichrysum-oil",
+  "clove": "clove-oil",
+  "black-pepper": "black-pepper-oil",
+  "cilantro": "cilantro-oil",
+  "fennel": "fennel-oil",
+  "melissa": "melissa-oil",
+  "patchouli": "patchouli-oil",
+  "spearmint": "spearmint-oil",
+  "tangerine": "tangerine-oil",
+  "cypress": "cypress-oil",
+  "juniper-berry": "juniper-berry-oil",
+  "arborvitae": "arborvitae-oil",
+  "birch": "birch-oil",
+  "blue-tansy": "blue-tansy-oil",
+  "cardamom": "cardamom-oil",
+  "celery-seed": "celery-seed-oil",
+  "coriander": "coriander-oil",
+  "dill": "dill-oil",
+  "douglas-fir": "douglas-fir-oil",
+  "green-mandarin": "doterra-green-mandarin",
+  "jasmine": "jasmine-oil",
+  "lime": "lime-oil",
+  "petitgrain": "petitgrain-oil",
+  "spikenard": "spikenard-oil",
+  "white-fir": "white-fir-oil",
+  "yarrow": "yarrow-oil",
+  "spanish-sage": "spanish-sage-oil",
   
   // Blends that are already correctly formatted (keep as-is)
   "wild-orange-oil": "wild-orange-oil",
@@ -49,6 +82,33 @@ export const DOTERRA_SLUG_FIX = {
   "grapefruit-oil": "grapefruit-oil",
   "eucalyptus-oil": "eucalyptus-oil",
   "oregano-oil": "oregano-oil",
+  "clove-oil": "clove-oil",
+  "black-pepper-oil": "black-pepper-oil",
+  "cilantro-oil": "cilantro-oil",
+  "fennel-oil": "fennel-oil",
+  "melissa-oil": "melissa-oil",
+  "patchouli-oil": "patchouli-oil",
+  "spearmint-oil": "spearmint-oil",
+  "tangerine-oil": "tangerine-oil",
+  "cypress-oil": "cypress-oil",
+  "juniper-berry-oil": "juniper-berry-oil",
+  "arborvitae-oil": "arborvitae-oil",
+  "birch-oil": "birch-oil",
+  "blue-tansy-oil": "blue-tansy-oil",
+  "cardamom-oil": "cardamom-oil",
+  "celery-seed-oil": "celery-seed-oil",
+  "coriander-oil": "coriander-oil",
+  "dill-oil": "dill-oil",
+  "douglas-fir-oil": "douglas-fir-oil",
+  "jasmine-oil": "jasmine-oil",
+  "lime-oil": "lime-oil",
+  "petitgrain-oil": "petitgrain-oil",
+  "spikenard-oil": "spikenard-oil",
+  "spanish-sage-oil": "spanish-sage-oil",
+  "cinnamon-bark-oil": "cinnamon-bark-oil",
+  "thyme-oil": "thyme-oil",
+  "basil-oil": "basil-oil",
+  "helichrysum-oil": "helichrysum-oil",
   
   // Wild orange and Ylang Ylang - short versions
   "wild-orange": "wild-orange-oil",
@@ -76,100 +136,105 @@ export const DOTERRA_SLUG_FIX = {
   "on-guard-protective-blend": "on-guard-oil",
   "balance-grounding-blend": "balance-grounding-blend-oil",
   "breathe-respiratory-blend": "breathe-respiratory-blend-oil",
-  "serenity-restful-blend": "serenity-restful-blend-oil",
-  "terrashield-outdoor-blend": "terrashield-outdoor-blend-oil",
+  // serenity-restful-blend-oil, terrashield-outdoor-blend-oil removed - discontinued
   
   // MetaPWR variations
   "metapwr-system": "metapwr-kit",
   "metapwr-metabolic-blend": "metapwr-oil",
-  "metapwr-metabolic-system": "metapwr-metabolic-system",
+  "metapwr-metabolic-system": "metapwr-kit",
   "metapwr-oil": "metapwr-oil",
   "metapwr-softgels": "metapwr-softgels",
   "metapwr-advantage": "metapwr-advantage",
+  "metapwr-kit": "metapwr-kit",
   
   // Deep Blue
   "deep-blue": "deep-blue-oil",
-  "deep-blue-soothing-blend": "deep-blue-soothing-blend",
   "deep-blue-polyphenol-complex": "deep-blue-polyphenol-complex",
+  "deep-blue-rub": "deep-blue-rub",
+  // deep-blue-soothing-blend removed - discontinued, will search instead
   
   // Special product name mappings
   "melaleuca": "doterra-tea-tree",
   "melaleuca-oil": "doterra-tea-tree",
-  "sage-oil": "sage-oil",
   "roman-chamomile": "roman-chamomile-oil",
   "sandalwood-indian": "sandalwood-oil",
+  // sage-oil removed - discontinued
   
   // Touch rollers and diluted versions
   "rose-touch": "doterra-rose-touch",
-  "frankincense-touch": "frankincense-touch",
-  "lavender-touch": "lavender-touch",
-  "jasmine-touch": "jasmine-touch",
-  "digestzen-touch": "digestzen-touch",
+  "frankincense-touch": "frankincense-oil", // Touch version discontinued, use regular oil
+  "lavender-touch": "lavender-oil", // Touch version discontinued, use regular oil
+  "jasmine-touch": "jasmine-oil", // Touch version discontinued, use regular oil
+  "digestzen-touch": "digestzen-oil", // Touch version discontinued, use regular oil
   
   // Supplements and capsules
   "terrazyme-digestive-enzyme-complex": "digestzen-terrazyme",
   "terrazyme": "digestzen-terrazyme",
-  "turmeric-dual-chamber-capsules": "turmeric-dual-chamber-capsules",
-  "bone-nutrient-essential-complex": "bone-nutrient-essential-complex",
-  "phytoestrogen-essential-complex": "phytoestrogen-essential-complex",
-  "clarycalm-monthly-blend": "clarycalm-monthly-blend",
+  "bone-nutrient-essential-complex": "supplements-bone-nutrient-essential-complex",
+  "clarycalm-monthly-blend": "clarycalm-blend-oil",
   "ddr-prime-softgels": "ddr-prime-softgels",
   "copaiba-softgels": "copaiba-softgels",
-  "adaptiv-calming-blend-capsules": "adaptiv-calming-blend-capsules",
-  "on-guard-plus-softgels": "on-guard-plus-softgels",
-  "peppermint-beadlets-digestive-health": "peppermint-beadlets-digestive-health",
-  "on-guard-beadlets": "on-guard-beadlets",
-  "on-guard-throat-drops": "on-guard-throat-drops",
-  "yarrow-pom-capsules": "yarrow-pom-capsules",
-  "greens-digestive-health-supplement": "greens-digestive-health-supplement",
-  "mito2max-energy-metabolism-complex": "mito2max-energy-metabolism-complex",
-  "pb-assist-jr": "pb-assist-jr",
+  "adaptiv-calming-blend-capsules": "adaptiv-oil-capsules",
+  "turmeric-capsules": "turmeric-oil-capsules",
+  "turmeric-dual-chamber-capsules": "turmeric-oil-capsules",
+  "on-guard-plus-softgels": "on-guard-oil", // Softgels discontinued, use oil
+  "peppermint-beadlets-digestive-health": "peppermint-oil", // Beadlets discontinued, use oil
+  "peppermint-beadlets": "peppermint-oil", // Beadlets discontinued, use oil
+  "on-guard-beadlets": "on-guard-oil", // Beadlets discontinued, use oil
+  "yarrow-pom-capsules": "yarrow-pom-oil-capsules",
+  "mito2max-energy-metabolism-complex": "supplements-mito-2-max",
+  "deep-blue-soothing-blend": "deep-blue-polyphenol-complex", // Rub discontinued, use polyphenol complex
+  "greens-digestive-health-supplement": "metapwr-advantage", // Greens discontinued, closest alternative
+  "greens": "metapwr-advantage", // Greens discontinued, closest alternative
+  // pb-assist-jr removed - discontinued
   
   // Skincare
-  "yarrow-pom-active-botanical-duo": "yarrow-pom-active-botanical-duo",
-  "yarrow-pom-serum": "yarrow-pom-active-botanical-duo",
+  "yarrow-pom-active-botanical-duo": "doterra-yarrow-pom",
+  "yarrow-pom-serum": "doterra-yarrow-pom",
   "immortelle-anti-aging-blend": "immortelle-anti-aging-blend",
-  "anti-aging-moisturizer": "anti-aging-moisturizer",
+  "anti-aging-moisturizer": "personal-care-anti-aging-moisturizer",
   "hydrating-cream": "hydrating-cream",
-  "tightening-serum": "tightening-serum",
-  "correct-x-essential-ointment": "correct-x-essential-ointment",
+  "tightening-serum": "personal-care-tightening-serum",
+  "correct-x": "correct-x",
+  "correct-x-essential-ointment": "correct-x",
   
   // Personal care & cleaning
-  "on-guard-cleaner-concentrate": "on-guard-cleaner-concentrate",
-  "on-guard-foaming-hand-wash": "on-guard-foaming-hand-wash",
-  "on-guard-laundry-detergent": "on-guard-laundry-detergent",
-  "on-guard-mouthwash": "on-guard-mouthwash",
-  "on-guard-natural-whitening-toothpaste": "on-guard-natural-whitening-toothpaste",
-  "on-guard-sanitizing-mist": "on-guard-sanitizing-mist",
-  "abode-multi-purpose-cleaner": "abode-multi-purpose-cleaner",
-  "whisper-blend-for-women": "whisper-blend-for-women",
-  "elevation-joyful-blend": "elevation-joyful-blend",
+  "on-guard-cleaner-concentrate": "onguard-cleaner-concentrate",
+  "on-guard-foaming-hand-wash": "doterra-on-guard-foaming-hand-wash",
+  "on-guard-laundry-detergent": "doterra-on-guard-laundry-detergent",
+  "on-guard-mouthwash": "doterra-onguard-mouthwash",
+  "on-guard-natural-whitening-toothpaste": "doterra-on-guard-natural-whitening-toothpaste",
+  "on-guard-sanitizing-mist": "doterra-on-guard-sanitizing-mist",
+  "abode-multi-purpose-cleaner": "abode-multi-purpose-surface-cleaner-concentrate-4-pack",
+  // whisper-blend-for-women, elevation-joyful-blend removed - discontinued
   
   // Kits and accessories
   "home-essentials-kit": "home-essentials-enrollment-kit",
   "foundational-wellness-bundle": "foundational-wellness-bundle",
-  "family-essentials-kit-and-petal-diffuser": "family-essentials-kit-and-petal-diffuser",
+  // family-essentials-kit-and-petal-diffuser removed - discontinued kit
   "vegetable-capsules": "veggie-caps",
-  "fractionated-coconut-oil": "fractionated-coconut-oil",
-  "carrier-oils": "carrier-oils",
-  "essential-oil-accessories": "essential-oil-accessories",
-  "essential-oil-bottles-5ml-amber": "essential-oil-bottles-5ml-amber",
-  "essential-oil-roller-bottles": "essential-oil-roller-bottles",
-  "glass-spray-bottles": "glass-spray-bottles",
+  "fractionated-coconut-oil": "usage-fractionated-coconut-oil-carrier-oil",
+  "carrier-oils": "sensitive-skin-carrier-blend",
+  "essential-oil-accessories": "veggie-caps", // Generic accessories page doesn't exist, use caps as common accessory
+  // Note: bottles and spray bottles don't exist as single products
+  // They will fall back to search which gives better results than 404
   
   // Diffusers
-  "petal-diffuser": "petal-diffuser",
+  "petal-diffuser": "pebble-diffuser",
+  "pebble-diffuser": "pebble-diffuser",
   "laluz-diffuser": "laluz-diffuser",
-  "lumo-diffuser": "lumo-diffuser",
-  "roam-diffuser": "roam-diffuser"
+  "lumo-diffuser": "pebble-diffuser", // Lumo discontinued, fallback to Pebble
+  "roam-diffuser": "pebble-diffuser" // Roam discontinued, fallback to Pebble
 };
 
 /**
+ * DEPRECATED: Use doterraGoUrl() from doterraGo.js instead
  * Generate a doTERRA URL from a slug or path
  * @param {string} slugOrPath - Product slug or path
  * @returns {string} Full doTERRA URL
  */
 export function doterraUrl(slugOrPath) {
+  console.warn("doterraUrl() is deprecated. Use doterraGoUrl() from doterraGo.js instead");
   const raw = String(slugOrPath || "").trim();
   if (!raw) return BASE;
 
@@ -182,8 +247,9 @@ export function doterraUrl(slugOrPath) {
   // If fixed already looks like a full URL, return it
   if (fixed.startsWith("http://") || fixed.startsWith("https://")) return fixed;
 
-  // If it's a product path, use product page
-  return `${BASE}/p/${fixed}`;
+  // NEVER create direct product page links - return search instead
+  const searchQuery = encodeURIComponent(raw.replace(/-/g, " "));
+  return `${BASE}/search/fullsearch?saveSearch=false&text=${searchQuery}&contentType=PRODUCT`;
 }
 
 /**
