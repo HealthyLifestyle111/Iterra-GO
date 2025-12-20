@@ -1,388 +1,401 @@
-# Associate Referral System - Implementation Guide
+# ASSOCIATE_REFERRAL_IMPLEMENTATION.md
+_Last updated: 2025-12-20_
 
-## ✅ What's Been Created
+## What this solves (in plain English)
 
-All core infrastructure is now in place:
+Your app is a members-only "turnkey storefront." A member buys a membership, enters their **doTERRA referral identity**, and from that moment onward the entire app routes every product click so **they** get credit — not Jenna — without breaking links or falling back to random search pages.
 
-1. **Product Catalog** - [src/data/products.json](src/data/products.json)
-   - Canonical URLs for all products (no more /site/ paths)
-   - Easily expandable - add new products here
+This guide fixes two problems at once:
 
-2. **Associate Database** - [src/data/associates.json](src/data/associates.json)
-   - Store associate referral URLs and custom share links
-   - Currently has jennawilliams1 as default
+1) **Broken product links** (dummy names → wrong slugs → `/search?q=` / 404 / "recommended-error")  
+2) **Turnkey associate switching** (member enters info once; app uses it everywhere)
 
-3. **Link Resolver** - [src/lib/resolveOutboundLink.js](src/lib/resolveOutboundLink.js)
-   - Smart routing: credited links → redirect endpoint → canonical URLs
-   - One function for ALL product links
+The core principle is simple and ruthless:
 
-4. **Redirect Route** - [server/routes/go.js](server/routes/go.js)
-   - `/go/:associateId/:productId` endpoint
-   - First-click referral activation pattern
-   - Cookie-based tracking (30 days)
-   - Installed cookie-parser dependency
-
-5. **Server Integration** - Updated [server/server.js](server/server.js)
-   - Mounted the /go router
-   - Added cookie-parser middleware
+> **Never build doTERRA product URLs from names. Ever.**  
+> Use a canonical product catalog for destinations, and a separate associate record for attribution.
 
 ---
 
-## 🎯 Next Step: Membership Form Update
+## Terms you'll see in this guide
 
-You need to capture the **referral URL** when someone creates an associate account.
+- **displayName**: the label you show in your UI ("Lemon", "Sunlight in a Bottle", etc.). Can be "dummy."
+- **productId**: your internal stable ID (`"lemon"`, `"phytoestrogen-complex"`)
+- **canonicalUrl**: the real doTERRA destination for a product (`/US/en/p/lemon-oil`)
+- **referralUrl**: the associate's doTERRA referral link (`https://referral.doterra.me/...`) — *required for turnkey*
+- **shareLinks**: optional per-product credited links (e.g., from Link Generator) — *best quality when available*
+- **/go redirect**: your internal route that handles "activate credit → then send to product"
 
-### Where to Add This
+---
 
-**Find your membership signup/registration form.** Based on your codebase, this could be:
+## File map (recommended)
 
-1. **In AssociateLogin.jsx** - If you have a "Create Account" flow
-2. **In BackOffice.jsx** - If associates register through back office
-3. **A separate signup page** - Check for any signup/registration components
-
-### Required Form Field
-
-Add this field to your membership form:
-
-```jsx
-<div>
-  <label style={{
-    display: "block",
-    color: "var(--rosegold)",
-    fontSize: 12,
-    marginBottom: 6,
-    fontWeight: 600
-  }}>
-    doTERRA Referral Link (Required) *
-  </label>
-  <Input
-    type="url"
-    required
-    value={referralUrl}
-    onChange={(e) => setReferralUrl(e.target.value)}
-    placeholder="https://www.doterra.com/US/en/site/yourusername"
-    style={{
-      background: "rgba(245,222,179,0.04)",
-      border: "1px solid rgba(245,222,179,0.12)",
-      color: "var(--champagne)"
-    }}
-  />
-  <p style={{
-    fontSize: 11,
-    color: "var(--rosegold)",
-    opacity: 0.7,
-    marginTop: 4
-  }}>
-    Paste your personal doTERRA referral link here
-  </p>
-</div>
 ```
-
-### When Form is Submitted
-
-Instead of hardcoding `SITE = "jennawilliams1"`, create a new associate record:
-
-```javascript
-const handleCreateAssociate = async (formData) => {
-  const associateId = formData.username || formData.email.split('@')[0]; // or whatever they enter
-  
-  const newAssociate = {
-    displayName: formData.fullName,
-    referralUrl: formData.referralUrl, // THE CRITICAL FIELD
-    shareLinks: {} // They can add custom links later
-  };
-  
-  // Save to your database or update associates.json
-  // Example API call:
-  await fetch('/api/associates', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      id: associateId,
-      data: newAssociate
-    })
-  });
-  
-  // Store in local state/context
-  setCurrentAssociate(associateId);
-};
+src/
+  data/
+    products.json
+    associates.json        (or DB)
+  lib/
+    resolveOutboundLink.js
+  pages/
+    MembershipSignup.jsx   (or your checkout/signup)
+server/
+  server.js
+  routes/
+    go.js
+scripts/
+  extract-doterra-links.sh
+  report-slug-collisions.mjs
 ```
 
 ---
 
-## 🔗 How to Use in Product Links
+## Step 1 — Create a canonical product catalog (this fixes broken links)
 
-### React Components (Anywhere you show products)
-
-```jsx
-import { resolveOutboundLink } from '@/lib/resolveOutboundLink';
-import products from '@/data/products.json';
-import associates from '@/data/associates.json';
-
-function ProductCard({ productId }) {
-  const currentAssociate = associates['jennawilliams1']; // Or get from context/state
-  
-  return (
-    <a 
-      href={resolveOutboundLink({ 
-        associate: currentAssociate, 
-        productId, 
-        products 
-      })}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="product-link"
-    >
-      {products[productId].name}
-    </a>
-  );
-}
-```
-
-### Example Usage in HomeEssentials.jsx
-
-Replace this pattern:
-```jsx
-// ❌ OLD WAY
-<a href={doterraGoUrl("lemon")} target="_blank">
-  Lemon Essential Oil
-</a>
-```
-
-With this:
-```jsx
-// ✅ NEW WAY
-import { resolveOutboundLink } from '@/lib/resolveOutboundLink';
-import products from '@/data/products.json';
-import associates from '@/data/associates.json';
-
-const associate = associates['jennawilliams1']; // or from context
-
-<a 
-  href={resolveOutboundLink({ 
-    associate, 
-    productId: 'lemon', 
-    products 
-  })}
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Lemon Essential Oil
-</a>
-```
-
----
-
-## 🚀 How the System Works
-
-### Flow Diagram
-
-```
-User clicks product link
-         ↓
-resolveOutboundLink() checks:
-  1. Does associate have a credited shareLink for this product?
-     → YES: Use that (best - already has attribution)
-     → NO: Continue...
-  2. Does associate exist with referralUrl?
-     → YES: Use /go/:associateId/:productId
-     → NO: Use canonical product URL
-         ↓
-If using /go route:
-  1. Server checks activation cookie
-     → First visit: Redirect to referralUrl (activates account)
-     → Already activated: Redirect to canonical product URL
-```
-
-### First-Click Activation Pattern
-
-**Why this works:**
-- doTERRA tracks referrals when users visit the associate's site URL first
-- After that initial activation, users can go directly to products
-- Cookie persists for 30 days
-- No complex tracking needed on your end
-
----
-
-## 📝 Where's the Default SITE Set?
-
-Currently hardcoded in two places:
-
-1. **[src/lib/doterraLinks.js](src/lib/doterraLinks.js)** - Line 5:
-   ```javascript
-   const SITE = "jennawilliams1";
-   ```
-
-2. **[src/lib/doterraGo.js](src/lib/doterraGo.js)** - Line 22:
-   ```javascript
-   return "https://www.doterra.com/US/en/site/jennawilliams1";
-   ```
-
-### Migration Strategy
-
-**Option 1: Context/State** (Recommended)
-```jsx
-// Create AssociateContext.jsx
-import { createContext, useContext, useState } from 'react';
-import associates from '@/data/associates.json';
-
-const AssociateContext = createContext();
-
-export function AssociateProvider({ children }) {
-  const [currentAssociateId, setCurrentAssociateId] = useState('jennawilliams1');
-  const currentAssociate = associates[currentAssociateId];
-  
-  return (
-    <AssociateContext.Provider value={{ currentAssociate, setCurrentAssociateId }}>
-      {children}
-    </AssociateContext.Provider>
-  );
-}
-
-export const useAssociate = () => useContext(AssociateContext);
-```
-
-**Option 2: URL Parameter**
-```javascript
-// Extract from URL: /products?associate=jennawilliams1
-const params = new URLSearchParams(window.location.search);
-const associateId = params.get('associate') || 'jennawilliams1';
-const associate = associates[associateId];
-```
-
----
-
-## 🎨 Adding More Products
-
-Edit [src/data/products.json](src/data/products.json):
+### ✅ `src/data/products.json`
+Store only **canonical destinations** (no `/search?q=`, no `/site/<name>/p/`):
 
 ```json
 {
-  "your-product-slug": {
-    "name": "Display Name",
-    "canonicalUrl": "https://www.doterra.com/US/en/p/exact-product-slug"
+  "lemon": {
+    "name": "Lemon",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/lemon-oil"
+  },
+  "phytoestrogen-complex": {
+    "name": "Phytoestrogen Essential Complex",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/phytoestrogen-complex"
   }
 }
 ```
 
-**How to find canonical URLs:**
-1. Go to doterra.com
-2. Search for the product
-3. Copy the /US/en/p/product-slug URL (NOT the /site/ version)
+### What changes in your UI data (dummy names)
 
----
-
-## 🔧 Adding Custom Share Links
-
-If an associate has doTERRA Link Generator links, add them to their record:
+Instead of storing external URLs per UI card, store only `productId`:
 
 ```json
 {
-  "jennawilliams1": {
-    "displayName": "Jenna Williams",
-    "referralUrl": "https://www.doterra.com/US/en/site/jennawilliams1",
-    "shareLinks": {
-      "lemon": "https://www.doterra.com/link/ABC123",
-      "lavender": "https://www.doterra.com/link/XYZ789"
-    }
+  "displayName": "Sunlight in a Bottle",
+  "productId": "lemon"
+}
+```
+
+Now your "dummy names" can be poetic, branded, renamed, regrouped — and the link **never breaks**.
+
+---
+
+## Step 2 — Store associate attribution (this enables turnkey switching)
+
+### ✅ Associate record shape
+
+Minimum required to be turnkey:
+
+```json
+{
+  "id": "jennawilliams1",
+  "displayName": "Jenna Williams",
+  "referralUrl": "https://referral.doterra.me/XXXXX",
+  "shareLinks": {
+    "phytoestrogen-complex": "https://<credited-link-generator-url>"
   }
 }
 ```
 
-The resolver will use these credited links first (best attribution).
+**Turnkey rule:** on membership purchase, member must provide `referralUrl` (or you cannot reliably attribute without manual admin mapping).
 
 ---
 
-## 🧪 Testing the System
+## Step 3 — Implement `resolveOutboundLink()` (one function to rule all clicks)
 
-### Test Activation Flow
+### ✅ `src/lib/resolveOutboundLink.js`
 
-1. Clear cookies
-2. Click a product link: `/go/jennawilliams1/lemon`
-3. Should redirect to: `https://www.doterra.com/US/en/site/jennawilliams1`
-4. Go back and click again
-5. Should now redirect to: `https://www.doterra.com/US/en/p/lemon-oil`
+```js
+import products from "../data/products.json";
 
-### Test Different Associates
+export function resolveOutboundLink({ associate, productId }) {
+  const product = products[productId];
+  if (!product) throw new Error(`Unknown productId: ${productId}`);
 
-```javascript
-// Create a test associate
-const associates = {
-  "testuser": {
-    "displayName": "Test User",
-    "referralUrl": "https://www.doterra.com/US/en/site/testuser",
-    "shareLinks": {}
+  // Best: associate has a credited per-product URL (Link Generator output).
+  const credited = associate?.shareLinks?.[productId];
+  if (credited && typeof credited === "string" && credited.startsWith("http")) {
+    return credited;
   }
-};
 
-// Use in link
-resolveOutboundLink({ 
-  associate: associates.testuser, 
-  productId: 'lavender', 
-  products 
-});
+  // Default: route through your server redirect
+  return `/go/${encodeURIComponent(associate.id)}/${encodeURIComponent(productId)}`;
+}
 ```
 
 ---
 
-## 📦 API Endpoint for Dynamic Associates (Optional)
+## Step 4 — Add the /go redirect endpoint (credit activation + stable destination)
 
-If you want to store associates in a database instead of JSON:
+This makes your system "turnkey" with only one associate field: `referralUrl`.
 
-```javascript
-// server/routes/associates.js
-import express from 'express';
+### ✅ `server/routes/go.js`
+
+```js
+import express from "express";
+import products from "../../src/data/products.json" assert { type: "json" };
+
+// Replace this with your DB lookup.
+import associates from "../../src/data/associates.json" assert { type: "json" };
+
 const router = express.Router();
 
-router.post('/api/associates', async (req, res) => {
-  const { id, data } = req.body;
-  
-  // Validate referralUrl
-  if (!data.referralUrl || !data.referralUrl.includes('doterra.com')) {
-    return res.status(400).json({ error: 'Valid doTERRA referral URL required' });
-  }
-  
-  // Save to database
-  await db.associates.create({ id, ...data });
-  
-  res.json({ success: true });
-});
+router.get("/go/:associateId/:productId", (req, res) => {
+  const { associateId, productId } = req.params;
 
-router.get('/api/associates/:id', async (req, res) => {
-  const associate = await db.associates.findById(req.params.id);
-  res.json(associate);
+  const associate = associates[associateId];
+  const product = products[productId];
+
+  if (!associate?.referralUrl) return res.status(404).send("Unknown associate or missing referralUrl.");
+  if (!product?.canonicalUrl) return res.status(404).send("Unknown product.");
+
+  // "Activation" cookie: once set, we skip sending to referralUrl repeatedly.
+  const cookieName = `dt_activated_${associateId}`;
+  const activated = req.cookies?.[cookieName] === "1";
+
+  if (!activated) {
+    res.cookie(cookieName, "1", {
+      maxAge: 30 * 24 * 60 * 60 * 1000,
+      httpOnly: true,
+      sameSite: "lax"
+    });
+    return res.redirect(302, associate.referralUrl);
+  }
+
+  return res.redirect(302, product.canonicalUrl);
 });
 
 export default router;
 ```
 
----
+### ✅ Mount it in `server/server.js`
 
-## 🎯 Action Items
+```js
+import cookieParser from "cookie-parser";
+import goRouter from "./routes/go.js";
 
-### IMMEDIATE (Stop the chaos):
-1. ✅ Product catalog created
-2. ✅ Link resolver created
-3. ✅ Redirect endpoint created
-4. ⏳ **Find your membership form**
-5. ⏳ **Add referralUrl field**
-6. ⏳ **Update form submission to create associate records**
-
-### NEXT (Full migration):
-7. Replace `doterraGoUrl()` calls with `resolveOutboundLink()`
-8. Create AssociateContext for current associate state
-9. Add associate selection UI (if multi-associate)
-10. Test activation flow thoroughly
+app.use(cookieParser());
+app.use(goRouter);
+```
 
 ---
 
-## 📞 Tell Me Where Your Form Is
+## Step 5 — Fix the UI click handler (avoid SPA/router hijacking)
 
-Paste the code from:
-- Where users sign up for membership
-- Where `SITE = "jennawilliams1"` is set
-- Where associates create accounts
+**Do not** use React Router `<Link>` for external destinations.
+Use a plain anchor.
 
-I'll show you EXACTLY where to add the referralUrl field and how to wire it up.
+```jsx
+import { resolveOutboundLink } from "../lib/resolveOutboundLink";
 
-The system is turnkey now — you just need to capture that ONE field during signup.
+export function ProductCard({ associate, productId, label }) {
+  const href = resolveOutboundLink({ associate, productId });
+
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {label}
+    </a>
+  );
+}
+```
+
+---
+
+## Step 6 — Membership form: add `referralUrl` (this is the turnkey switch)
+
+You said: "When they purchase a membership, they enter their associate name and it switches."
+**Replace that input** (or add alongside it) with the **referralUrl**, because that is what your system can reliably use.
+
+### ✅ Typical membership form fields
+
+* `associateDisplayName` (optional, for UI)
+* `associateId` (optional, for your internal key)
+* **`referralUrl` (required)**
+
+### Where is the membership form?
+
+Run this in your repo to find it:
+
+```bash
+rg -n "membership|checkout|subscribe|pricing|plan|stripe|purchase|register|signup" src
+rg -n "form|onSubmit|handleSubmit" src/pages src/components
+```
+
+### Exact code change pattern (React)
+
+In the form state:
+
+```js
+const [referralUrl, setReferralUrl] = useState("");
+```
+
+Add an input:
+
+```jsx
+<label>
+  doTERRA Referral Link (required)
+  <input
+    value={referralUrl}
+    onChange={(e) => setReferralUrl(e.target.value)}
+    placeholder="https://referral.doterra.me/..."
+    required
+  />
+</label>
+```
+
+Validate before saving:
+
+```js
+function isValidReferralUrl(url) {
+  try {
+    const u = new URL(url);
+    return u.hostname === "referral.doterra.me";
+  } catch {
+    return false;
+  }
+}
+
+if (!isValidReferralUrl(referralUrl)) {
+  setError("Please paste a valid doTERRA referral link (referral.doterra.me/...).");
+  return;
+}
+```
+
+Save it to the member/associate profile (DB or json):
+
+```js
+await saveAssociate({
+  id: associateIdOrGenerated,
+  displayName: associateDisplayName,
+  referralUrl,
+  shareLinks: {}
+});
+```
+
+Then, when the member logs in, load that associate and set it as "active associate" across the app.
+
+---
+
+## Migration: from `doterraGoUrl()` → `resolveOutboundLink()`
+
+If you currently have `src/lib/doterraGo.js` or `doterraGoUrl(slug)` producing `/site/<name>/p/<slug>`, that's the source of breakage.
+
+### ✅ Replace usage sites
+
+Search:
+
+```bash
+rg -n "doterraGoUrl\\(|doterraGo\\(|/US/en/site/" src
+```
+
+Refactor:
+
+**Before**
+
+```js
+const href = doterraGoUrl(slug);   // fragile
+```
+
+**After**
+
+```js
+const href = resolveOutboundLink({ associate, productId });
+```
+
+### Temporary adapter (if you need it)
+
+If you must keep old call sites alive during migration:
+
+```js
+// src/lib/doterraGo.js
+import { resolveOutboundLink } from "./resolveOutboundLink";
+
+export function doterraGoUrl(slugOrProductId, associate) {
+  // treat the old slug as productId if you used slugs as IDs
+  return resolveOutboundLink({ associate, productId: slugOrProductId });
+}
+```
+
+Then migrate component-by-component until the adapter is unused and delete it.
+
+---
+
+## Testing procedures (don't guess — prove)
+
+### 1) Unit test the resolver
+
+* When shareLinks has a product → returns shareLinks URL
+* Else → returns `/go/:associate/:productId`
+
+### 2) Integration test the /go route
+
+* First click → 302 to referralUrl and sets activation cookie
+* Second click → 302 to canonicalUrl
+
+### 3) Manual QA checklist (fast)
+
+* Open product from a fresh incognito session:
+  * first click should hit referral link (activation)
+  * second click should go directly to product
+* Swap active associate:
+  * activation cookie should be associate-specific
+  * product click should route to the new associate's referralUrl first
+
+---
+
+## How to add more products (repeatable, no chaos)
+
+1. Add product entry to `src/data/products.json` with a known-good `canonicalUrl`
+2. In your UI listings, reference it by `productId`
+3. Run your link audit script and ensure no `/search?q=` or `/site/` URLs are being used
+
+---
+
+## Guardrails (prevent regressions)
+
+### Block known-bad patterns in CI
+
+Add this to `package.json` scripts:
+
+```json
+{
+  "scripts": {
+    "check:no-bad-doterra-links": "rg -n \"doterra\\.com/US/en/(search\\?q=|site/|recommended-error)\" . && exit 1 || exit 0"
+  }
+}
+```
+
+Run:
+
+```bash
+npm run check:no-bad-doterra-links
+```
+
+---
+
+## What this architecture guarantees
+
+✅ Dummy names never break links  
+✅ Associate switching is instant and global  
+✅ You stop chasing doTERRA slug inconsistencies  
+✅ You can onboard a new associate in minutes (one required field)
+
+What it does **not** magically guarantee:
+
+* Perfect "credited" tracking for every single click if the associate refuses to provide any doTERRA-issued referral identity.
+  A username alone cannot reliably generate doTERRA-issued tracking URLs.
+
+---
+
+## Next: show me where your membership form lives
+
+Run:
+
+```bash
+rg -n "Membership|Subscribe|Plan|Checkout|Stripe|Purchase|Signup|Register" src
+```
+
+Paste the file path(s) and ~40 lines around the submit handler, and I'll tell you **exactly** where to add `referralUrl` so the associate flips immediately after purchase.
