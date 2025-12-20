@@ -1,0 +1,32 @@
+name: Link Quality CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  validate-links:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Validate Product Catalog Completeness
+        run: npm run validate:catalog
+        
+      - name: Check for Bad doTERRA Link Patterns
+        run: npm run check:no-bad-links
+        
+      - name: Report
+        if: success()
+        run: echo "✅ All link quality checks passed"

@@ -7,6 +7,10 @@
     "name": "Lavender Essential Oil",
     "canonicalUrl": "https://www.doterra.com/US/en/p/lavender-oil"
   },
+  "lavender-essential-oil": {
+    "name": "Lavender Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/lavender-oil"
+  },
   "peppermint": {
     "name": "Peppermint Essential Oil",
     "canonicalUrl": "https://www.doterra.com/US/en/p/peppermint-oil"
@@ -15,7 +19,15 @@
     "name": "Frankincense Essential Oil",
     "canonicalUrl": "https://www.doterra.com/US/en/p/frankincense-oil"
   },
+  "frankincense-essential-oil": {
+    "name": "Frankincense Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/frankincense-oil"
+  },
   "wild-orange": {
+    "name": "Wild Orange Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/wild-orange-oil"
+  },
+  "wild-orange-oil": {
     "name": "Wild Orange Essential Oil",
     "canonicalUrl": "https://www.doterra.com/US/en/p/wild-orange-oil"
   },
@@ -35,9 +47,37 @@
     "name": "Copaiba Essential Oil",
     "canonicalUrl": "https://www.doterra.com/US/en/p/copaiba-oil"
   },
+  "ginger-oil": {
+    "name": "Ginger Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/ginger-oil"
+  },
+  "cinnamon-bark-oil": {
+    "name": "Cinnamon Bark Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/cinnamon-bark-oil"
+  },
+  "cedarwood-essential-oil": {
+    "name": "Cedarwood Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/cedarwood-oil"
+  },
+  "himalayan-fir-essential-oil": {
+    "name": "Himalayan Fir Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/himalayan-fir-oil"
+  },
+  "douglas-fir-essential-oil": {
+    "name": "Douglas Fir Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/douglas-fir-oil"
+  },
+  "siberian-fir-essential-oil": {
+    "name": "Siberian Fir Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/siberian-fir-oil"
+  },
   "home-essentials-kit": {
     "name": "Home Essentials Enrollment Kit",
     "canonicalUrl": "https://www.doterra.com/US/en/p/home-essentials-enrollment-kit"
+  },
+  "foundational-wellness-bundle": {
+    "name": "Foundational Wellness Bundle",
+    "canonicalUrl": "https://www.doterra.com/US/en/search?q=foundational+wellness+bundle"
   },
   "phytoestrogen-complex": {
     "name": "Phytoestrogen Essential Complex",
@@ -55,7 +95,15 @@
     "name": "On Guard Protective Blend",
     "canonicalUrl": "https://www.doterra.com/US/en/p/on-guard-oil"
   },
+  "on-guard-protective-blend": {
+    "name": "On Guard Protective Blend",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/on-guard-oil"
+  },
   "breathe": {
+    "name": "Breathe Respiratory Blend",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/breathe-respiratory-blend-oil"
+  },
+  "breathe-respiratory-blend": {
     "name": "Breathe Respiratory Blend",
     "canonicalUrl": "https://www.doterra.com/US/en/p/breathe-respiratory-blend-oil"
   },
@@ -70,5 +118,29 @@
   "terrazyme": {
     "name": "TerraZyme Digestive Enzyme Complex",
     "canonicalUrl": "https://www.doterra.com/US/en/p/digestzen-terrazyme"
+  },
+  "holiday-peace-essential-oil-blend": {
+    "name": "Holiday Peace Essential Oil Blend",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/holiday-peace-oil"
+  },
+  "wassail": {
+    "name": "Wassail Holiday Blend",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/wassail-oil"
+  },
+  "lantern-diffuser-holiday": {
+    "name": "Lantern Diffuser Holiday Edition",
+    "canonicalUrl": "https://www.doterra.com/US/en/search?q=lantern+diffuser+holiday"
+  },
+  "spa-hand-body-lotion-gift-set": {
+    "name": "Spa Hand & Body Lotion Gift Set",
+    "canonicalUrl": "https://www.doterra.com/US/en/search?q=spa+hand+body+lotion+gift+set"
+  },
+  "holiday-bath-bomb-trio": {
+    "name": "Holiday Bath Bomb Trio",
+    "canonicalUrl": "https://www.doterra.com/US/en/search?q=holiday+bath+bomb+trio"
+  },
+  "rose-touch": {
+    "name": "Rose Touch",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/rose-touch"
   }
 }

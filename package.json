@@ -12,7 +12,9 @@
     "test:urls:live": "node scripts/validate-doterra-slugs.mjs",
     "test:slugs:all": "node scripts/scan-all-slugs.mjs",
     "audit:doterra-links": "node scripts/audit-no-direct-doterra.mjs",
-    "audit:doterra": "node scripts/no-direct-doterra.mjs"
+    "audit:doterra": "node scripts/no-direct-doterra.mjs",
+    "validate:catalog": "node scripts/validate-product-catalog.mjs",
+    "check:no-bad-links": "! grep -rE 'doterra\\.com/US/en/(site/jennawilliams1|recommended-error)' src --include='*.js' --include='*.jsx' || (echo '❌ Bad doTERRA link patterns found' && exit 1)"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",
