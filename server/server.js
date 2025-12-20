@@ -386,8 +386,8 @@ app.post("/api/ai", async (req, res) => {
   }
 });
 
-// Mount the /go redirect router
-app.use(goRouter);
+// Mount the /go redirect router with prefix
+app.use("/go", goRouter);
 
 const port = process.env.PORT || 10000;
 app.listen(port, () => console.log(`AI server listening on ${port}`));
