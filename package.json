@@ -14,6 +14,7 @@
     "audit:doterra-links": "node scripts/audit-no-direct-doterra.mjs",
     "audit:doterra": "node scripts/no-direct-doterra.mjs",
     "validate:catalog": "node scripts/validate-product-catalog.mjs",
+    "verify:slugs": "node scripts/verify-doterra-slugs.mjs",
     "check:no-bad-links": "! grep -rE 'doterra\\.com/US/en/(site/jennawilliams1|recommended-error)' src --include='*.js' --include='*.jsx' || (echo '❌ Bad doTERRA link patterns found' && exit 1)"
   },
   "dependencies": {
