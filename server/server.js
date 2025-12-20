@@ -258,7 +258,7 @@ function buildReplicatedHome(site) {
 
 function buildFullSearchUrl(site, query) {
   const q = encodeURIComponent(query);
-  return `${DOTERRA_ORIGIN}${REGION}/site/${site}/search/fullsearch?saveSearch=false&text=${q}&contentType=PRODUCT`;
+  return `${DOTERRA_ORIGIN}${REGION}/site/${site}/search/fullsearch?saveSearch=false&text=${q}`;
 }
 
 function normalizeQuery(raw) {
