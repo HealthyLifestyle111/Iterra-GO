@@ -268,27 +268,50 @@ function normalizeQuery(raw) {
     .replace(/\s+/g, " ");
 }
 
-// ONLY include slugs personally confirmed to load correctly.
-// Everything else goes to search so it never breaks.
-const VERIFIED = {
-  lemon: "lemon-oil",
-  peppermint: "peppermint-oil",
-  lavender: "lavender-oil",
-  frankincense: "frankincense-oil",
-  oregano: "oregano-oil",
-  eucalyptus: "eucalyptus-oil",
-  copaiba: "copaiba-oil",
-  cedarwood: "cedarwood-oil",
-  vetiver: "vetiver-oil",
-  "ylang-ylang": "ylang-ylang-oil",
-  sandalwood: "sandalwood-oil",
-  grapefruit: "grapefruit-oil",
-  "wild-orange": "wild-orange-oil",
-};
+// Single oils that should always use the -oil slug
+// These are canonical product URLs that work reliably
+const SINGLE_OILS = new Set([
+  "bergamot",
+  "cassia",
+  "cedarwood",
+  "clary-sage",
+  "copaiba",
+  "eucalyptus",
+  "frankincense",
+  "geranium",
+  "ginger",
+  "grapefruit",
+  "helichrysum",
+  "lavender",
+  "lemon",
+  "lemongrass",
+  "marjoram",
+  "melaleuca",
+  "myrrh",
+  "oregano",
+  "peppermint",
+  "rosemary",
+  "sandalwood",
+  "vetiver",
+  "wild-orange",
+  "wintergreen",
+  "ylang-ylang",
+]);
 
-// DoTERRA link resolver endpoint - VERIFIED-or-SEARCH logic
-// Never link to doTERRA product pages directly unless VERIFIED.
-// Everything else goes to search results (never 404, never breaks).
+function resolveProductSlug(slug) {
+  const clean = String(slug || "").trim().toLowerCase();
+  
+  // If the slug is exactly a known single-oil base, force "-oil"
+  if (SINGLE_OILS.has(clean)) {
+    return `${clean}-oil`;
+  }
+  
+  return clean;
+}
+
+// DoTERRA link resolver endpoint
+// For single oils: always use canonical /p/<slug>-oil format (no /site/ path)
+// For everything else: search to avoid 404s
 app.get("/api/doterra/go/:key", (req, res) => {
   const site = sanitizeSite(req.query.site);
   const rawKey = sanitizeKey(req.params.key);
@@ -299,12 +322,17 @@ app.get("/api/doterra/go/:key", (req, res) => {
 
   const keyLower = rawKey.toLowerCase();
   
-  // Direct ONLY if verified
-  if (VERIFIED[keyLower]) {
-    return res.redirect(302, buildReplicatedProductUrl(site, VERIFIED[keyLower]));
+  // Resolve the canonical slug (handles single oil normalization)
+  const resolvedSlug = resolveProductSlug(keyLower);
+  
+  // For single oils, use the canonical product URL (no /site/ path)
+  // This avoids 404s from unreliable /site/<site>/p/<slug> paths
+  if (SINGLE_OILS.has(keyLower)) {
+    // Use canonical /US/en/p/<slug>-oil format (no site path)
+    return res.redirect(302, `${DOTERRA_ORIGIN}${REGION}/p/${resolvedSlug}`);
   }
 
-  // Otherwise ALWAYS search (never dead-ends)
+  // For everything else: search to avoid 404s
   const q = normalizeQuery(rawKey);
   return res.redirect(302, buildFullSearchUrl(site, q));
 });
