@@ -2,9 +2,14 @@
   "name": "iterra-go-server",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=20" },
-  "scripts": { "start": "node server.js" },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
+    "cookie-parser": "^1.4.7",
     "express": "^4.19.2",
     "openai": "^4.0.0"
   }

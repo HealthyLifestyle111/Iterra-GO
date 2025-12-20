@@ -1,0 +1,74 @@
+{
+  "lemon": {
+    "name": "Lemon Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/lemon-oil"
+  },
+  "lavender": {
+    "name": "Lavender Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/lavender-oil"
+  },
+  "peppermint": {
+    "name": "Peppermint Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/peppermint-oil"
+  },
+  "frankincense": {
+    "name": "Frankincense Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/frankincense-oil"
+  },
+  "wild-orange": {
+    "name": "Wild Orange Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/wild-orange-oil"
+  },
+  "melaleuca": {
+    "name": "Tea Tree (Melaleuca) Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/doterra-tea-tree"
+  },
+  "oregano": {
+    "name": "Oregano Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/oregano-oil"
+  },
+  "eucalyptus": {
+    "name": "Eucalyptus Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/eucalyptus-oil"
+  },
+  "copaiba": {
+    "name": "Copaiba Essential Oil",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/copaiba-oil"
+  },
+  "home-essentials-kit": {
+    "name": "Home Essentials Enrollment Kit",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/home-essentials-enrollment-kit"
+  },
+  "phytoestrogen-complex": {
+    "name": "Phytoestrogen Essential Complex",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/phytoestrogen-complex"
+  },
+  "deep-blue": {
+    "name": "Deep Blue Soothing Blend",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/deep-blue-oil"
+  },
+  "digestzen": {
+    "name": "DigestZen Digestive Blend",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/digestzen-oil"
+  },
+  "on-guard": {
+    "name": "On Guard Protective Blend",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/on-guard-oil"
+  },
+  "breathe": {
+    "name": "Breathe Respiratory Blend",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/breathe-respiratory-blend-oil"
+  },
+  "balance": {
+    "name": "Balance Grounding Blend",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/balance-grounding-blend-oil"
+  },
+  "metapwr": {
+    "name": "MetaPWR Metabolic Blend",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/metapwr-oil"
+  },
+  "terrazyme": {
+    "name": "TerraZyme Digestive Enzyme Complex",
+    "canonicalUrl": "https://www.doterra.com/US/en/p/digestzen-terrazyme"
+  }
+}

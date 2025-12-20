@@ -52,6 +52,22 @@
             </a>
             <span class="warning">→ Should redirect to SEARCH (not foundational-wellness-bundle) ⚠️</span>
         </div>
+        
+        <div class="test-row">
+            <span class="label">Dummy Name (spaces):</span>
+            <a href="http://localhost:10000/api/doterra/go/Bone Support Complex" target="_blank">
+                /api/doterra/go/Bone Support Complex
+            </a>
+            <span class="warning">→ Should redirect to SEARCH for "Bone Support Complex" ⚠️</span>
+        </div>
+        
+        <div class="test-row">
+            <span class="label">Display Name:</span>
+            <a href="http://localhost:10000/api/doterra/go/Metabolic Blend" target="_blank">
+                /api/doterra/go/Metabolic Blend
+            </a>
+            <span class="warning">→ Should redirect to SEARCH for "Metabolic Blend" ⚠️</span>
+        </div>
     </div>
     
     <div class="test-section">
@@ -86,14 +102,22 @@
     <div class="test-section">
         <h2>What Was Fixed?</h2>
         <ul>
-            <li><strong>Backend Issue:</strong> The resolver was scraping doTERRA HTML and extracting the FIRST product link it found, which was always the "Foundational Wellness Bundle" promo that appears on every page.</li>
-            <li><strong>Solution:</strong> Replaced HTML scraping with a deterministic slug mapping table and smart redirect logic:
+            <li><strong>Previous Issue:</strong> The resolver was treating dummy/display names like product slugs, causing broken or mis-routed links.</li>
+            <li><strong>Solution:</strong> Implemented direct-or-search logic:
                 <ul>
-                    <li>Known products → direct to product page</li>
-                    <li>Unknown items → search results (never defaults to one product)</li>
+                    <li><strong>Real doTERRA slugs</strong> (from mapping table) → Direct to <code>/p/&lt;slug&gt;</code></li>
+                    <li><strong>Dummy/generic labels</strong> (display names, human phrases) → Redirect to doTERRA search</li>
+                    <li>No more scraping HTML or guessing - deterministic routing based on slug validation</li>
                 </ul>
             </li>
-            <li><strong>Frontend Option:</strong> Can use <code>doterraUrl()</code> for direct links or <code>doterraGoUrl()</code> for backend-resolved links with associate attribution.</li>
+            <li><strong>How It Works:</strong>
+                <ul>
+                    <li>Maintains small "known direct slug" map (DIRECT_SLUGS from DOTERRA_SLUG_FIX)</li>
+                    <li>Detects dummy names: spaces, human phrases, anything not in slug format</li>
+                    <li>Uses <code>isLikelySlug()</code> function to validate slug format (lowercase, dashes, no spaces)</li>
+                </ul>
+            </li>
+            <li><strong>Result:</strong> Oils and mapped products go to exact product pages, dummy names go to search results (always relevant, never dead links)</li>
         </ul>
     </div>
 </body>

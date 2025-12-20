@@ -1,8 +1,11 @@
 import express from "express";
+import cookieParser from "cookie-parser";
 import OpenAI from "openai";
+import goRouter from "./routes/go.js";
 
 const app = express();
 app.use(express.json({ limit: "1mb" }));
+app.use(cookieParser());
 
 const hasKey = !!process.env.OPENAI_API_KEY;
 const openai = hasKey ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) : null;
@@ -382,6 +385,9 @@ app.post("/api/ai", async (req, res) => {
     return res.status(500).json({ error: err?.message || "AI server error" });
   }
 });
+
+// Mount the /go redirect router
+app.use(goRouter);
 
 const port = process.env.PORT || 10000;
 app.listen(port, () => console.log(`AI server listening on ${port}`));
