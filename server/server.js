@@ -260,8 +260,8 @@ function buildReplicatedHome(site) {
 }
 
 function buildFullSearchUrl(site, query) {
-  const q = encodeURIComponent(query);
-  return `${DOTERRA_ORIGIN}${REGION}/search?q=${q}`;
+  // Search endpoint doesn't work reliably - redirect to homepage instead
+  return `${DOTERRA_ORIGIN}${REGION}/site/${site}`;
 }
 
 function normalizeQuery(raw) {
