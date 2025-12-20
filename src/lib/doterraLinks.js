@@ -2,8 +2,19 @@
 // DEPRECATED: Use doterraGo.js and doterraGoUrl() instead
 // This file is kept for reference only - DOTERRA_SLUG_FIX is used by backend
 
-const SITE = "jennawilliams1";
-const BASE = `https://www.doterra.com/US/en/site/${SITE}`;
+import { getActiveAssociate } from "./activeAssociate";
+
+const DOTERRA_BASE = "https://www.doterra.com/US/en";
+
+export function canonicalProductUrl(slug) {
+  return `${DOTERRA_BASE}/p/${slug}`;
+}
+
+// If you still need "site" URLs for any reason, make them dynamic:
+export function siteProductUrl(slug) {
+  const { id } = getActiveAssociate();
+  return `${DOTERRA_BASE}/site/${encodeURIComponent(id)}/p/${slug}`;
+}
 
 export const DOTERRA_SLUG_FIX = {
   // Single-word oils that need -oil suffix

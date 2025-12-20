@@ -1,28 +1,39 @@
+import { getActiveAssociate } from "./activeAssociate";
+import { resolveOutboundLink } from "./resolveOutboundLink";
+import products from "../data/products.json";
+
 const API_BASE = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
 
 /**
- * Generate a doTERRA link through the backend resolver
- * @param {string} key - Product key or slug
- * @param {string|Object} siteOrOptions - Associate site ID or options object
- * @returns {string} Backend resolver URL that redirects to doTERRA
+ * Generate a doTERRA link using the active associate
+ * @param {string} productId - Product ID from catalog
+ * @param {string|Object} siteOrOptions - Optional override (backward compat)
+ * @returns {string} URL that credits the active associate
  */
-export function doterraGoUrl(key, siteOrOptions) {
-  const k = String(key || "").trim();
+export function doterraGoUrl(productId, siteOrOptions) {
+  const key = String(productId || "").trim();
   
-  // Extract site from either string or options object
-  let site = null;
+  // Get active associate (or override if provided)
+  let associate = getActiveAssociate();
+  
+  // Handle legacy override parameter
   if (typeof siteOrOptions === "string") {
-    site = siteOrOptions;
-  } else if (siteOrOptions && typeof siteOrOptions === "object") {
-    site = siteOrOptions.site;
+    associate = { id: siteOrOptions, referralUrl: "", shareLinks: {} };
+  } else if (siteOrOptions && typeof siteOrOptions === "object" && siteOrOptions.site) {
+    associate = { id: siteOrOptions.site, referralUrl: "", shareLinks: {} };
   }
   
-  // If no key, return doTERRA homepage
-  if (!k) {
-    return "https://www.doterra.com/US/en/site/jennawilliams1";
+  // If no key, return doTERRA homepage with active associate
+  if (!key) {
+    return associate.referralUrl || `https://www.doterra.com/US/en/site/${associate.id}`;
   }
   
-  // Always use backend resolver (never direct links)
-  const qs = site ? `?site=${encodeURIComponent(String(site).trim())}` : "";
-  return `${API_BASE}/api/doterra/go/${encodeURIComponent(k)}${qs}`;
+  // Use new resolver system if product exists in catalog
+  if (products[key]) {
+    return resolveOutboundLink({ associate, productId: key, products });
+  }
+  
+  // Fallback to legacy backend resolver for unknown products
+  const qs = associate.id !== "jennawilliams1" ? `?site=${encodeURIComponent(associate.id)}` : "";
+  return `${API_BASE}/api/doterra/go/${encodeURIComponent(key)}${qs}`;
 }
