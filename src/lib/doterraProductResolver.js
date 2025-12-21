@@ -4,15 +4,29 @@ import verifiedSlugsData from '../../verifiedSlugs.json';
 const DOTERRA_BASE = "https://www.doterra.com/US/en";
 const verifiedSlugs = verifiedSlugsData;
 
-// Map any "dummy/search" terms to a REAL product slug.
-const SEARCH_OVERRIDES = {
-  "foundational wellness bundle": "foundational-wellness-bundle",
-  "phytoestrogen essential complex": "phytoestrogen-complex",
-};
+/**
+ * PERMANENT FIX: Hybrid approach for stable doTERRA linking
+ * 
+ * WHY CANONICAL URLS:
+ * - Replicated URLs (/site/{user}/p/{slug}) are blocked by Imperva firewall
+ * - Canonical URLs (/p/{slug}) ALWAYS load (verified Dec 21, 2025)
+ * - doTERRA recommends using Link Generator tool for official tracked links
+ * 
+ * HYBRID APPROACH:
+ * - Canonical product URLs (never 404, no firewall blocks)
+ * - Replicated home sets tracking cookie OR use OwnerID parameter
+ * - All 202 verified slugs load full product pages
+ * 
+ * This eliminates slug change issues, security blocks, and home page defaults
+ */
 
 /**
- * Build a product URL with optional OwnerID tracking
+ * Build a canonical product URL with optional OwnerID tracking
  * Uses official ?OwnerID parameter (stable, guaranteed credit)
+ * 
+ * @param {string} slug - Verified product slug
+ * @param {string|null} ownerId - doTERRA Member ID for direct tracking
+ * @returns {string} - Canonical product URL
  */
 export function canonicalProductUrl(slug, ownerId = null) {
   if (!slug) return DOTERRA_BASE;
@@ -21,7 +35,18 @@ export function canonicalProductUrl(slug, ownerId = null) {
 }
 
 /**
+ * Build replicated home URL (sets tracking cookie)
+ * 
+ * @param {string} associateSite - Site username (e.g., "jennawilliams1")
+ * @returns {string} - Replicated home URL
+ */
+export function replicatedHomeUrl(associateSite) {
+  return `${DOTERRA_BASE}/site/${associateSite}`;
+}
+
+/**
  * Resolve a product key to a verified slug
+ * 
  * @param {string} key - Product key/slug
  * @returns {string|null} - Verified slug or null if not found
  */
@@ -33,6 +58,10 @@ export function resolveSlug(key) {
 
 /**
  * Build a search URL with optional OwnerID
+ * 
+ * @param {string} query - Search query
+ * @param {string|null} ownerId - doTERRA Member ID for tracking
+ * @returns {string} - Search URL
  */
 export function searchUrl(query, ownerId = null) {
   const searchQuery = encodeURIComponent(query);
@@ -41,53 +70,57 @@ export function searchUrl(query, ownerId = null) {
 }
 
 /**
- * Main resolver: accepts various input formats and returns a tracked URL
+ * Main resolver: Returns both replicated home and product URLs for hybrid approach
+ * Frontend should open home first (sets cookie), then product (gets credit)
+ * 
  * @param {string} input - Product slug, key, or URL
  * @param {string|null} ownerId - doTERRA Member ID for tracking
- * @param {string|null} associateSite - Fallback site username (e.g., "jennawilliams1")
- * @returns {string} - Full doTERRA URL with tracking
+ * @param {string|null} associateSite - Site username for cookie setting
+ * @returns {Object} - { home: string|null, product: string }
  */
 export function resolveDoterraOutbound(input, ownerId = null, associateSite = null) {
   if (!input) {
-    // No input: fallback to replicated home or base
-    if (associateSite) return `${DOTERRA_BASE}/site/${associateSite}`;
-    return DOTERRA_BASE;
+    // No input: return home only
+    const home = associateSite ? replicatedHomeUrl(associateSite) : DOTERRA_BASE;
+    return { home, product: null };
   }
 
   const str = String(input).trim();
-
-  // Handle search queries
-  const mSearch = str.match(/\/search\?q=([^&#]+)/i);
-  if (mSearch) {
-    const q = decodeURIComponent(mSearch[1])
-      .replace(/\+/g, " ")
-      .trim()
-      .toLowerCase();
-
-    const slug = SEARCH_OVERRIDES[q];
-    if (slug) return canonicalProductUrl(slug, ownerId);
-    return searchUrl(q, ownerId);
-  }
 
   // Extract slug from /p/<slug> URLs
   const mProd = str.match(/\/p\/([^/?#]+)/i);
   if (mProd) {
     const slug = resolveSlug(mProd[1]) || mProd[1];
-    return canonicalProductUrl(slug, ownerId);
+    const product = canonicalProductUrl(slug, ownerId);
+    const home = associateSite ? replicatedHomeUrl(associateSite) : null;
+    return { home, product };
   }
 
   // If it's just a raw slug/key
   if (!str.includes("http") && !str.includes("/")) {
     const slug = resolveSlug(str);
     if (slug) {
-      return canonicalProductUrl(slug, ownerId);
+      const product = canonicalProductUrl(slug, ownerId);
+      const home = associateSite ? replicatedHomeUrl(associateSite) : null;
+      return { home, product };
     }
     // Unknown slug: fallback to search
     console.warn(`[doterraProductResolver] Unknown slug "${str}" - falling back to search`);
-    return searchUrl(str, ownerId);
+    const product = searchUrl(str, ownerId);
+    const home = associateSite ? replicatedHomeUrl(associateSite) : null;
+    return { home, product };
   }
 
-  // Anything else → replicated home or base
-  if (associateSite) return `${DOTERRA_BASE}/site/${associateSite}`;
-  return DOTERRA_BASE;
+  // Anything else → home only
+  const home = associateSite ? replicatedHomeUrl(associateSite) : DOTERRA_BASE;
+  return { home, product: null };
+}
+
+/**
+ * Legacy function for backward compatibility
+ * Returns just the product URL (no hybrid approach)
+ */
+export function getProductUrl(input, ownerId = null) {
+  const result = resolveDoterraOutbound(input, ownerId, null);
+  return result.product || result.home;
 }

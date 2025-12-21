@@ -95,12 +95,13 @@ router.get("/:associateId/:productId", (req, res) => {
 
 /**
  * NEW: Handle /api/doterra/go/:key redirects
- * Uses OwnerID query parameter for stable tracking
+ * HYBRID APPROACH: Returns JSON with both home and product URLs
+ * Frontend opens home first (sets cookie), then product (gets credit)
  * Must come AFTER the two-param route
  */
 router.get("/:key", (req, res) => {
   const { key } = req.params;
-  const { owner_id, site } = req.query;
+  const { owner_id, site, format } = req.query;
 
   console.log(`[doTERRA GO] Key: ${key}, OwnerID: ${owner_id || 'none'}, Site: ${site || 'none'}`);
 
@@ -108,30 +109,33 @@ router.get("/:key", (req, res) => {
   const slug = resolveSlug(key);
 
   if (slug) {
-    // Verified slug: build URL with OwnerID
-    const url = buildProductUrl(slug, owner_id);
-    console.log(`[doTERRA GO] Resolved to: ${url}`);
-    return res.redirect(301, url);
+    // Verified slug: build canonical URL with OwnerID
+    const productUrl = buildProductUrl(slug, owner_id);
+    const homeUrl = site ? `${DOTERRA_BASE}/site/${site}` : null;
+
+    // If format=json, return both URLs for frontend handling
+    if (format === 'json') {
+      console.log(`[doTERRA GO] Hybrid URLs - Home: ${homeUrl || 'none'}, Product: ${productUrl}`);
+      return res.json({ home: homeUrl, product: productUrl });
+    }
+
+    // Default: direct redirect to product (for backward compatibility)
+    console.log(`[doTERRA GO] Direct redirect to: ${productUrl}`);
+    return res.redirect(301, productUrl);
   }
 
   // Unknown slug: fallback to search
-  if (owner_id) {
-    const searchQuery = buildSearchUrl(key, owner_id);
-    console.log(`[doTERRA GO] Unknown slug, search with tracking: ${searchQuery}`);
-    return res.redirect(301, searchQuery);
+  const searchQuery = buildSearchUrl(key, owner_id);
+  const homeUrl = site ? `${DOTERRA_BASE}/site/${site}` : null;
+
+  if (format === 'json') {
+    console.log(`[doTERRA GO] Unknown slug - Hybrid fallback to search`);
+    return res.json({ home: homeUrl, product: searchQuery });
   }
 
-  // No owner_id: fallback to replicated home (sets cookie)
-  if (site) {
-    const homeUrl = `${DOTERRA_BASE}/site/${site}`;
-    console.log(`[doTERRA GO] Fallback to replicated home: ${homeUrl}`);
-    return res.redirect(301, homeUrl);
-  }
-
-  // Last resort: canonical product URL or search
-  const fallbackUrl = slug ? buildProductUrl(slug) : buildSearchUrl(key);
-  console.log(`[doTERRA GO] Fallback: ${fallbackUrl}`);
-  return res.redirect(301, fallbackUrl);
+  // Default: redirect to search
+  console.log(`[doTERRA GO] Unknown slug, redirecting to search: ${searchQuery}`);
+  return res.redirect(301, searchQuery);
 });
 
 export default router;
