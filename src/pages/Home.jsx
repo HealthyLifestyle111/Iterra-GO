@@ -86,20 +86,17 @@ export default function IterraVitalityDropdown() {
           description: "Essential daily energy, focus, and immune defense. Start here.",
           outcomes: "Users report improved energy levels, enhanced focus, and strengthened wellness routines within the first few months of consistent use",
           products: [
-            { name: "Energy & Stamina Complex", slug: "supplements-mito-2-max" },
-            { name: "Protective Blend Softgels", slug: "on-guard-plus-softgels" },
-            { name: "Peppermint Beadlets", slug: "peppermint-beadlets-digestive-health" }
+            { name: "Immune Support Kit", link: "https://www.doterra.com/US/en/p/immune-support-kit" }
           ]
         },
         {
           name: "Tier 2 — Peak Performance",
-          description: "Advanced stacks for competitive edge. Stress management meets cognitive enhancement.",
-          outcomes: "Support for stress management, mental focus, and overall wellness balance",
+          description: "Advanced stacks for competitive edge. Immune boosting and protein support.",
+          outcomes: "Support for immune system, muscle recovery, and overall wellness balance",
           products: [
-            { name: "Superfood Greens Powder", slug: "greens-digestive-health-supplement" },
-            { name: "Calming Blend Capsules", slug: "adaptiv-calming-blend-capsules" },
-            { name: "Frankincense Touch Roller", slug: "frankincense-touch" },
-            { name: "Wild Orange Essential Oil", slug: "wild-orange-oil" }
+            { name: "Vegan Protein", link: "https://www.doterra.com/US/en/p/vegan-protein" },
+            { name: "Deep Blue Polyphenol Complex", link: "https://www.doterra.com/US/en/p/deep-blue-polyphenol-complex" },
+            { name: "Frankincense Essential Oil", link: "https://www.doterra.com/US/en/p/frankincense-oil" }
           ]
         },
         {
@@ -138,101 +135,52 @@ export default function IterraVitalityDropdown() {
         ]
       },
       diy: {
-        title: "DIY Power Recipes",
+        title: "Power Recipes",
         recipes: [
           {
-            name: "Pre-Workout Energy Smoothie",
-            ingredients: [
-              { name: "Greens Superfood Powder (1 scoop)", slug: "greens-digestive-health-supplement" },
-              { name: "Wild Orange Essential Oil (2 drops)", slug: "wild-orange" },
-              { name: "Peppermint Essential Oil (1 drop)", slug: "peppermint" }
-            ],
-            instructions: "Blend 1 scoop Greens powder with 8oz cold water or almond milk. Add 2 drops Wild Orange and 1 drop Peppermint. Add ice and banana. Blend until smooth. Drink 30 minutes before workout."
+            name: "Power Recipes",
+            ingredients: [],
+            instructions: ""
           },
           {
-            name: "Focus & Clarity Roll-On",
-            ingredients: [
-              { name: "Fractionated Coconut Oil", slug: "fractionated-coconut-oil" },
-              { name: "Focus Blend (8 drops)", slug: "intune-focus-blend" },
-              { name: "Frankincense (6 drops)", slug: "frankincense" },
-              { name: "Vetiver (4 drops)", slug: "vetiver" },
-              { name: "10mL Roller Bottle", slug: "essential-oil-accessories" }
-            ],
-            instructions: "Fill roller with FCO, add essential oils, shake well. Apply to temples, back of neck, and pulse points before important meetings or focused work sessions."
-          }
-        ]
-      }
-    },
-    agileBody: {
-      title: "AGILE BODY",
-      subtitle: "Weight Management • Mobility • Recovery",
-      philosophy: "For the man who refuses to accept decline. Support your body's natural resilience well into your 50s, 60s, and beyond.",
-      whoThisIsFor: "Men over 35 seeking metabolic support, joint comfort, and post-workout recovery. Athletes, lifters, runners who demand sustained mobility.",
-      whatYouGet: "Support for healthy metabolism • Joint comfort and mobility support • Post-workout recovery support • Muscle maintenance and flexibility support",
-      tiers: [
-        {
-          name: "Tier 1 — Metabolic Foundation",
+            name: "Pre-Workout Energy Smoothie",
+            diy: {
+              title: "DIY Athletic Performance Recipes",
+              recipes: [
+                { name: "Athletic Performance Recipes" },
+                { name: "Post-Workout Recovery Protein Shake" },
+                { name: "Deep Muscle Recovery Massage Oil" }
+              ]
+            },
           description: "Support healthy metabolism, inflammation response, and digestive function. The essential stack.",
           outcomes: "Users report improved metabolism support, digestive comfort, and healthy weight management when combined with diet and exercise",
           products: [
             { name: "Metabolic Blend Essential Oil", slug: "metapwr-oil" },
             { name: "Turmeric Dual Chamber Capsules", slug: "turmeric-dual-chamber-capsules" },
             { name: "Digestive Enzyme Complex", slug: "terrazyme-digestive-enzyme-complex" }
-          ]
-        },
-        {
-          name: "Tier 2 — Active Recovery",
-          description: "Support for discomfort management, healthy inflammation response, and athletic recovery for serious training.",
-          outcomes: "Support for joint comfort, healthy inflammation response, and muscle recovery after exercise",
-          products: [
-            { name: "Soothing Blend Polyphenol Complex", slug: "deep-blue-polyphenol-complex" },
-            { name: "Soothing Blend Topical Rub", slug: "deep-blue-soothing-blend" },
-            { name: "Copaiba Softgels", slug: "copaiba-softgels" },
-            { name: "Lemongrass Essential Oil", slug: "lemongrass-oil" }
-          ]
-        },
-        {
-          name: "Tier 3 — Peak Mobility Stack",
-          description: "Comprehensive cellular support. Collagen synthesis support, full-body mobility, longevity wellness.",
-          outcomes: "Support for cellular health, skin/joint/tendon wellness, and sustained athletic lifestyle goals",
-          products: [
-            { name: "Collagen Synthesis Complex", slug: "metapwr-advantage" },
-            { name: "Massage Blend Essential Oil Kit", slug: "aromatouch-massage-blend" },
+          diy: {
+            title: "DIY Leadership & Presence Recipes",
+            recipes: [
+              { name: "Leadership & Presence Recipes" },
+              { name: "Executive Focus Diffuser Blend" }
+            ]
+          },
             { name: "Marjoram Essential Oil", slug: "marjoram-oil" },
             { name: "Wintergreen Essential Oil", slug: "wintergreen-oil" }
-          ]
-        }
-      ],
-      luxuryOfferings: {
-        title: "Premium Athletic Services",
-        services: [
-          {
-            name: "Metabolic Reset Consultation",
-            price: "Contact for Pricing",
-            includes: "Body composition analysis • Custom metabolic protocol • 60-day supplement plan • Weekly check-ins",
-            link: "https://healthlifestyleservices.com"
+          diy: {
+            title: "DIY Legacy & Longevity Recipes",
+            recipes: [
+              { name: "Legacy & Longevity Recipes" },
+              { name: "Cellular Longevity Morning Elixir" }
+            ]
           },
-          {
-            name: "Mobility Support Program",
-            price: "Contact for Pricing",
-            includes: "Monthly AromaTouch sessions • Custom topical formulations • Joint wellness tracking • Movement coaching integration",
-            link: "https://healthlifestyleservices.com"
-          }
+      diy: {
+        title: "DIY Sovereign Recipes",
+        recipes: [
+          { name: "Sovereign Recipes" },
+          { name: "Hormone Balance Smoothie" }
         ]
       },
-      diy: {
-        title: "DIY Athletic Performance Recipes",
-        recipes: [
-          {
-            name: "Post-Workout Recovery Protein Shake",
-            ingredients: [
-              { name: "Metabolic Blend (2 drops)", slug: "metapwr-oil" },
-              { name: "Lemon Essential Oil (1 drop)", slug: "lemon" },
-              { name: "Grapefruit Essential Oil (1 drop)", slug: "grapefruit" }
-            ],
-            instructions: "Add to your favorite protein shake with ice, banana, and almond milk. Blend well. Drink within 30 minutes post-workout for metabolic support and muscle recovery."
-          },
-          {
             name: "Deep Muscle Recovery Massage Oil",
             ingredients: [
               { name: "Soothing Blend Rub (2 tablespoons)", slug: "deep-blue-soothing-blend" },
@@ -280,7 +228,7 @@ export default function IterraVitalityDropdown() {
           description: "Complete autonomic support. The nervous system of a monk with the drive of a CEO.",
           outcomes: "Support for calm under pressure, deep restorative sleep, and influential presence",
           products: [
-            { name: "Lavender Essential Oil", slug: "lavender" },
+            // Removed Lavender Essential Oil for masculine vitality pillar
             { name: "Respiratory Blend Essential Oil", slug: "breathe-respiratory-blend" },
             { name: "Bergamot Essential Oil", slug: "bergamot-oil" },
             { name: "Sandalwood Essential Oil", slug: "sandalwood-oil" }
@@ -307,6 +255,11 @@ export default function IterraVitalityDropdown() {
       diy: {
         title: "DIY Leadership & Presence Recipes",
         recipes: [
+          {
+            name: "Leadership & Presence Recipes",
+            ingredients: [],
+            instructions: ""
+          },
           {
             name: "Executive Focus Diffuser Blend",
             ingredients: [
@@ -390,6 +343,11 @@ export default function IterraVitalityDropdown() {
       diy: {
         title: "DIY Legacy & Longevity Recipes",
         recipes: [
+          {
+            name: "Legacy & Longevity Recipes",
+            ingredients: [],
+            instructions: ""
+          },
           {
             name: "Cellular Longevity Morning Elixir",
             ingredients: [
@@ -493,6 +451,11 @@ export default function IterraVitalityDropdown() {
       diy: {
         title: "DIY Sovereign Recipes",
         recipes: [
+          {
+            name: "Sovereign Recipes",
+            ingredients: [],
+            instructions: ""
+          },
           {
             name: "Hormone Balance Smoothie",
             ingredients: [
@@ -610,6 +573,11 @@ export default function IterraVitalityDropdown() {
         title: "DIY Flowing Form Recipes",
         recipes: [
           {
+            name: "Flowing Form Recipes",
+            ingredients: [],
+            instructions: ""
+          },
+          {
             name: "Metabolism Boost Morning Water",
             ingredients: [
               { name: "Metabolic Blend (2 drops)", slug: "metapwr-oil" },
@@ -702,6 +670,11 @@ export default function IterraVitalityDropdown() {
       diy: {
         title: "DIY Radiance Recipes",
         recipes: [
+          {
+            name: "Radiance Recipes",
+            ingredients: [],
+            instructions: ""
+          },
           {
             name: "Morning Radiance Ritual Mist",
             ingredients: [
@@ -807,6 +780,11 @@ export default function IterraVitalityDropdown() {
         title: "DIY Eternal Beauty Recipes",
         recipes: [
           {
+            name: "Eternal Beauty Recipes",
+            ingredients: [],
+            instructions: ""
+          },
+          {
             name: "Cellular Renewal Morning Elixir",
             ingredients: [
               { name: "Active Botanical Duo Capsules (1)", slug: "yarrow-pom-capsules" },
@@ -852,35 +830,42 @@ export default function IterraVitalityDropdown() {
     hydration: {
       title: "Foundation: Hydration",
       guideline: "35 mL per kg of body weight daily. Increase based on activity level and environment.",
-      protocol: [
-        {
-          time: "Morning (Energize & Cleanse)",
-          instruction: "1-2 drops of citrus oil in water",
-          link: doterraGoUrl("lemon"),
-          linkText: "Lemon Oil"
-        },
-        {
-          time: "Noon (Focus & Digest)",
-          instruction: "1 drop of mint oil in water",
-          link: doterraGoUrl("peppermint"),
-          linkText: "Peppermint Oil"
-        },
-        {
-          time: "Evening (Calm & Soothe)",
-          instruction: "1-2 drops of floral oil in warm water",
-          link: doterraGoUrl("lavender"),
-          linkText: "Lavender Oil"
-        }
-      ]
-    },
-    sleep: {
-      title: "Foundation: Sleep Support",
-      description: "Lavender Essential Oil: Premium therapeutic-grade lavender for relaxation, calm, and restful sleep support.",
-      link: doterraGoUrl("lavender"),
-      linkText: "Shop Lavender Essential Oil"
-    },
-    weightAndActivity: {
-      title: "Foundation: Weight & Physical Activity Guidelines",
+      ayurvedicWaterRoutine: {
+        title: "Ayurvedic-Inspired Oil-Infused Water Routine",
+        summary: "This routine aligns with Ayurvedic principles: matching dosha-dominant times of day (Kapha morning, Pitta midday, Vata evening), supporting agni (digestion), detoxification, and emotional balance. Use room-temperature or warm water (never cold—cold extinguishes agni). Add oils to a glass (8-12 oz), stir, sip slowly while seated.",
+        routines: [
+          {
+            period: "Morning (Energize & Cleanse)",
+            time: "Upon waking, 6-8 AM (early Kapha time, after sunrise or Brahma Muhurta)",
+            why: "Flushes overnight toxins (ama), stimulates elimination, kindles digestive fire (agni), boosts energy/metabolism, and invigorates the mind/body for the day. Citrus oils enhance cleansing and uplift mood.",
+            temperature: "Room temperature or slightly warm (promotes absorption without shocking system)",
+            recipe: "1-2 drops Lemon Oil in water (bright, detoxifying, supports liver/skin)"
+          },
+          {
+            period: "Noon (Focus & Digest)",
+            time: "Midday, 12-2 PM (peak Pitta time, when digestion is strongest)",
+            why: "Supports peak agni for lunch digestion, cools internal heat, sharpens mental focus/alertness, and prevents afternoon slump. Mint oils refresh breath, aid digestion, and clear mental fog.",
+            temperature: "Room temperature (cools Pitta fire without dulling digestion)",
+            recipe: "1 drop Peppermint Oil in water (cooling, digestive stimulant, enhances concentration)"
+          },
+          {
+            period: "Evening (Calm & Soothe)",
+            time: "Early evening, 6-8 PM (transition to Vata time, before dinner or wind-down)",
+            why: "Calms nervous system, reduces Vata anxiety/stress accumulated from day, prepares for restful sleep, and soothes digestion/emotions. Floral oils promote relaxation and emotional balance.",
+            temperature: "Warm (grounds Vata, aids relaxation and absorption)",
+            recipe: "1-2 drops Lavender Oil in warm water (calming, soothing, supports restful transition to night)"
+          }
+        ],
+        note: "Drink mindfully, listening to thirst. Adjust drops for taste (oils are potent). Always use therapeutic-grade oils safe for internal use. For personalized dosha tweaks, consult an Ayurvedic practitioner."
+      },
+      diy: {
+        title: "DIY Flowing Form Recipes",
+        recipes: [
+          { name: "Flowing Form Recipes" },
+          { name: "Metabolism Boost Morning Water" },
+          { name: "Post-Yoga Recovery Massage Oil" }
+        ]
+      },
       description: "Evidence-based guidelines for maintaining healthy weight and physical activity levels across all life stages.",
       men: {
         title: "Men's Guidelines",
@@ -891,47 +876,21 @@ export default function IterraVitalityDropdown() {
             strength: "2+ days/week full-body strength training",
             flexibility: "2-3 days/week stretching/mobility work",
             recovery: "1-2 rest days/week for muscle repair"
+          diy: {
+            title: "DIY Radiance Recipes",
+            recipes: [
+              { name: "Radiance Recipes" },
+              { name: "Morning Radiance Ritual Mist" }
+            ]
           },
-          {
-            range: "Ages 31-50",
-            activity: "150-300 min/week moderate aerobic (brisk walking, cycling)",
-            strength: "2-3 days/week strength training (focus on maintaining muscle mass)",
-            flexibility: "3 days/week stretching (prevent stiffness)",
-            recovery: "2 rest days/week; prioritize sleep 7-9 hours"
-          },
-          {
-            range: "Ages 51-70",
-            activity: "150 min/week moderate aerobic (walking, swimming)",
-            strength: "2 days/week functional strength (maintain independence)",
-            flexibility: "Daily gentle stretching, balance work 2-3x/week",
-            recovery: "Active recovery (gentle movement); monitor joint health"
-          },
-          {
-            range: "Ages 70+",
-            activity: "As able, focus on daily movement (walking 20-30 min)",
-            strength: "Light resistance 2x/week (resistance bands, bodyweight)",
-            flexibility: "Daily mobility work; chair yoga; fall prevention exercises",
             recovery: "Prioritize rest, hydration, and gradual progression"
-          }
-        ],
-        weightGuidelines: "Healthy BMI: 18.5-24.9. Waist circumference: <40 inches (102 cm). Focus on muscle mass maintenance, especially after age 30."
-      },
-      women: {
-        title: "Women's Guidelines",
-        ageGroups: [
-          {
-            range: "Ages 18-30",
-            activity: "150-300 min/week moderate OR 75-150 min/week vigorous activity",
-            strength: "2+ days/week strength training (bone density support)",
-            flexibility: "2-3 days/week yoga, Pilates, or stretching",
-            recovery: "1-2 rest days; adjust intensity during menstrual cycle",
-            cycleNote: "Follicular phase (days 1-14): Higher intensity. Luteal phase (days 15-28): Moderate intensity, more rest."
+          diy: {
+            title: "DIY Eternal Beauty Recipes",
+            recipes: [
+              { name: "Eternal Beauty Recipes" },
+              { name: "Cellular Renewal Morning Elixir" }
+            ]
           },
-          {
-            range: "Ages 31-50",
-            activity: "150-300 min/week moderate aerobic activity",
-            strength: "2-3 days/week resistance training (combat muscle loss)",
-            flexibility: "3-4 days/week stretching, yoga",
             recovery: "2 rest days; prioritize stress management and sleep",
             cycleNote: "Peri-menopause: Adjust based on energy levels and hormonal fluctuations."
           },
@@ -1603,21 +1562,28 @@ export default function IterraVitalityDropdown() {
         <div style={{marginBottom:20}}>
           <h5 style={{fontSize:14,color:"var(--champagne)",fontWeight:600,marginBottom:6}}>{foundationalResources.hydration.title}</h5>
           <p style={{fontSize:13,color:"rgba(245,222,179,0.9)",marginBottom:8,lineHeight:1.6}}><strong>Guideline:</strong> {foundationalResources.hydration.guideline}</p>
-          <p style={{fontSize:13,color:"var(--rosegold)",marginBottom:8}}>Therapeutic Waters Protocol (3 times daily):</p>
-          <div style={{display:"flex",flexDirection:"column",gap:8}}>
-            {foundationalResources.hydration.protocol.map((item, i) => (
-              <div key={i} style={{padding:8,borderRadius:8,background:"rgba(245,222,179,0.05)"}}>
-                <div style={{fontSize:12,color:"var(--rosegold)",fontWeight:600,marginBottom:4}}>{item.time}</div>
-                <div style={{fontSize:12,color:"rgba(245,222,179,0.9)",marginBottom:6}}>{item.instruction}</div>
-                <button
-                  onClick={() => openLink(item.link)}
-                  style={{background:"transparent",border:"1px solid rgba(245,222,179,0.2)",padding:"4px 10px",borderRadius:6,color:"var(--champagne)",cursor:"pointer",fontSize:11}}
-                >
-                  {item.linkText} →
-                </button>
+          {foundationalResources.hydration.ayurvedicWaterRoutine && (
+            <details open style={{marginBottom:12,background:"rgba(245,222,179,0.06)",borderRadius:8,padding:12,border:"1px solid rgba(245,222,179,0.13)"}}>
+              <summary style={{fontWeight:600,color:"var(--rosegold)",fontSize:13,cursor:"pointer"}}>
+                {foundationalResources.hydration.ayurvedicWaterRoutine.title}
+              </summary>
+              <div style={{marginTop:8,fontSize:13,color:"rgba(245,222,179,0.92)"}}>
+                <div style={{marginBottom:8}}>{foundationalResources.hydration.ayurvedicWaterRoutine.summary}</div>
+                {foundationalResources.hydration.ayurvedicWaterRoutine.routines.map((routine, idx) => (
+                  <div key={idx} style={{marginBottom:12,padding:10,borderRadius:6,background:"rgba(245,222,179,0.04)",border:"1px solid rgba(245,222,179,0.08)"}}>
+                    <div style={{fontWeight:600,color:"var(--rosegold)",fontSize:12,marginBottom:4}}>{routine.period}</div>
+                    <div style={{fontSize:12,color:"#e6b7a5",marginBottom:2}}><strong>Time:</strong> {routine.time}</div>
+                    <div style={{fontSize:12,color:"rgba(245,222,179,0.9)",marginBottom:2}}><strong>Why:</strong> {routine.why}</div>
+                    <div style={{fontSize:12,color:"rgba(245,222,179,0.9)",marginBottom:2}}><strong>Temperature:</strong> {routine.temperature}</div>
+                    <div style={{fontSize:12,color:"rgba(245,222,179,0.9)",marginBottom:2}}><strong>Recipe:</strong> {routine.recipe}</div>
+                  </div>
+                ))}
+                {foundationalResources.hydration.ayurvedicWaterRoutine.note && (
+                  <div style={{marginTop:6,fontStyle:"italic",color:"#bfa77a"}}>{foundationalResources.hydration.ayurvedicWaterRoutine.note}</div>
+                )}
               </div>
-            ))}
-          </div>
+            </details>
+          )}
         </div>
       )}
 
@@ -1684,24 +1650,54 @@ export default function IterraVitalityDropdown() {
       )}
 
       {isAgeless && agelessType && (
-        <div style={{marginBottom:20}}>
-          <h5 style={{fontSize:14,color:"var(--champagne)",fontWeight:600,marginBottom:8}}>
-            {agelessType === 'children' ? foundationalResources.portionSizesChildren.title : foundationalResources.portionSizesMature.title}
-          </h5>
-          <div style={{display:"grid",gap:8}}>
-            {(agelessType === 'children' ? foundationalResources.portionSizesChildren.portions : foundationalResources.portionSizesMature.portions).map((portion, i) => (
-              <div key={i} style={{padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)",border:"1px solid rgba(245,222,179,0.08)"}}>
-                <div style={{fontSize:12,color:"var(--rosegold)",fontWeight:600,marginBottom:2}}>{portion.category}</div>
-                <div style={{fontSize:11,color:"rgba(245,222,179,0.85)",lineHeight:1.5}}>{portion.serving}</div>
-              </div>
-            ))}
+        <>
+          {/* Hydration Foundation for Ageless Vitality */}
+          <div style={{marginBottom:20}}>
+            <h5 style={{fontSize:14,color:"var(--champagne)",fontWeight:600,marginBottom:6}}>{foundationalResources.hydration.title}</h5>
+            <p style={{fontSize:13,color:"rgba(245,222,179,0.9)",marginBottom:8,lineHeight:1.6}}><strong>Guideline:</strong> {foundationalResources.hydration.guideline}</p>
+            {foundationalResources.hydration.ayurvedicWaterRoutine && (
+              <details open style={{marginBottom:12,background:"rgba(245,222,179,0.06)",borderRadius:8,padding:12,border:"1px solid rgba(245,222,179,0.13)"}}>
+                <summary style={{fontWeight:600,color:"var(--rosegold)",fontSize:13,cursor:"pointer"}}>
+                  {foundationalResources.hydration.ayurvedicWaterRoutine.title}
+                </summary>
+                <div style={{marginTop:8,fontSize:13,color:"rgba(245,222,179,0.92)"}}>
+                  <div style={{marginBottom:8}}>{foundationalResources.hydration.ayurvedicWaterRoutine.summary}</div>
+                  {foundationalResources.hydration.ayurvedicWaterRoutine.routines.map((routine, idx) => (
+                    <div key={idx} style={{marginBottom:12,padding:10,borderRadius:6,background:"rgba(245,222,179,0.04)",border:"1px solid rgba(245,222,179,0.08)"}}>
+                      <div style={{fontWeight:600,color:"var(--rosegold)",fontSize:12,marginBottom:4}}>{routine.period}</div>
+                      <div style={{fontSize:12,color:"#e6b7a5",marginBottom:2}}><strong>Time:</strong> {routine.time}</div>
+                      <div style={{fontSize:12,color:"rgba(245,222,179,0.9)",marginBottom:2}}><strong>Why:</strong> {routine.why}</div>
+                      <div style={{fontSize:12,color:"rgba(245,222,179,0.9)",marginBottom:2}}><strong>Temperature:</strong> {routine.temperature}</div>
+                      <div style={{fontSize:12,color:"rgba(245,222,179,0.9)",marginBottom:2}}><strong>Recipe:</strong> {routine.recipe}</div>
+                    </div>
+                  ))}
+                  {foundationalResources.hydration.ayurvedicWaterRoutine.note && (
+                    <div style={{marginTop:6,fontStyle:"italic",color:"#bfa77a"}}>{foundationalResources.hydration.ayurvedicWaterRoutine.note}</div>
+                  )}
+                </div>
+              </details>
+            )}
           </div>
-          <div style={{marginTop:12,padding:8,borderRadius:6,background:"rgba(230,183,165,0.08)",border:"1px solid rgba(230,183,165,0.12)"}}>
-            <p style={{fontSize:11,color:"var(--rosegold)",lineHeight:1.6,fontStyle:"italic"}}>
-              {agelessType === 'children' ? foundationalResources.portionSizesChildren.snackTip : foundationalResources.portionSizesMature.snackTip}
-            </p>
+          {/* Portion Sizes Foundation for Ageless Vitality */}
+          <div style={{marginBottom:20}}>
+            <h5 style={{fontSize:14,color:"var(--champagne)",fontWeight:600,marginBottom:8}}>
+              {agelessType === 'children' ? foundationalResources.portionSizesChildren.title : foundationalResources.portionSizesMature.title}
+            </h5>
+            <div style={{display:"grid",gap:8}}>
+              {(agelessType === 'children' ? foundationalResources.portionSizesChildren.portions : foundationalResources.portionSizesMature.portions).map((portion, i) => (
+                <div key={i} style={{padding:8,borderRadius:6,background:"rgba(245,222,179,0.04)",border:"1px solid rgba(245,222,179,0.08)"}}>
+                  <div style={{fontSize:12,color:"var(--rosegold)",fontWeight:600,marginBottom:2}}>{portion.category}</div>
+                  <div style={{fontSize:11,color:"rgba(245,222,179,0.85)",lineHeight:1.5}}>{portion.serving}</div>
+                </div>
+              ))}
+            </div>
+            <div style={{marginTop:12,padding:8,borderRadius:6,background:"rgba(230,183,165,0.08)",border:"1px solid rgba(230,183,165,0.12)"}}>
+              <p style={{fontSize:11,color:"var(--rosegold)",lineHeight:1.6,fontStyle:"italic"}}>
+                {agelessType === 'children' ? foundationalResources.portionSizesChildren.snackTip : foundationalResources.portionSizesMature.snackTip}
+              </p>
+            </div>
           </div>
-        </div>
+        </>
       )}
 
       {!isAgeless && (
