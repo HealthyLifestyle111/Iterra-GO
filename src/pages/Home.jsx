@@ -86,7 +86,7 @@ export default function IterraVitalityDropdown() {
           description: "Essential daily energy, focus, and immune defense. Start here.",
           outcomes: "Users report improved energy levels, enhanced focus, and strengthened wellness routines within the first few months of consistent use",
           products: [
-            { name: "Energy & Stamina Complex", slug: "mito2max-energy-metabolism-complex" },
+            { name: "Energy & Stamina Complex", slug: "supplements-mito-2-max" },
             { name: "Protective Blend Softgels", slug: "on-guard-plus-softgels" },
             { name: "Peppermint Beadlets", slug: "peppermint-beadlets-digestive-health" }
           ]
@@ -1090,7 +1090,7 @@ export default function IterraVitalityDropdown() {
         "Metabolic health and lean muscle maintenance"
       ],
       products: [
-        { name: "Energy & Stamina Complex", slug: "mito2max-energy-metabolism-complex" },
+        { name: "Energy & Stamina Complex", slug: "supplements-mito-2-max" },
         { name: "Copaiba Essential Oil", slug: "copaiba" },
         { name: "Frankincense Essential Oil", slug: "frankincense" },
         { name: "Metabolism Support System", slug: "metapwr-metabolic-system" }
