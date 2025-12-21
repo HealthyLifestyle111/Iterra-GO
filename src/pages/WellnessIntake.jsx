@@ -386,12 +386,13 @@ export default function WellnessIntake() {
         status: 'pending'
       };
 
-      await base44.entities.WellnessIntake.create(intakePayload);
+      const createdIntake = await base44.entities.WellnessIntake.create(intakePayload);
 
-      alert('✨ Wellness intake submitted successfully! We\'ll be in touch soon with your personalized recommendations.');
-      navigate(createPageUrl("Home"));
       localStorage.removeItem('iterra_intake');
       localStorage.removeItem('iterra_intake_prev');
+      
+      // Redirect to results page with intake ID to generate personalized recommendations
+      navigate(createPageUrl("WellnessIntakeResult") + `?id=${createdIntake.id}`);
     } catch (error) {
       console.error("Error submitting intake:", error);
       alert("There was an error submitting your intake. Please try again or contact us directly.");
