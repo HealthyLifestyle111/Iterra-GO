@@ -176,8 +176,15 @@ export default function WellnessIntake() {
     const max = Math.max(counts.vata, counts.pitta, counts.kapha);
     if (max > 0) {
       const guess = Object.keys(counts).find(k => counts[k] === max);
-      setDoshaGuess(guess.charAt(0).toUpperCase() + guess.slice(1));
-      setFormData(prev => ({ ...prev, dosha: guess }));
+      const newDosha = guess.charAt(0).toUpperCase() + guess.slice(1);
+      setDoshaGuess(newDosha);
+      // Only update if dosha actually changed to avoid re-renders
+      setFormData(prev => {
+        if (prev.dosha !== guess) {
+          return { ...prev, dosha: guess };
+        }
+        return prev;
+      });
     }
   }, [formData.dosha_quiz]);
 
@@ -241,7 +248,13 @@ export default function WellnessIntake() {
   }, [formData.zodiac]);
 
   useEffect(() => {
-    setFormData(prev => ({ ...prev, chakras: prev.chakra_quiz.symptoms }));
+    setFormData(prev => {
+      // Only update if chakras actually changed to avoid infinite loop
+      if (JSON.stringify(prev.chakras) !== JSON.stringify(prev.chakra_quiz.symptoms)) {
+        return { ...prev, chakras: prev.chakra_quiz.symptoms };
+      }
+      return prev;
+    });
   }, [formData.chakra_quiz.symptoms]);
 
   const toggleSection = (id) => {
