@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: iterra-go
+    runtime: node
+    buildCommand: npm install && npm run build && cd server && npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DOTERRA_DEFAULT_SITE
+        value: jennawilliams1
+      - key: DOTERRA_REGION_PATH
+        value: /US/en
