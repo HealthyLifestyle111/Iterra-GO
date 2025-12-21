@@ -876,28 +876,23 @@ export default function IterraVitalityDropdown() {
             strength: "2+ days/week full-body strength training",
             flexibility: "2-3 days/week stretching/mobility work",
             recovery: "1-2 rest days/week for muscle repair"
-          diy: {
-            title: "DIY Radiance Recipes",
-            recipes: [
-              { name: "Radiance Recipes" },
-              { name: "Morning Radiance Ritual Mist" }
-            ]
           },
+          {
+            range: "Ages 31-50",
+            activity: "150-300 min/week moderate OR 75-150 min/week vigorous aerobic activity",
+            strength: "2+ days/week full-body strength training",
+            flexibility: "2-3 days/week stretching/mobility work",
             recovery: "Prioritize rest, hydration, and gradual progression"
-          diy: {
-            title: "DIY Eternal Beauty Recipes",
-            recipes: [
-              { name: "Eternal Beauty Recipes" },
-              { name: "Cellular Renewal Morning Elixir" }
-            ]
-          },
-            recovery: "2 rest days; prioritize stress management and sleep",
-            cycleNote: "Peri-menopause: Adjust based on energy levels and hormonal fluctuations."
           },
           {
             range: "Ages 51-70",
             activity: "150 min/week moderate activity (walking, dancing, water aerobics)",
             strength: "2-3 days/week strength training (bone health critical)",
+            flexibility: "2-3 days/week stretching/mobility work",
+            recovery: "2 rest days; prioritize stress management and sleep",
+            cycleNote: "Peri-menopause: Adjust based on energy levels and hormonal fluctuations."
+          }
+        ]
             flexibility: "Daily stretching; balance exercises 3x/week",
             recovery: "Focus on joint-friendly activities; monitor bone density",
             menopauseNote: "Post-menopause: Strength training essential for bone density and metabolic health."
