@@ -22,6 +22,7 @@ export function getActiveAssociate() {
 
     return {
       id: String(parsed?.id || DEFAULT.id).trim() || DEFAULT.id,
+      ownerId: String(parsed?.ownerId || "").trim(),
       referralUrl: String(parsed?.referralUrl || "").trim(),
       shareLinks: parsed?.shareLinks || {},
     };
@@ -34,6 +35,7 @@ export function setActiveAssociate(associate) {
   const storage = getStorage();
   const cleaned = {
     id: String(associate?.id || DEFAULT.id).trim() || DEFAULT.id,
+    ownerId: String(associate?.ownerId || "").trim(),
     referralUrl: String(associate?.referralUrl || "").trim(),
     shareLinks: associate?.shareLinks || {},
   };

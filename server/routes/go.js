@@ -8,30 +8,95 @@ const __dirname = dirname(__filename);
 
 const router = express.Router();
 
+const DOTERRA_BASE = "https://www.doterra.com/US/en";
+
 // Load data files
-let products, associates;
+let products, associates, verifiedSlugs;
 try {
   products = JSON.parse(readFileSync(join(__dirname, "../../src/data/products.json"), "utf8"));
   associates = JSON.parse(readFileSync(join(__dirname, "../../src/data/associates.json"), "utf8"));
+  verifiedSlugs = JSON.parse(readFileSync(join(__dirname, "../../verifiedSlugs.json"), "utf8"));
 } catch (err) {
-  console.error("Failed to load product/associate data:", err.message);
+  console.error("Failed to load data files:", err.message);
   products = {};
   associates = {};
+  verifiedSlugs = {};
 }
 
 /**
- * Handle /go/:associateId/:productId redirects
- * 
- * This implements a "first-click referral activation" pattern:
- * 1. First click: redirect to associate's referral URL (activates account)
- * 2. Subsequent clicks: go directly to product (user is already activated)
- * 
- * This ensures proper attribution while providing good UX
+ * Resolve a product key to verified slug
+ */
+function resolveSlug(key) {
+  if (!key) return null;
+  const normalized = String(key).toLowerCase().replace(/\s+/g, '-').trim();
+  return verifiedSlugs[normalized] || null;
+}
+
+/**
+ * Build product URL with OwnerID tracking
+ */
+function buildProductUrl(slug, ownerId = null) {
+  const baseUrl = `${DOTERRA_BASE}/p/${slug}`;
+  return ownerId ? `${baseUrl}?OwnerID=${ownerId}` : baseUrl;
+}
+
+/**
+ * Build search URL with OwnerID tracking
+ */
+function buildSearchUrl(query, ownerId = null) {
+  const searchQuery = encodeURIComponent(query);
+  const baseUrl = `${DOTERRA_BASE}/search?text=${searchQuery}`;
+  return ownerId ? `${baseUrl}&OwnerID=${ownerId}` : baseUrl;
+}
+
+/**
+ * NEW: Handle /api/doterra/go/:key redirects
+ * Uses OwnerID query parameter for stable tracking
+ */
+router.get("/:key", (req, res) => {
+  const { key } = req.params;
+  const { owner_id, site } = req.query;
+
+  console.log(`[doTERRA GO] Key: ${key}, OwnerID: ${owner_id || 'none'}, Site: ${site || 'none'}`);
+
+  // Try to resolve slug
+  const slug = resolveSlug(key);
+
+  if (slug) {
+    // Verified slug: build URL with OwnerID
+    const url = buildProductUrl(slug, owner_id);
+    console.log(`[doTERRA GO] Resolved to: ${url}`);
+    return res.redirect(301, url);
+  }
+
+  // Unknown slug: fallback to search
+  if (owner_id) {
+    const searchQuery = buildSearchUrl(key, owner_id);
+    console.log(`[doTERRA GO] Unknown slug, search with tracking: ${searchQuery}`);
+    return res.redirect(301, searchQuery);
+  }
+
+  // No owner_id: fallback to replicated home (sets cookie)
+  if (site) {
+    const homeUrl = `${DOTERRA_BASE}/site/${site}`;
+    console.log(`[doTERRA GO] Fallback to replicated home: ${homeUrl}`);
+    return res.redirect(301, homeUrl);
+  }
+
+  // Last resort: canonical product URL or search
+  const fallbackUrl = slug ? buildProductUrl(slug) : buildSearchUrl(key);
+  console.log(`[doTERRA GO] Fallback: ${fallbackUrl}`);
+  return res.redirect(301, fallbackUrl);
+});
+
+/**
+ * LEGACY: Handle /go/:associateId/:productId redirects
+ * Kept for backward compatibility
  */
 router.get("/:associateId/:productId", (req, res) => {
   const { associateId, productId } = req.params;
   
-  console.log(`[GO Route] ${associateId}/${productId}`);
+  console.log(`[GO Route LEGACY] ${associateId}/${productId}`);
 
   const associate = associates[associateId];
   const product = products[productId];
