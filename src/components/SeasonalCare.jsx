@@ -63,13 +63,7 @@ export default function SeasonalCare() {
         }
       ],
       diyRecipe: {
-        title: "Cooling Summer Mist",
-        ingredients: [
-          { name: "Peppermint (10 drops)", slug: "peppermint-oil" },
-          { name: "Lavender (8 drops)", slug: "lavender-oil" },
-          { name: "Distilled Water (4 oz)", slug: "peppermint-oil" }
-        ],
-        instructions: "Combine in spray bottle. Shake well. Mist on skin for instant cooling relief. Avoid eyes."
+        title: "Cooling Summer Mist"
       }
     },
     fall: {
@@ -96,13 +90,7 @@ export default function SeasonalCare() {
         }
       ],
       diyRecipe: {
-        title: "Autumn Spice Immune Booster",
-        ingredients: [
-          { name: "On Guard Blend (4 drops)", slug: "on-guard", use: "Immune protection" },
-          { name: "Cinnamon (2 drops)", slug: "cinnamon-bark", use: "Warming, antimicrobial" },
-          { name: "Wild Orange (3 drops)", slug: "wild-orange", use: "Uplifting, vitamin C support" }
-        ],
-        instructions: "Diffuse blend daily as temperatures drop. Creates cozy atmosphere while supporting immunity."
+        title: "Autumn Spice Immune Booster"
       }
     },
     winter: {
@@ -146,6 +134,103 @@ export default function SeasonalCare() {
 
   return (
     <div>
+      {/* Foundational Resources Section */}
+      <div style={{maxWidth:600,margin:"40px auto",padding:32,borderRadius:16,background:"rgba(218,165,112,0.08)",border:"1px solid rgba(218,165,112,0.13)",marginBottom:40}}>
+        <h2 style={{fontSize:24,color:"var(--champagne)",fontWeight:700,marginBottom:18}}>Foundational Resources</h2>
+        {/* Nutrition */}
+        <div style={{marginBottom:28}}>
+          <h3 style={{fontSize:17,color:"var(--champagne)",fontWeight:600,marginBottom:8}}>Foundation: Nutrition</h3>
+          <p style={{fontSize:13,color:"rgba(245,222,179,0.9)",marginBottom:10,lineHeight:1.6}}>
+            Core Supplement Bundle: A complete pack of multivitamins, probiotics and essential oils for daily foundational nutrition.
+          </p>
+          <a
+            href="https://www.doterra.com/US/en/p/foundational-wellness-kit"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,padding:"7px 16px",borderRadius:8,color:"#1b0b06",fontWeight:600,cursor:"pointer",fontSize:13,marginBottom:4,textDecoration:"none",display:"inline-block"}}
+          >
+            Shop Foundational Wellness Bundle
+          </a>
+        </div>
+        {/* Hydration */}
+        <div style={{marginBottom:28}}>
+          <h3 style={{fontSize:17,color:"var(--champagne)",fontWeight:600,marginBottom:8}}>Foundation: Hydration</h3>
+          <p style={{fontSize:13,color:"rgba(245,222,179,0.9)",marginBottom:8,lineHeight:1.6}}><strong>Guideline:</strong> 35 mL per kg of body weight daily. Increase based on activity level and environment.</p>
+          <p style={{fontSize:13,color:"var(--rosegold)",marginBottom:8}}>Therapeutic Waters Protocol (3 times daily):</p>
+          <div style={{display:"flex",flexDirection:"column",gap:8,marginBottom:12}}>
+            <div style={{padding:8,borderRadius:8,background:"rgba(245,222,179,0.05)"}}>
+              <div style={{fontSize:12,color:"var(--rosegold)",fontWeight:600,marginBottom:4}}>Morning (Energize & Cleanse)</div>
+              <div style={{fontSize:12,color:"rgba(245,222,179,0.9)",marginBottom:6}}>1-2 drops of citrus oil in water</div>
+              <a href="https://www.doterra.com/US/en/p/lemon-oil" target="_blank" rel="noopener noreferrer"
+                style={{background:"transparent",border:"1px solid rgba(245,222,179,0.2)",padding:"4px 10px",borderRadius:6,color:"var(--champagne)",cursor:"pointer",fontSize:11,textDecoration:"none",display:"inline-block"}}>
+                Lemon Oil →
+              </a>
+            </div>
+            <div style={{padding:8,borderRadius:8,background:"rgba(245,222,179,0.05)"}}>
+              <div style={{fontSize:12,color:"var(--rosegold)",fontWeight:600,marginBottom:4}}>Noon (Focus & Digest)</div>
+              <div style={{fontSize:12,color:"rgba(245,222,179,0.9)",marginBottom:6}}>1 drop of mint oil in water</div>
+              <a href="https://www.doterra.com/US/en/p/peppermint-oil" target="_blank" rel="noopener noreferrer"
+                style={{background:"transparent",border:"1px solid rgba(245,222,179,0.2)",padding:"4px 10px",borderRadius:6,color:"var(--champagne)",cursor:"pointer",fontSize:11,textDecoration:"none",display:"inline-block"}}>
+                Peppermint Oil →
+              </a>
+            </div>
+            <div style={{padding:8,borderRadius:8,background:"rgba(245,222,179,0.05)"}}>
+              <div style={{fontSize:12,color:"var(--rosegold)",fontWeight:600,marginBottom:4}}>Evening (Calm & Soothe)</div>
+              <div style={{fontSize:12,color:"rgba(245,222,179,0.9)",marginBottom:6}}>1-2 drops of floral oil in warm water</div>
+              <a href="https://www.doterra.com/US/en/p/lavender-oil" target="_blank" rel="noopener noreferrer"
+                style={{background:"transparent",border:"1px solid rgba(245,222,179,0.2)",padding:"4px 10px",borderRadius:6,color:"var(--champagne)",cursor:"pointer",fontSize:11,textDecoration:"none",display:"inline-block"}}>
+                Lavender Oil →
+              </a>
+            </div>
+          </div>
+          {/* Ayurvedic-Inspired Oil-Infused Water Routine */}
+          <div style={{marginTop:16,marginBottom:12,padding:16,background:"rgba(245,222,179,0.06)",borderRadius:8,border:"1px solid rgba(245,222,179,0.13)"}}>
+            <h4 style={{fontWeight:700,color:"var(--rosegold)",fontSize:15,marginBottom:8}}>Ayurvedic-Inspired Oil-Infused Water Routine</h4>
+            <div style={{fontSize:13,color:"rgba(245,222,179,0.92)",marginBottom:8}}>
+              This routine aligns with Ayurvedic principles: matching dosha-dominant times of day (Kapha morning, Pitta midday, Vata evening), supporting agni (digestion), detoxification, and emotional balance. Use room-temperature or warm water (never cold—cold extinguishes agni). Add oils to a glass (8-12 oz), stir, sip slowly while seated.
+            </div>
+            <div style={{marginBottom:10}}>
+              <strong>Morning (Energize & Cleanse)</strong><br/>
+              <span style={{fontSize:12}}><b>Time:</b> Upon waking, 6-8 AM (early Kapha time, after sunrise or Brahma Muhurta).<br/>
+              <b>Why:</b> Flushes overnight toxins (ama), stimulates elimination, kindles digestive fire (agni), boosts energy/metabolism, and invigorates the mind/body for the day. Citrus oils enhance cleansing and uplift mood.<br/>
+              <b>Temperature:</b> Room temperature or slightly warm (promotes absorption without shocking system).<br/>
+              <b>Recipe:</b> 1-2 drops Lemon Oil in water (bright, detoxifying, supports liver/skin).</span>
+            </div>
+            <div style={{marginBottom:10}}>
+              <strong>Noon (Focus & Digest)</strong><br/>
+              <span style={{fontSize:12}}><b>Time:</b> Midday, 12-2 PM (peak Pitta time, when digestion is strongest).<br/>
+              <b>Why:</b> Supports peak agni for lunch digestion, cools internal heat, sharpens mental focus/alertness, and prevents afternoon slump. Mint oils refresh breath, aid digestion, and clear mental fog.<br/>
+              <b>Temperature:</b> Room temperature (cools Pitta fire without dulling digestion).<br/>
+              <b>Recipe:</b> 1 drop Peppermint Oil in water (cooling, digestive stimulant, enhances concentration).</span>
+            </div>
+            <div style={{marginBottom:10}}>
+              <strong>Evening (Calm & Soothe)</strong><br/>
+              <span style={{fontSize:12}}><b>Time:</b> Early evening, 6-8 PM (transition to Vata time, before dinner or wind-down).<br/>
+              <b>Why:</b> Calms nervous system, reduces Vata anxiety/stress accumulated from day, prepares for restful sleep, and soothes digestion/emotions. Floral oils promote relaxation and emotional balance.<br/>
+              <b>Temperature:</b> Warm (grounds Vata, aids relaxation and absorption).<br/>
+              <b>Recipe:</b> 1-2 drops Lavender Oil in warm water (calming, soothing, supports restful transition to night).</span>
+            </div>
+            <div style={{marginTop:8,fontSize:12}}>
+              Drink mindfully, listening to thirst. Adjust drops for taste (oils are potent). Always use therapeutic-grade oils safe for internal use. For personalized dosha tweaks, consult an Ayurvedic practitioner.
+            </div>
+          </div>
+        </div>
+        {/* Sleep Support */}
+        <div style={{marginBottom:12}}>
+          <h3 style={{fontSize:17,color:"var(--champagne)",fontWeight:600,marginBottom:8}}>Foundation: Sleep Support</h3>
+          <p style={{fontSize:13,color:"rgba(245,222,179,0.9)",marginBottom:8,lineHeight:1.6}}>
+            Lavender Essential Oil: Premium therapeutic support for restful sleep and relaxation. Diffuse at bedtime or apply to pulse points.
+          </p>
+          <a
+            href="https://www.doterra.com/US/en/p/lavender-oil"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:0,padding:"7px 16px",borderRadius:8,color:"#1b0b06",fontWeight:600,cursor:"pointer",fontSize:13,textDecoration:"none",display:"inline-block"}}
+          >
+            Shop Lavender Oil
+          </a>
+        </div>
+      </div>
       <div style={{padding:24,borderRadius:16,background:"linear-gradient(180deg, rgba(218,165,112,0.12), rgba(185,135,93,0.08))",border:"1px solid rgba(218,165,112,0.2)",marginBottom:24}}>
         <h3 style={{fontSize:22,color:"var(--champagne)",marginBottom:10,fontWeight:700}}>🌿 Seasonal Wellness Care</h3>
         <p style={{fontSize:14,color:"var(--rosegold)",lineHeight:1.6}}>
