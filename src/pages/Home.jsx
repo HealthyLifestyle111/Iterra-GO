@@ -144,43 +144,17 @@ export default function IterraVitalityDropdown() {
           },
           {
             name: "Pre-Workout Energy Smoothie",
-            diy: {
-              title: "DIY Athletic Performance Recipes",
-              recipes: [
-                { name: "Athletic Performance Recipes" },
-                { name: "Post-Workout Recovery Protein Shake" },
-                { name: "Deep Muscle Recovery Massage Oil" }
-              ]
-            },
-          description: "Support healthy metabolism, inflammation response, and digestive function. The essential stack.",
-          outcomes: "Users report improved metabolism support, digestive comfort, and healthy weight management when combined with diet and exercise",
-          products: [
-            { name: "Metabolic Blend Essential Oil", slug: "metapwr-oil" },
-            { name: "Turmeric Dual Chamber Capsules", slug: "turmeric-dual-chamber-capsules" },
-            { name: "Digestive Enzyme Complex", slug: "terrazyme-digestive-enzyme-complex" }
-          diy: {
-            title: "DIY Leadership & Presence Recipes",
-            recipes: [
-              { name: "Leadership & Presence Recipes" },
-              { name: "Executive Focus Diffuser Blend" }
+            description: "Support healthy metabolism, inflammation response, and digestive function. The essential stack.",
+            outcomes: "Users report improved metabolism support, digestive comfort, and healthy weight management when combined with diet and exercise",
+            products: [
+              { name: "Metabolic Blend Essential Oil", slug: "metapwr-oil" },
+              { name: "Turmeric Dual Chamber Capsules", slug: "turmeric-dual-chamber-capsules" },
+              { name: "Digestive Enzyme Complex", slug: "terrazyme-digestive-enzyme-complex" },
+              { name: "Marjoram Essential Oil", slug: "marjoram-oil" },
+              { name: "Wintergreen Essential Oil", slug: "wintergreen-oil" }
             ]
           },
-            { name: "Marjoram Essential Oil", slug: "marjoram-oil" },
-            { name: "Wintergreen Essential Oil", slug: "wintergreen-oil" }
-          diy: {
-            title: "DIY Legacy & Longevity Recipes",
-            recipes: [
-              { name: "Legacy & Longevity Recipes" },
-              { name: "Cellular Longevity Morning Elixir" }
-            ]
-          },
-      diy: {
-        title: "DIY Sovereign Recipes",
-        recipes: [
-          { name: "Sovereign Recipes" },
-          { name: "Hormone Balance Smoothie" }
-        ]
-      },
+          {
             name: "Deep Muscle Recovery Massage Oil",
             ingredients: [
               { name: "Soothing Blend Rub (2 tablespoons)", slug: "deep-blue-soothing-blend" },
