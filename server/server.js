@@ -2,6 +2,11 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import OpenAI from "openai";
 import goRouter from "./routes/go.js";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 app.use(express.json({ limit: "1mb" }));
@@ -393,29 +398,45 @@ const VERIFIED = new Set([
   "ylang-ylang-oil",
 ]);
 
+// Helper functions for doTERRA link building
+function canonicalProduct(slug) {
+  return `https://www.doterra.com/US/en/p/${slug}`;
+}
+
+function tracked(url, ownerId) {
+  if (!ownerId) return url;
+  return url.includes("?")
+    ? `${url}&OwnerID=${encodeURIComponent(ownerId)}`
+    : `${url}?OwnerID=${encodeURIComponent(ownerId)}`;
+}
+
+function trackedHome(ownerId) {
+  return tracked("https://www.doterra.com/US/en", ownerId);
+}
+
 // DoTERRA link resolver endpoint
-// VERIFIED products: direct link to product page
-// Non-VERIFIED: redirect to associate homepage (safe, never 404)
+// Maps internal keys to real product slugs + appends OwnerID tracking
 app.get("/api/doterra/go/:key", (req, res) => {
-  const site = sanitizeSite(req.query.site);
-  const rawKey = sanitizeKey(req.params.key);
+  const key = (req.params.key || "").toString().trim();
+  const ownerId = (req.query.ownerId || "").toString().trim();
 
-  if (!rawKey) {
-    return res.redirect(302, buildReplicatedHome(site));
+  if (!key) {
+    return res.redirect(302, trackedHome(ownerId));
   }
 
-  const keyLower = rawKey.toLowerCase();
-  
-  // If product is verified, use direct link with associate site path
-  if (VERIFIED.has(keyLower)) {
-    return res.redirect(302, buildReplicatedProductUrl(site, keyLower));
+  // Check if key is in VERIFIED set (treat as slug directly)
+  const slug = VERIFIED.has(key) ? key : key;
+
+  // Validate slug format (never allow weird chars that could break)
+  if (!/^[a-z0-9-]+$/i.test(slug)) {
+    return res.redirect(302, trackedHome(ownerId));
   }
 
-  // For non-verified products: redirect to homepage (safe, never 404)
-  return res.redirect(302, buildReplicatedHome(site));
+  return res.redirect(302, tracked(canonicalProduct(slug), ownerId));
 });
 
-app.get("/", (_req, res) => res.send("Iterra-GO API is running. Try /api/health"));
+// Mount the /go redirect router BEFORE other routes
+app.use("/go", goRouter);
 
 app.get("/api/health", (_req, res) =>
   res.json({ ok: true, ai: hasKey ? "enabled" : "stub" })
@@ -461,8 +482,14 @@ app.post("/api/ai", async (req, res) => {
   }
 });
 
-// Mount the /go redirect router with prefix
-app.use("/go", goRouter);
+// Serve static files from the Vite build
+const distPath = join(__dirname, "../dist");
+app.use(express.static(distPath));
+
+// For client-side routing: serve index.html for all non-API, non-/go routes
+app.get("*", (_req, res) => {
+  res.sendFile(join(distPath, "index.html"));
+});
 
 const port = process.env.PORT || 10000;
 app.listen(port, () => console.log(`AI server listening on ${port}`));

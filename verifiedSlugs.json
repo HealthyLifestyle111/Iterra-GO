@@ -1,159 +1,174 @@
 {
-  "timestamp": "2025-12-20T19:45:42.945Z",
+  "timestamp": "2025-12-20T23:56:45.781Z",
   "totals": {
     "found": 117,
     "verified": 117,
     "invalid": 0
   },
   "verifiedSlugs": [
-    "aromatouch",
-    "adaptiv",
     "aromatouch-massage-blend",
-    "aromatouch-massage-blend-oil",
+    "adaptiv",
     "adaptiv-calming-blend",
+    "aromatouch-massage-blend-oil",
     "adaptiv-oil",
+    "aromatouch",
+    "balance",
+    "bergamot",
+    "balance-grounding-blend",
     "balance-grounding-blend-oil",
     "bergamot-oil",
-    "bone-nutrient-essential-complex",
-    "balance",
-    "balance-grounding-blend",
-    "bergamot",
     "breathe-respiratory-blend-oil",
-    "cassia",
-    "cedarwood",
     "cassia-oil",
-    "cedarwood-oil",
-    "cheer",
+    "cedarwood",
+    "bone-nutrient-essential-complex",
+    "cassia",
     "cheer-uplifting-blend",
+    "cheer",
+    "cedarwood-oil",
     "cheer-uplifting-blend-oil",
     "cinnamon-bark",
     "cinnamon-bark-oil",
-    "citrus-bliss-invigorating-blend",
     "citrus-bliss-oil",
     "citrus-bliss",
-    "clary-sage",
+    "citrus-bliss-invigorating-blend",
     "clary-sage-oil",
     "console",
     "console-comforting-blend",
+    "console-comforting-blend-oil",
     "copaiba",
+    "clary-sage",
     "copaiba-oil",
     "correct-x",
     "copaiba-softgels",
-    "console-comforting-blend-oil",
-    "deep-blue-oil",
-    "deep-blue",
     "deep-blue-soothing-blend",
+    "deep-blue",
+    "deep-blue-oil",
     "digestzen",
     "digestzen-digestive-blend",
     "digestzen-oil",
     "digestzen-terrazyme",
     "doterra-rose-touch",
-    "douglas-fir-oil",
-    "doterra-tea-tree",
     "eucalyptus",
+    "doterra-tea-tree",
+    "douglas-fir-oil",
     "eucalyptus-oil",
     "frankincense",
     "frankincense-oil",
     "geranium-oil",
+    "geranium",
     "ginger",
     "grapefruit",
-    "geranium",
     "ginger-oil",
-    "grapefruit-oil",
     "greens-digestive-health-supplement",
     "helichrysum",
-    "helichrysum-oil",
+    "grapefruit-oil",
     "himalayan-fir-oil",
-    "in-tune-oil",
+    "helichrysum-oil",
     "holiday-peace-oil",
     "home-essentials-kit",
-    "home-essentials-enrollment-kit",
     "intune",
+    "home-essentials-enrollment-kit",
+    "in-tune-oil",
     "intune-focus-blend",
     "lavender",
-    "lemongrass",
-    "lemon-oil",
     "lavender-oil",
     "lemon",
-    "lemongrass-oil",
+    "lemongrass",
+    "lemon-oil",
     "marjoram",
-    "marjoram-oil",
+    "lemongrass-oil",
     "melaleuca",
-    "metapwr-kit",
-    "melaleuca-oil",
-    "metapwr-metabolic-blend",
+    "marjoram-oil",
     "metapwr-oil",
+    "metapwr-metabolic-blend",
+    "melaleuca-oil",
+    "metapwr-system",
+    "metapwr-kit",
     "mito2max-energy-metabolism-complex",
     "my-new-product",
-    "metapwr-system",
     "myrrh",
-    "myrrh-oil",
     "on-guard-oil",
+    "myrrh-oil",
     "on-guard",
     "on-guard-protective-blend",
-    "on-guard-plus-softgels",
     "oregano",
-    "oregano-oil",
+    "on-guard-plus-softgels",
     "peppermint",
-    "peppermint-oil",
+    "oregano-oil",
+    "peppermint-beadlets-digestive-health",
     "purify",
-    "phytoestrogen-complex",
+    "peppermint-oil",
     "purify-cleansing-blend",
     "purify-oil",
-    "peppermint-beadlets-digestive-health",
+    "phytoestrogen-complex",
+    "rose",
     "rose-oil",
     "rose-touch",
     "rosemary",
-    "rosemary-oil",
     "sandalwood",
-    "rose",
+    "rosemary-oil",
     "sandalwood-oil",
-    "vegetable-capsules",
-    "supplements-mito-2-max",
     "siberian-fir-oil",
-    "terrazyme-digestive-enzyme-complex",
+    "supplements-mito-2-max",
     "terrazyme",
+    "vegetable-capsules",
+    "terrazyme-digestive-enzyme-complex",
     "veggie-caps",
-    "wild-orange",
-    "wild-orange-oil",
     "vetiver",
     "wassail-oil",
+    "wild-orange",
     "vetiver-oil",
+    "wild-orange-oil",
     "wintergreen",
     "ylang-ylang",
-    "ylang-ylang-oil",
-    "wintergreen-oil"
+    "wintergreen-oil",
+    "ylang-ylang-oil"
   ],
   "verified": {
-    "aromatouch": {
+    "aromatouch-massage-blend": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/aromatouch"
+      "finalUrl": "https://www.doterra.com/US/en/p/aromatouch-massage-blend"
     },
     "adaptiv": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/adaptiv"
     },
-    "aromatouch-massage-blend": {
+    "adaptiv-calming-blend": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/aromatouch-massage-blend"
+      "finalUrl": "https://www.doterra.com/US/en/p/adaptiv-calming-blend"
     },
     "aromatouch-massage-blend-oil": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/aromatouch-massage-blend-oil"
     },
-    "adaptiv-calming-blend": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/adaptiv-calming-blend"
-    },
     "adaptiv-oil": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/adaptiv-oil"
+    },
+    "aromatouch": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/aromatouch"
+    },
+    "balance": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/balance"
+    },
+    "bergamot": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/bergamot"
+    },
+    "balance-grounding-blend": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/balance-grounding-blend"
     },
     "balance-grounding-blend-oil": {
       "ok": true,
@@ -165,60 +180,45 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/bergamot-oil"
     },
-    "bone-nutrient-essential-complex": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/bone-nutrient-essential-complex"
-    },
-    "balance": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/balance"
-    },
-    "balance-grounding-blend": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/balance-grounding-blend"
-    },
-    "bergamot": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/bergamot"
-    },
     "breathe-respiratory-blend-oil": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/breathe-respiratory-blend-oil"
-    },
-    "cassia": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/cassia"
-    },
-    "cedarwood": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/cedarwood"
     },
     "cassia-oil": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/cassia-oil"
     },
-    "cedarwood-oil": {
+    "cedarwood": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/cedarwood-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/cedarwood"
+    },
+    "bone-nutrient-essential-complex": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/bone-nutrient-essential-complex"
+    },
+    "cassia": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/cassia"
+    },
+    "cheer-uplifting-blend": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/cheer-uplifting-blend"
     },
     "cheer": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/cheer"
     },
-    "cheer-uplifting-blend": {
+    "cedarwood-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/cheer-uplifting-blend"
+      "finalUrl": "https://www.doterra.com/US/en/p/cedarwood-oil"
     },
     "cheer-uplifting-blend-oil": {
       "ok": true,
@@ -235,11 +235,6 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/cinnamon-bark-oil"
     },
-    "citrus-bliss-invigorating-blend": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/citrus-bliss-invigorating-blend"
-    },
     "citrus-bliss-oil": {
       "ok": true,
       "status": 200,
@@ -250,10 +245,10 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/citrus-bliss"
     },
-    "clary-sage": {
+    "citrus-bliss-invigorating-blend": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/clary-sage"
+      "finalUrl": "https://www.doterra.com/US/en/p/citrus-bliss-invigorating-blend"
     },
     "clary-sage-oil": {
       "ok": true,
@@ -270,10 +265,20 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/console-comforting-blend"
     },
+    "console-comforting-blend-oil": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/console-comforting-blend-oil"
+    },
     "copaiba": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/copaiba"
+    },
+    "clary-sage": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/clary-sage"
     },
     "copaiba-oil": {
       "ok": true,
@@ -290,25 +295,20 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/copaiba-softgels"
     },
-    "console-comforting-blend-oil": {
+    "deep-blue-soothing-blend": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/console-comforting-blend-oil"
-    },
-    "deep-blue-oil": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/deep-blue-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/deep-blue-soothing-blend"
     },
     "deep-blue": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/deep-blue"
     },
-    "deep-blue-soothing-blend": {
+    "deep-blue-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/deep-blue-soothing-blend"
+      "finalUrl": "https://www.doterra.com/US/en/p/deep-blue-oil"
     },
     "digestzen": {
       "ok": true,
@@ -335,20 +335,20 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/doterra-rose-touch"
     },
-    "douglas-fir-oil": {
+    "eucalyptus": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/douglas-fir-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/eucalyptus"
     },
     "doterra-tea-tree": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/doterra-tea-tree"
     },
-    "eucalyptus": {
+    "douglas-fir-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/eucalyptus"
+      "finalUrl": "https://www.doterra.com/US/en/p/douglas-fir-oil"
     },
     "eucalyptus-oil": {
       "ok": true,
@@ -370,6 +370,11 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/geranium-oil"
     },
+    "geranium": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/geranium"
+    },
     "ginger": {
       "ok": true,
       "status": 200,
@@ -380,20 +385,10 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/grapefruit"
     },
-    "geranium": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/geranium"
-    },
     "ginger-oil": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/ginger-oil"
-    },
-    "grapefruit-oil": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/grapefruit-oil"
     },
     "greens-digestive-health-supplement": {
       "ok": true,
@@ -405,20 +400,20 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/helichrysum"
     },
-    "helichrysum-oil": {
+    "grapefruit-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/helichrysum-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/grapefruit-oil"
     },
     "himalayan-fir-oil": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/himalayan-fir-oil"
     },
-    "in-tune-oil": {
+    "helichrysum-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/in-tune-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/helichrysum-oil"
     },
     "holiday-peace-oil": {
       "ok": true,
@@ -430,15 +425,20 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/home-essentials-kit"
     },
+    "intune": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/intune"
+    },
     "home-essentials-enrollment-kit": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/home-essentials-enrollment-kit"
     },
-    "intune": {
+    "in-tune-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/intune"
+      "finalUrl": "https://www.doterra.com/US/en/p/in-tune-oil"
     },
     "intune-focus-blend": {
       "ok": true,
@@ -450,16 +450,6 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/lavender"
     },
-    "lemongrass": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/lemongrass"
-    },
-    "lemon-oil": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/lemon-oil"
-    },
     "lavender-oil": {
       "ok": true,
       "status": 200,
@@ -470,45 +460,60 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/lemon"
     },
-    "lemongrass-oil": {
+    "lemongrass": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/lemongrass-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/lemongrass"
+    },
+    "lemon-oil": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/lemon-oil"
     },
     "marjoram": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/marjoram"
     },
-    "marjoram-oil": {
+    "lemongrass-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/marjoram-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/lemongrass-oil"
     },
     "melaleuca": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/melaleuca"
     },
-    "metapwr-kit": {
+    "marjoram-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/metapwr-kit"
+      "finalUrl": "https://www.doterra.com/US/en/p/marjoram-oil"
     },
-    "melaleuca-oil": {
+    "metapwr-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/melaleuca-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/metapwr-oil"
     },
     "metapwr-metabolic-blend": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/metapwr-metabolic-blend"
     },
-    "metapwr-oil": {
+    "melaleuca-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/metapwr-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/melaleuca-oil"
+    },
+    "metapwr-system": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/metapwr-system"
+    },
+    "metapwr-kit": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/metapwr-kit"
     },
     "mito2max-energy-metabolism-complex": {
       "ok": true,
@@ -520,25 +525,20 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/my-new-product"
     },
-    "metapwr-system": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/metapwr-system"
-    },
     "myrrh": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/myrrh"
     },
-    "myrrh-oil": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/myrrh-oil"
-    },
     "on-guard-oil": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/on-guard-oil"
+    },
+    "myrrh-oil": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/myrrh-oil"
     },
     "on-guard": {
       "ok": true,
@@ -550,40 +550,40 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/on-guard-protective-blend"
     },
-    "on-guard-plus-softgels": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/on-guard-plus-softgels"
-    },
     "oregano": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/oregano"
     },
-    "oregano-oil": {
+    "on-guard-plus-softgels": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/oregano-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/on-guard-plus-softgels"
     },
     "peppermint": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/peppermint"
     },
-    "peppermint-oil": {
+    "oregano-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/peppermint-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/oregano-oil"
+    },
+    "peppermint-beadlets-digestive-health": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/peppermint-beadlets-digestive-health"
     },
     "purify": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/purify"
     },
-    "phytoestrogen-complex": {
+    "peppermint-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/phytoestrogen-complex"
+      "finalUrl": "https://www.doterra.com/US/en/p/peppermint-oil"
     },
     "purify-cleansing-blend": {
       "ok": true,
@@ -595,10 +595,15 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/purify-oil"
     },
-    "peppermint-beadlets-digestive-health": {
+    "phytoestrogen-complex": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/peppermint-beadlets-digestive-health"
+      "finalUrl": "https://www.doterra.com/US/en/p/phytoestrogen-complex"
+    },
+    "rose": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/rose"
     },
     "rose-oil": {
       "ok": true,
@@ -615,65 +620,50 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/rosemary"
     },
-    "rosemary-oil": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/rosemary-oil"
-    },
     "sandalwood": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/sandalwood"
     },
-    "rose": {
+    "rosemary-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/rose"
+      "finalUrl": "https://www.doterra.com/US/en/p/rosemary-oil"
     },
     "sandalwood-oil": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/sandalwood-oil"
     },
-    "vegetable-capsules": {
+    "siberian-fir-oil": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/vegetable-capsules"
+      "finalUrl": "https://www.doterra.com/US/en/p/siberian-fir-oil"
     },
     "supplements-mito-2-max": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/supplements-mito-2-max"
     },
-    "siberian-fir-oil": {
+    "terrazyme": {
       "ok": true,
       "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/siberian-fir-oil"
+      "finalUrl": "https://www.doterra.com/US/en/p/terrazyme"
+    },
+    "vegetable-capsules": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/vegetable-capsules"
     },
     "terrazyme-digestive-enzyme-complex": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/terrazyme-digestive-enzyme-complex"
     },
-    "terrazyme": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/terrazyme"
-    },
     "veggie-caps": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/veggie-caps"
-    },
-    "wild-orange": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/wild-orange"
-    },
-    "wild-orange-oil": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/wild-orange-oil"
     },
     "vetiver": {
       "ok": true,
@@ -685,10 +675,20 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/wassail-oil"
     },
+    "wild-orange": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/wild-orange"
+    },
     "vetiver-oil": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/vetiver-oil"
+    },
+    "wild-orange-oil": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/wild-orange-oil"
     },
     "wintergreen": {
       "ok": true,
@@ -700,15 +700,15 @@
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/ylang-ylang"
     },
-    "ylang-ylang-oil": {
-      "ok": true,
-      "status": 200,
-      "finalUrl": "https://www.doterra.com/US/en/p/ylang-ylang-oil"
-    },
     "wintergreen-oil": {
       "ok": true,
       "status": 200,
       "finalUrl": "https://www.doterra.com/US/en/p/wintergreen-oil"
+    },
+    "ylang-ylang-oil": {
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.doterra.com/US/en/p/ylang-ylang-oil"
     }
   },
   "invalid": {}

@@ -28,8 +28,10 @@ try {
  * 
  * This ensures proper attribution while providing good UX
  */
-router.get("/go/:associateId/:productId", (req, res) => {
+router.get("/:associateId/:productId", (req, res) => {
   const { associateId, productId } = req.params;
+  
+  console.log(`[GO Route] ${associateId}/${productId}`);
 
   const associate = associates[associateId];
   const product = products[productId];
