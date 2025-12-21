@@ -50,48 +50,9 @@ function buildSearchUrl(query, ownerId = null) {
 }
 
 /**
- * NEW: Handle /api/doterra/go/:key redirects
- * Uses OwnerID query parameter for stable tracking
- */
-router.get("/:key", (req, res) => {
-  const { key } = req.params;
-  const { owner_id, site } = req.query;
-
-  console.log(`[doTERRA GO] Key: ${key}, OwnerID: ${owner_id || 'none'}, Site: ${site || 'none'}`);
-
-  // Try to resolve slug
-  const slug = resolveSlug(key);
-
-  if (slug) {
-    // Verified slug: build URL with OwnerID
-    const url = buildProductUrl(slug, owner_id);
-    console.log(`[doTERRA GO] Resolved to: ${url}`);
-    return res.redirect(301, url);
-  }
-
-  // Unknown slug: fallback to search
-  if (owner_id) {
-    const searchQuery = buildSearchUrl(key, owner_id);
-    console.log(`[doTERRA GO] Unknown slug, search with tracking: ${searchQuery}`);
-    return res.redirect(301, searchQuery);
-  }
-
-  // No owner_id: fallback to replicated home (sets cookie)
-  if (site) {
-    const homeUrl = `${DOTERRA_BASE}/site/${site}`;
-    console.log(`[doTERRA GO] Fallback to replicated home: ${homeUrl}`);
-    return res.redirect(301, homeUrl);
-  }
-
-  // Last resort: canonical product URL or search
-  const fallbackUrl = slug ? buildProductUrl(slug) : buildSearchUrl(key);
-  console.log(`[doTERRA GO] Fallback: ${fallbackUrl}`);
-  return res.redirect(301, fallbackUrl);
-});
-
-/**
- * LEGACY: Handle /go/:associateId/:productId redirects
+ * LEGACY: Handle /api/doterra/go/:associateId/:productId redirects
  * Kept for backward compatibility
+ * Must come BEFORE /:key route since it's more specific
  */
 router.get("/:associateId/:productId", (req, res) => {
   const { associateId, productId } = req.params;
@@ -130,6 +91,47 @@ router.get("/:associateId/:productId", (req, res) => {
   // User already activated - go directly to product
   console.log(`[Product] ${associateId}/${productId} - redirecting to ${product.canonicalUrl}`);
   return res.redirect(302, product.canonicalUrl);
+});
+
+/**
+ * NEW: Handle /api/doterra/go/:key redirects
+ * Uses OwnerID query parameter for stable tracking
+ * Must come AFTER the two-param route
+ */
+router.get("/:key", (req, res) => {
+  const { key } = req.params;
+  const { owner_id, site } = req.query;
+
+  console.log(`[doTERRA GO] Key: ${key}, OwnerID: ${owner_id || 'none'}, Site: ${site || 'none'}`);
+
+  // Try to resolve slug
+  const slug = resolveSlug(key);
+
+  if (slug) {
+    // Verified slug: build URL with OwnerID
+    const url = buildProductUrl(slug, owner_id);
+    console.log(`[doTERRA GO] Resolved to: ${url}`);
+    return res.redirect(301, url);
+  }
+
+  // Unknown slug: fallback to search
+  if (owner_id) {
+    const searchQuery = buildSearchUrl(key, owner_id);
+    console.log(`[doTERRA GO] Unknown slug, search with tracking: ${searchQuery}`);
+    return res.redirect(301, searchQuery);
+  }
+
+  // No owner_id: fallback to replicated home (sets cookie)
+  if (site) {
+    const homeUrl = `${DOTERRA_BASE}/site/${site}`;
+    console.log(`[doTERRA GO] Fallback to replicated home: ${homeUrl}`);
+    return res.redirect(301, homeUrl);
+  }
+
+  // Last resort: canonical product URL or search
+  const fallbackUrl = slug ? buildProductUrl(slug) : buildSearchUrl(key);
+  console.log(`[doTERRA GO] Fallback: ${fallbackUrl}`);
+  return res.redirect(301, fallbackUrl);
 });
 
 export default router;

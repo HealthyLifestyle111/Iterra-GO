@@ -414,29 +414,8 @@ function trackedHome(ownerId) {
   return tracked("https://www.doterra.com/US/en", ownerId);
 }
 
-// DoTERRA link resolver endpoint
-// Maps internal keys to real product slugs + appends OwnerID tracking
-app.get("/api/doterra/go/:key", (req, res) => {
-  const key = (req.params.key || "").toString().trim();
-  const ownerId = (req.query.ownerId || "").toString().trim();
-
-  if (!key) {
-    return res.redirect(302, trackedHome(ownerId));
-  }
-
-  // Check if key is in VERIFIED set (treat as slug directly)
-  const slug = VERIFIED.has(key) ? key : key;
-
-  // Validate slug format (never allow weird chars that could break)
-  if (!/^[a-z0-9-]+$/i.test(slug)) {
-    return res.redirect(302, trackedHome(ownerId));
-  }
-
-  return res.redirect(302, tracked(canonicalProduct(slug), ownerId));
-});
-
-// Mount the /go redirect router BEFORE other routes
-app.use("/go", goRouter);
+// Mount the doTERRA redirect router at /api/doterra/go
+app.use("/api/doterra/go", goRouter);
 
 app.get("/api/health", (_req, res) =>
   res.json({ ok: true, ai: hasKey ? "enabled" : "stub" })
