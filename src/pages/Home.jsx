@@ -1563,12 +1563,12 @@ export default function Home() {
       {!isAgeless && (
         <div style={{marginBottom:20}}>
           <h5 style={{fontSize:14,color:"var(--champagne)",fontWeight:600,marginBottom:6}}>{foundationalResources.sleep?.title ?? 'Sleep Support'}</h5>
-          <p style={{fontSize:13,color:"rgba(245,222,179,0.9)",marginBottom:8,lineHeight:1.6}}>{foundationalResources.sleep.description}</p>
+          <p style={{fontSize:13,color:"rgba(245,222,179,0.9)",marginBottom:8,lineHeight:1.6}}>{foundationalResources.sleep?.description ?? ''}</p>
           <button
-            onClick={() => openLink(foundationalResources.sleep.link)}
+            onClick={() => openLink(foundationalResources.sleep?.link ?? '#')}
             style={{background:"linear-gradient(90deg,var(--bronze),var(--rosegold))",border:"0",padding:"6px 12px",borderRadius:8,color:"#1b0b06",fontWeight:600,cursor:"pointer",fontSize:12}}
           >
-            {foundationalResources.sleep.linkText}
+            {foundationalResources.sleep?.linkText ?? 'Shop Sleep System'}
           </button>
         </div>
       )}
