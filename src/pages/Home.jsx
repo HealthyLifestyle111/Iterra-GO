@@ -6,10 +6,14 @@ import { doterraGoUrl } from "@/lib/doterraGo";
 import AssociateLogin from "../components/AssociateLogin";
 
 export default function Home() {
-  // DEBUG: Render marker
-  return <div style={{background:'#ff0',color:'#000',padding:12,fontWeight:'bold',fontSize:20,zIndex:9999}}>DEBUG: Home component is rendering</div>;
-
   // ...existing code...
+  // Place the debug marker at the top of the returned JSX
+  return (
+    <>
+      <div style={{background:'#ff0',color:'#000',padding:12,fontWeight:'bold',fontSize:20,zIndex:9999}}>DEBUG: Home component is rendering</div>
+      {/* ...existing Home component JSX... */}
+    </>
+  );
     // Auto-skip welcome modal to prevent white screen issues
     useEffect(() => {
       localStorage.setItem('associateSkipped', 'true');
