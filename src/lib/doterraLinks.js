@@ -47,7 +47,7 @@ export const DOTERRA_SLUG_FIX = {
   "clove": "clove-oil",
   "black-pepper": "black-pepper-oil",
   "cilantro": "cilantro-oil",
-  "fennel": "fennel-oil",
+  "fennel": "sweet-fennel-oil", // updated to correct slug
   "melissa": "melissa-oil",
   "patchouli": "patchouli-oil",
   "spearmint": "spearmint-oil",
@@ -60,15 +60,15 @@ export const DOTERRA_SLUG_FIX = {
   "cardamom": "cardamom-oil",
   "celery-seed": "celery-seed-oil",
   "coriander": "coriander-oil",
-  "dill": "dill-oil",
+  // "dill": "dill-oil", // still discontinued, no replacement
   "douglas-fir": "douglas-fir-oil",
   "green-mandarin": "doterra-green-mandarin",
   "jasmine": "jasmine-oil",
   "lime": "lime-oil",
   "petitgrain": "petitgrain-oil",
   "spikenard": "spikenard-oil",
-  "white-fir": "white-fir-oil",
-  "yarrow": "yarrow-oil",
+  "white-fir": "siberian-fir-oil", // updated to correct slug
+  // "yarrow": "yarrow-oil", // still discontinued, only yarrow-pom exists
   "spanish-sage": "spanish-sage-oil",
   
   // Blends that are already correctly formatted (keep as-is)
@@ -96,7 +96,7 @@ export const DOTERRA_SLUG_FIX = {
   "clove-oil": "clove-oil",
   "black-pepper-oil": "black-pepper-oil",
   "cilantro-oil": "cilantro-oil",
-  "fennel-oil": "fennel-oil",
+  // "fennel-oil": "fennel-oil", // removed, discontinued
   "melissa-oil": "melissa-oil",
   "patchouli-oil": "patchouli-oil",
   "spearmint-oil": "spearmint-oil",
@@ -109,7 +109,7 @@ export const DOTERRA_SLUG_FIX = {
   "cardamom-oil": "cardamom-oil",
   "celery-seed-oil": "celery-seed-oil",
   "coriander-oil": "coriander-oil",
-  "dill-oil": "dill-oil",
+  // "dill-oil": "dill-oil", // removed, discontinued
   "douglas-fir-oil": "douglas-fir-oil",
   "jasmine-oil": "jasmine-oil",
   "lime-oil": "lime-oil",
