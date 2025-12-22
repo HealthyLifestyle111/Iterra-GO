@@ -800,6 +800,12 @@ export default function IterraVitalityDropdown() {
   };
 
   const foundationalResources = {
+        sleep: {
+          title: "Foundation: Sleep Support",
+          description: "Premium therapeutic-grade system for relaxation, calm, and restful sleep support (includes Serenity Blend, Softgels, and Stick + Valerian).",
+          link: "https://www.doterra.com/US/en/p/serenity-sleep-system",
+          linkText: "Shop Serenity Sleep System"
+        },
     nutrition: {
       title: "Foundation: Nutrition",
       description: "Core Supplement Bundle: A complete pack of multivitamins, probiotics and essential oils for daily foundational nutrition.",
@@ -1514,7 +1520,7 @@ export default function IterraVitalityDropdown() {
 
       {!isAgeless && (
         <div style={{marginBottom:20}}>
-          <h5 style={{fontSize:14,color:"var(--champagne)",fontWeight:600,marginBottom:6}}>{foundationalResources.nutrition.title ?? 'Fallback Title'}</h5>
+          <h5 style={{fontSize:14,color:"var(--champagne)",fontWeight:600,marginBottom:6}}>{foundationalResources.nutrition?.title ?? 'Nutrition'}</h5>
           <p style={{fontSize:13,color:"rgba(245,222,179,0.9)",marginBottom:8,lineHeight:1.6}}>{foundationalResources.nutrition.description}</p>
           <button
             onClick={() => openLink(foundationalResources.nutrition.link)}
@@ -1527,7 +1533,7 @@ export default function IterraVitalityDropdown() {
 
       {!isAgeless && (
         <div style={{marginBottom:20}}>
-          <h5 style={{fontSize:14,color:"var(--champagne)",fontWeight:600,marginBottom:6}}>{foundationalResources.hydration.title ?? 'Fallback Title'}</h5>
+          <h5 style={{fontSize:14,color:"var(--champagne)",fontWeight:600,marginBottom:6}}>{foundationalResources.hydration?.title ?? 'Hydration'}</h5>
           <p style={{fontSize:13,color:"rgba(245,222,179,0.9)",marginBottom:8,lineHeight:1.6}}><strong>Guideline:</strong> {foundationalResources.hydration.guideline}</p>
           {foundationalResources.hydration.ayurvedicWaterRoutine && (
             <details open style={{marginBottom:12,background:"rgba(245,222,179,0.06)",borderRadius:8,padding:12,border:"1px solid rgba(245,222,179,0.13)"}}>
