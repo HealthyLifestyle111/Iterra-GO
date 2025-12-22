@@ -5,7 +5,7 @@ import { createPageUrl } from "@/utils";
 import { doterraGoUrl } from "@/lib/doterraGo";
 import AssociateLogin from "../components/AssociateLogin";
 
-export default function IterraVitalityDropdown() {
+export default function Home() {
     // Auto-skip welcome modal to prevent white screen issues
     useEffect(() => {
       localStorage.setItem('associateSkipped', 'true');
