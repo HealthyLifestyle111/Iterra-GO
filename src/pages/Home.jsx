@@ -1,4 +1,5 @@
 
+import FoundationsContent from "../components/FoundationsContent";
 
 export default function Home() {
   return (
