@@ -5,11 +5,6 @@ import { createPageUrl } from "@/utils";
 
 export default function Layout({ children, currentPageName }) {
   const location = useLocation();
-  
-  // Don't show layout on home page - it has its own complete design
-  if (currentPageName === "Home" || location.pathname === "/" || location.pathname === createPageUrl("Home")) {
-    return <>{children}</>;
-  }
 
   return (
     <div className="min-h-screen" style={{
