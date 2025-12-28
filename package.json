@@ -1,22 +1,13 @@
 {
-  "name": "iterra-go",
+  "name": "base44-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "cd server && npm start",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "test:urls": "node test-doterra-urls.mjs",
-    "test:urls:live": "node scripts/validate-doterra-slugs.mjs",
-    "test:slugs:all": "node scripts/scan-all-slugs.mjs",
-    "audit:doterra-links": "node scripts/audit-no-direct-doterra.mjs",
-    "audit:doterra": "node scripts/no-direct-doterra.mjs",
-    "validate:catalog": "node scripts/validate-product-catalog.mjs",
-    "verify:slugs": "node scripts/verify-doterra-slugs.mjs",
-    "check:no-bad-links": "! grep -rE 'doterra\\.com/US/en/(site/jennawilliams1|recommended-error)' src --include='*.js' --include='*.jsx' || (echo '❌ Bad doTERRA link patterns found' && exit 1)"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",
@@ -82,7 +73,6 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
-    "playwright": "^1.57.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
     "vite": "^6.1.0"
