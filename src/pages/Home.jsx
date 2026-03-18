@@ -649,8 +649,8 @@ body.no-scroll{overflow:hidden!important}
 .tagline{font-size:16px;letter-spacing:2px;font-weight:400;color:var(--rosegold);text-shadow:0 0 10px rgba(230,183,165,.6)}
 .flower-of-life-bg{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:580px;height:580px;opacity:.08;animation:flowerSpin 120s linear infinite;z-index:1;filter:blur(1px)}
 @keyframes flowerSpin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
-.service-container{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:30px;max-width:760px;margin-top:295px}
+.service-container{position:absolute;top:60%;left:50%;transform:translate(-50%,-50%);z-index:10}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:30px;max-width:760px;margin-top:0}
 .wellness-intake-top{position:absolute;top:250px;left:50%;transform:translateX(-50%);width:300px;height:72px;border-radius:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;font-weight:600;letter-spacing:.5px;z-index:15;color:var(--champagne);font-family:'Cinzel Decorative','Playfair Display',serif;background:linear-gradient(180deg,rgba(65,30,22,0.65),rgba(35,15,10,0.5));backdrop-filter:blur(18px) saturate(120%);border:1px solid rgba(245,222,179,.25);box-shadow:0 12px 36px rgba(0,0,0,.55),0 0 46px rgba(245,222,179,.22),inset 0 -6px 12px rgba(0,0,0,.35);animation:intakeBreath 6s ease-in-out infinite,intakeFloat 10s ease-in-out infinite;text-shadow:0 0 12px rgba(230,183,165,.45)}
 @keyframes intakeBreath{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.04)}}
 @keyframes intakeFloat{0%,100%{top:250px}50%{top:244px}}
@@ -714,7 +714,7 @@ body.no-scroll{overflow:hidden!important}
 
       <div className="service-container">
         <div className="service-grid">
-          <button ref__={triggerRef} className="service-button" onClick={() => { setShowDropdown(true); setSelectedMasculinePillar(null); }}>Masculine Vitality</button>
+          <button ref={triggerRef} className="service-button" onClick={() => { setShowDropdown(true); setSelectedMasculinePillar(null); }}>Masculine Vitality</button>
           <button className="service-button" onClick={() => { setShowFeminineDropdown(true); setSelectedFemininePillar(null); }}>Feminine Energy</button>
           <button className="service-button" onClick={() => { setShowPetDropdown(true); setSelectedPetType(null); setSelectedPetPillar(null); }}>Pet Harmony</button>
           <button className="service-button" onClick={() => { setShowHomeDropdown(true); setSelectedHomePillar(null); }}>Home Essentials</button>
