@@ -1,20 +1,14 @@
-import './App.css'
-import Pages from "@/pages/index.jsx"
-import { Toaster } from "@/components/ui/toaster"
-import FirstRunSetup from "@/components/FirstRunSetup"
-import ErrorBoundary from "@/components/ErrorBoundary"
-
-
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <ErrorBoundary>
-      <FirstRunSetup />
-      <Pages />
-      <Toaster />
-    </ErrorBoundary>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App 
+export default App;
