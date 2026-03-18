@@ -6,6 +6,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* Add other routes if needed, but no login wrapper */}
       </Routes>
     </BrowserRouter>
   );
